@@ -10,7 +10,8 @@ public class AvarageSkillValidator implements PlayerValidator{
     @Override
     public boolean validate(Player player) {
         if (player instanceof FieldPlayer) {
-            inspect(player);
+            inspect(FieldPlayer.class);
+            return true;
         }
         return false;
     }

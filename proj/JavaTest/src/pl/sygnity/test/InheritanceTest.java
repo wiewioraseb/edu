@@ -10,6 +10,10 @@ import pl.sygnity.test.util.FieldPlayer;
 import pl.sygnity.test.util.GoalKeeper;
 import pl.sygnity.test.util.Player;
 import pl.sygnity.test.util.Striker;
+import pl.sygnity.test.validators.AgeValidator;
+import pl.sygnity.test.validators.AvarageSkillValidator;
+import pl.sygnity.test.validators.PlayerValidator;
+import pl.sygnity.test.validators.QualityValidator;
 
 public class InheritanceTest {
 
@@ -31,7 +35,9 @@ public class InheritanceTest {
 	 */
 	private static Map<Player, Integer> rejectedPlayers;
 
-	
+
+
+
 	/* 
 	 * W tej metodzie należy umieścić instancję każdego z walidatorów w kolekcji(dowolnego typu) oraz zwalidować wszystkich piłkarzy 
 	 * używając każdego z walidatorów po kolei. Zawodnicy, którzy zostaną pomyślnie zwalidowali, powinni być umieszczeni w
@@ -39,6 +45,24 @@ public class InheritanceTest {
 	 * Wszyscy odrzuceni zawodnicy powinni trafić do mapy rejectedPlayers, gdzie kluczem jest obiekt Player, a wartością ilość oblanych testów.
 	 */
 	public static void testPlayers() {
+		acceptedGoalKeepers = new ArrayList<GoalKeeper>();
+		acceptedFieldPlayers = new ArrayList<FieldPlayer>();
+		acceptedStrikers = new ArrayList<Striker>();
+
+		PlayerValidator ageValidator = new AgeValidator();
+		PlayerValidator avarageSkillValidator = new AvarageSkillValidator();
+		PlayerValidator qualityValidator = new QualityValidator();
+		for (Player player : players) {
+			if (ageValidator.validate(player)
+					&& avarageSkillValidator.validate(player)
+					&& qualityValidator.validate(player)
+					) {
+				if (player instanceof FieldPlayer) acceptedFieldPlayers.add((FieldPlayer)player);
+				if (player instanceof GoalKeeper) acceptedGoalKeepers.add((GoalKeeper)player);
+				if (player instanceof Striker) acceptedStrikers.add((Striker)player);
+			}
+		}
+
 		// TODO
 	}		
 	
