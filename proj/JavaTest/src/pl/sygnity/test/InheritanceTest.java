@@ -55,8 +55,7 @@ public class InheritanceTest {
 		for (Player player : players) {
 			if (ageValidator.validate(player)
 					&& avarageSkillValidator.validate(player)
-					&& qualityValidator.validate(player)
-					) {
+					&& qualityValidator.validate(player)) {
 				if (player instanceof FieldPlayer) acceptedFieldPlayers.add((FieldPlayer)player);
 				if (player instanceof GoalKeeper) acceptedGoalKeepers.add((GoalKeeper)player);
 				if (player instanceof Striker) acceptedStrikers.add((Striker)player);
