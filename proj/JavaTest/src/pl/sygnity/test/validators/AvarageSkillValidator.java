@@ -8,13 +8,12 @@ public class AvarageSkillValidator implements PlayerValidator{
 
     @Override
     public boolean validate(Player player)  {
-        if (player instanceof FieldPlayer) {
             try {
-                return Verify.skillsThreshold(player, FieldPlayer.class);
+                // TODO: solve mystery how to pass generic class Player.class
+                return Verify.skillsThreshold(player, Player.class);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
-        }
         return false;
     }
 }
