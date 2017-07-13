@@ -1,10 +1,6 @@
 package pl.sygnity.test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import pl.sygnity.test.util.FieldPlayer;
 import pl.sygnity.test.util.GoalKeeper;
@@ -48,17 +44,22 @@ public class InheritanceTest {
 		acceptedGoalKeepers = new ArrayList<GoalKeeper>();
 		acceptedFieldPlayers = new ArrayList<FieldPlayer>();
 		acceptedStrikers = new ArrayList<Striker>();
+		rejectedPlayers = new HashMap<Player, Integer>();
 
 		PlayerValidator ageValidator = new AgeValidator();
 		PlayerValidator avarageSkillValidator = new AvarageSkillValidator();
 		PlayerValidator qualityValidator = new QualityValidator();
 		for (Player player : players) {
+			boolean[] failedTests = {ageValidator.validate(player), avarageSkillValidator.validate(player),
+					qualityValidator.validate(player)};
 			if (ageValidator.validate(player)
 					&& avarageSkillValidator.validate(player)
 					&& qualityValidator.validate(player)) {
 				if (player instanceof FieldPlayer) acceptedFieldPlayers.add((FieldPlayer)player);
 				if (player instanceof GoalKeeper) acceptedGoalKeepers.add((GoalKeeper)player);
 				if (player instanceof Striker) acceptedStrikers.add((Striker)player);
+			} else {
+				rejectedPlayers.put(player, failedTests.length);
 			}
 		}
 
