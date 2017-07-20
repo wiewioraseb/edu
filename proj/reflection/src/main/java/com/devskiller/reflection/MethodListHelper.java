@@ -16,6 +16,28 @@ public class MethodListHelper {
 	 * @return collection of methods metadata
 	 */
 	public Collection<MethodInfo> listMethods(Class aClass, boolean includeAbstract, boolean includeSuperclass) {
-		throw new UnsupportedOperationException("Please, implement me");
+
+		Collection<MethodInfo> arrayList = new ArrayList<>();
+
+		if (!includeAbstract && !includeSuperclass) {
+			Method[] methods = aClass.getDeclaredMethods();
+			Arrays.stream(methods)
+					.forEach(e -> {
+						List<Class> args = Arrays.asList(e.getParameterTypes());
+						arrayList.add(
+								new MethodInfo(e.getName(),
+										Modifier.isAbstract(e.getModifiers()),
+										args,
+										e.getReturnType()));
+					});
+//		} else if () {
+			
+		}
+		System.out.println("Result!!! :" + arrayList);
+
+
+
+
+		return arrayList;
 	}
 }
