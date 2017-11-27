@@ -35,6 +35,8 @@ namespace CarDealer
         //List<String> toyotaEngines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
 
         List<String> engines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
+        List<String> lacquerColors = new List<String>(new String[] { "czarny", "biały", "żółty", "zielony", "niebieski", "szary", "czerwony", "fioletowy" });
+        List<String> metallicLacquerColors = new List<String>(new String[] { "czarny", "zielony", "niebieski", "czerwony"});
 
         public Form1()
         {
@@ -46,20 +48,20 @@ namespace CarDealer
             cars.Add(initialCarBrands[2], mitsubishiModels);
             cars.Add(initialCarBrands[3], citroenModels);
             cars.Add(initialCarBrands[4], toyotaModels);
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //carBrandComboBox.SelectedIndex = -1;
+            System.Diagnostics.Debug.WriteLine("Form1_Load");
 
-                carModelComboBox.Enabled = false;
-                engineComboBox.Enabled = false;
-                lacquerColorComboBox.Enabled = false;
+            carModelComboBox.Enabled = false;
+            engineComboBox.Enabled = false;
+            lacquerColorComboBox.Enabled = false;
 
             carBrandComboBox.DropDown += new EventHandler(carBrandComboBox_DropDown);
-
-
+            carModelComboBox.DropDown += new EventHandler(carModelComboBox_DropDown);
+            engineComboBox.DropDown += new EventHandler(engineComboBox_DropDown);
+            lacquerColorComboBox.DropDown += new EventHandler(lacquerColorComboBox_DropDown);
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,15 +74,40 @@ namespace CarDealer
             carModelComboBox.Enabled = true;
         }
 
-
         private void carModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
         private void carModelComboBox_DropDown(object sender, EventArgs e)
         {
-            //engineComboBox.DataSource = 
-            //engineComboBox.Enabled = true;
+            String selectedCarBrand = carBrandComboBox.SelectedItem.ToString();
+            carModelComboBox.DataSource = cars[selectedCarBrand];
+            engineComboBox.Enabled = true;
+        }
+
+        private void engineComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void engineComboBox_DropDown(object sender, EventArgs e)
+        {
+            engineComboBox.DataSource = engines;
+            lacquerColorComboBox.Enabled = true;
+        }
+
+        private void isMetallicLacquerCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lacquerColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void lacquerColorComboBox_DropDown(object sender, EventArgs e)
+        {
+            lacquerColorComboBox.DataSource = isMetallicLacquerCheckBox.Checked ? metallicLacquerColors : lacquerColors;
+
         }
     }
 }

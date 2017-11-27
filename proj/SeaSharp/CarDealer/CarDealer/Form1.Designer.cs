@@ -77,6 +77,7 @@
             this.engineComboBox.Size = new System.Drawing.Size(121, 21);
             this.engineComboBox.TabIndex = 8;
             this.engineComboBox.Text = "wybierz silnik";
+            this.engineComboBox.SelectedIndexChanged += new System.EventHandler(this.engineComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -106,6 +107,7 @@
             this.isMetallicLacquerCheckBox.TabIndex = 10;
             this.isMetallicLacquerCheckBox.Text = "Lakier metalik";
             this.isMetallicLacquerCheckBox.UseVisualStyleBackColor = true;
+            this.isMetallicLacquerCheckBox.CheckedChanged += new System.EventHandler(this.isMetallicLacquerCheckBox_CheckedChanged);
             // 
             // label4
             // 
@@ -124,6 +126,7 @@
             this.lacquerColorComboBox.Size = new System.Drawing.Size(121, 21);
             this.lacquerColorComboBox.TabIndex = 11;
             this.lacquerColorComboBox.Text = "wybierz kolor";
+            this.lacquerColorComboBox.SelectedIndexChanged += new System.EventHandler(this.lacquerColorComboBox_SelectedIndexChanged);
             // 
             // additionalOptionsCheckedListBox
             // 
