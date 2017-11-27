@@ -46,9 +46,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Marka samochodu";
+            this.label1.Text = "Marka samochodu:";
             // 
             // carBrandComboBox
             // 
@@ -65,9 +65,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(285, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Silnik";
+            this.label3.Text = "Silnik:";
             // 
             // engineComboBox
             // 
@@ -83,9 +83,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(155, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Model";
+            this.label2.Text = "Model:";
             // 
             // carModelComboBox
             // 
@@ -95,6 +95,7 @@
             this.carModelComboBox.Size = new System.Drawing.Size(121, 21);
             this.carModelComboBox.TabIndex = 6;
             this.carModelComboBox.Text = "wybierz model";
+            this.carModelComboBox.SelectedIndexChanged += new System.EventHandler(this.carModelComboBox_SelectedIndexChanged);
             // 
             // isMetallicLacquerCheckBox
             // 
@@ -111,9 +112,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(509, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Kolor lakieru";
+            this.label4.Text = "Kolor lakieru:";
             // 
             // lacquerColorComboBox
             // 
@@ -124,7 +125,7 @@
             this.lacquerColorComboBox.TabIndex = 11;
             this.lacquerColorComboBox.Text = "wybierz kolor";
             // 
-            // CheckedListBox1
+            // additionalOptionsCheckedListBox
             // 
             this.additionalOptionsCheckedListBox.FormattingEnabled = true;
             this.additionalOptionsCheckedListBox.Items.AddRange(new object[] {
@@ -132,7 +133,7 @@
             "Klimatyzacja",
             "Wspomaganie"});
             this.additionalOptionsCheckedListBox.Location = new System.Drawing.Point(28, 94);
-            this.additionalOptionsCheckedListBox.Name = "CheckedListBox1";
+            this.additionalOptionsCheckedListBox.Name = "additionalOptionsCheckedListBox";
             this.additionalOptionsCheckedListBox.Size = new System.Drawing.Size(132, 49);
             this.additionalOptionsCheckedListBox.TabIndex = 15;
             // 
