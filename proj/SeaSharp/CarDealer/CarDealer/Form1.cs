@@ -34,7 +34,7 @@ namespace CarDealer
         List<String> toyotaModels = new List<String>(new String[] { "Camry", "Premio", "Prius", "Corolla", "Cruiser" });
         //List<String> toyotaEngines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
 
-        List<String> engines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
+        List<String> enginesList = new List<String>(new String[] { "1.3", "1.6", "2.0" });
         List<String> lacquerColors = new List<String>(new String[] { "czarny", "biały", "żółty", "zielony", "niebieski", "szary", "czerwony", "fioletowy" });
         List<String> metallicLacquerColors = new List<String>(new String[] { "czarny", "zielony", "niebieski", "czerwony"});
 
@@ -66,7 +66,7 @@ namespace CarDealer
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
         {
@@ -76,7 +76,10 @@ namespace CarDealer
 
         private void carModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            //carAvatarPB.
+            //this.carAvatarPB.Image = global::CarDealer.Properties.Resources.toyota_cruiser;
+            this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject("toyota_cruiser");
+
         }
         private void carModelComboBox_DropDown(object sender, EventArgs e)
         {
@@ -91,7 +94,7 @@ namespace CarDealer
         }
         private void engineComboBox_DropDown(object sender, EventArgs e)
         {
-            engineComboBox.DataSource = engines;
+            engineComboBox.DataSource = enginesList;
             lacquerColorComboBox.Enabled = true;
         }
 
@@ -108,6 +111,20 @@ namespace CarDealer
         {
             lacquerColorComboBox.DataSource = isMetallicLacquerCheckBox.Checked ? metallicLacquerColors : lacquerColors;
 
+        }
+
+        private void additionalOptionsCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addEngineButton_Click(object sender, EventArgs e)
+        {
+            // BindingList: https://stackoverflow.com/questions/9758577/c-sharp-datagridview-not-updated-when-datasource-is-changed 
+            enginesList.Add(addEngineTextBox.Text);
+            // dirty hack
+            engineComboBox.DataSource = null;
+            engineComboBox.DataSource = enginesList;
         }
     }
 }
