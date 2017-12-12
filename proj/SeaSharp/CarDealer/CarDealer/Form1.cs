@@ -52,6 +52,8 @@ namespace CarDealer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'car_dealer_dbDataSet.samochody' table. You can move, or remove it, as needed.
+            this.samochodyTableAdapter.Fill(this.carDealerDataSet.samochody);
             System.Diagnostics.Debug.WriteLine("Form1_Load");
 
             carModelComboBox.Enabled = false;
@@ -70,7 +72,7 @@ namespace CarDealer
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
         {
-            carBrandComboBox.DataSource = carBrands;
+            //carBrandComboBox.DataSource = carBrands;
             carModelComboBox.Enabled = true;
         }
 
@@ -125,6 +127,38 @@ namespace CarDealer
             // dirty hack
             engineComboBox.DataSource = null;
             engineComboBox.DataSource = enginesList;
+
+            try
+            {
+                //this.carsBindingSource.AddNew();
+                //DataRow dr = this.carsBindingSource.Rows[IntPosition];
+                //dr.BeginEdit();
+                //dr[1] = "New Value";
+
+                this.samochodyTableAdapter.Insert(
+                    addBrandTextBox.Text.ToString(),
+                    addModelTextBox.Text.ToString(),
+                    addEngineTextBox.Text.ToString(),
+                    "1990",
+                    2000
+                    );
+
+                this.Validate();
+                //this.carsBindingSource.EndEdit();
+                this.samochodyTableAdapter.Update(this.carDealerDataSet.samochody);
+                this.samochodyTableAdapter.Fill(this.carDealerDataSet.samochody);
+
+                MessageBox.Show("Dodano nowy wpis.");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("NIE udalo sie dodac nowego wpisu!");
+            }
+        }
+
+        private void Validate()
+        {
+            System.Diagnostics.Debug.WriteLine("Zwalidowano!");
         }
     }
 }

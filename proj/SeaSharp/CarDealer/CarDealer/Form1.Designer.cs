@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.carBrandComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,16 +44,21 @@
             this.carAvatarLabel = new System.Windows.Forms.Label();
             this.addEntryLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.addMetalicLacquerCheckBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.addBrandTextBox = new System.Windows.Forms.TextBox();
+            this.addModelTextBox = new System.Windows.Forms.TextBox();
             this.addEngineTextBox = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.addLacquerTextBox = new System.Windows.Forms.TextBox();
             this.addEngineButton = new System.Windows.Forms.Button();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carDealerDataSet = new CarDealer.car_dealer_dbDataSet();
+            this.samochodyTableAdapter = new CarDealer.car_dealer_dbDataSetTableAdapters.samochodyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,12 +72,13 @@
             // 
             // carBrandComboBox
             // 
+            this.carBrandComboBox.DataSource = this.carsBindingSource;
+            this.carBrandComboBox.DisplayMember = "marka";
             this.carBrandComboBox.FormattingEnabled = true;
             this.carBrandComboBox.Location = new System.Drawing.Point(28, 45);
             this.carBrandComboBox.Name = "carBrandComboBox";
             this.carBrandComboBox.Size = new System.Drawing.Size(121, 21);
             this.carBrandComboBox.TabIndex = 3;
-            this.carBrandComboBox.Text = "wybierz markę";
             this.carBrandComboBox.SelectedIndexChanged += new System.EventHandler(this.carBrandComboBox_SelectedIndexChanged);
             // 
             // label3
@@ -200,15 +207,15 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "Kolor lakieru:";
             // 
-            // checkBox1
+            // addMetalicLacquerCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(415, 213);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(91, 17);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.Text = "Lakier metalik";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.addMetalicLacquerCheckBox.AutoSize = true;
+            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(415, 213);
+            this.addMetalicLacquerCheckBox.Name = "addMetalicLacquerCheckBox";
+            this.addMetalicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
+            this.addMetalicLacquerCheckBox.TabIndex = 25;
+            this.addMetalicLacquerCheckBox.Text = "Lakier metalik";
+            this.addMetalicLacquerCheckBox.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -237,19 +244,19 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Marka samochodu:";
             // 
-            // textBox1
+            // addBrandTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 215);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 28;
+            this.addBrandTextBox.Location = new System.Drawing.Point(31, 215);
+            this.addBrandTextBox.Name = "addBrandTextBox";
+            this.addBrandTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addBrandTextBox.TabIndex = 28;
             // 
-            // textBox2
+            // addModelTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(158, 215);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 29;
+            this.addModelTextBox.Location = new System.Drawing.Point(158, 215);
+            this.addModelTextBox.Name = "addModelTextBox";
+            this.addModelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addModelTextBox.TabIndex = 29;
             // 
             // addEngineTextBox
             // 
@@ -258,12 +265,12 @@
             this.addEngineTextBox.Size = new System.Drawing.Size(100, 20);
             this.addEngineTextBox.TabIndex = 30;
             // 
-            // textBox4
+            // addLacquerTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(512, 215);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 31;
+            this.addLacquerTextBox.Location = new System.Drawing.Point(512, 215);
+            this.addLacquerTextBox.Name = "addLacquerTextBox";
+            this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addLacquerTextBox.TabIndex = 31;
             // 
             // addEngineButton
             // 
@@ -275,18 +282,32 @@
             this.addEngineButton.UseVisualStyleBackColor = true;
             this.addEngineButton.Click += new System.EventHandler(this.addEngineButton_Click);
             // 
+            // carsBindingSource
+            // 
+            this.carsBindingSource.DataMember = "samochody";
+            this.carsBindingSource.DataSource = this.carDealerDataSet;
+            // 
+            // carDealerDataSet
+            // 
+            this.carDealerDataSet.DataSetName = "carDealerDataSet";
+            this.carDealerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // samochodyTableAdapter
+            // 
+            this.samochodyTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 323);
             this.Controls.Add(this.addEngineButton);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.addLacquerTextBox);
             this.Controls.Add(this.addEngineTextBox);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addModelTextBox);
+            this.Controls.Add(this.addBrandTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.addMetalicLacquerCheckBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -308,6 +329,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,15 +353,18 @@
         private System.Windows.Forms.Label carAvatarLabel;
         private System.Windows.Forms.Label addEntryLabel;
         internal System.Windows.Forms.Label label6;
-        internal System.Windows.Forms.CheckBox checkBox1;
+        internal System.Windows.Forms.CheckBox addMetalicLacquerCheckBox;
         internal System.Windows.Forms.Label label7;
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox addBrandTextBox;
+        private System.Windows.Forms.TextBox addModelTextBox;
         private System.Windows.Forms.TextBox addEngineTextBox;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox addLacquerTextBox;
         private System.Windows.Forms.Button addEngineButton;
+        private System.Windows.Forms.BindingSource carsBindingSource;
+        private car_dealer_dbDataSet carDealerDataSet;
+        private car_dealer_dbDataSetTableAdapters.samochodyTableAdapter samochodyTableAdapter;
     }
 }
 
