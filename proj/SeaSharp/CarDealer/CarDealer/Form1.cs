@@ -42,12 +42,12 @@ namespace CarDealer
         {
             InitializeComponent();
 
-            carBrands.AddRange(initialCarBrands);
-            cars.Add(initialCarBrands[0], opelModels);
-            cars.Add(initialCarBrands[1], bmwModels);
-            cars.Add(initialCarBrands[2], mitsubishiModels);
-            cars.Add(initialCarBrands[3], citroenModels);
-            cars.Add(initialCarBrands[4], toyotaModels);
+            //carBrands.AddRange(initialCarBrands);
+            //cars.Add(initialCarBrands[0], opelModels);
+            //cars.Add(initialCarBrands[1], bmwModels);
+            //cars.Add(initialCarBrands[2], mitsubishiModels);
+            //cars.Add(initialCarBrands[3], citroenModels);
+            //cars.Add(initialCarBrands[4], toyotaModels);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,8 +85,8 @@ namespace CarDealer
         }
         private void carModelComboBox_DropDown(object sender, EventArgs e)
         {
-            String selectedCarBrand = carBrandComboBox.SelectedItem.ToString();
-            carModelComboBox.DataSource = cars[selectedCarBrand];
+            //String selectedCarBrand = carBrandComboBox.SelectedItem.ToString();
+            //carModelComboBox.DataSource = cars[selectedCarBrand];
             engineComboBox.Enabled = true;
         }
 
@@ -120,13 +120,13 @@ namespace CarDealer
 
         }
 
-        private void addEngineButton_Click(object sender, EventArgs e)
+        private void addNewCarButton_Click(object sender, EventArgs e)
         {
             // BindingList: https://stackoverflow.com/questions/9758577/c-sharp-datagridview-not-updated-when-datasource-is-changed 
-            enginesList.Add(addEngineTextBox.Text);
+            //enginesList.Add(addEngineTextBox.Text);
             // dirty hack
-            engineComboBox.DataSource = null;
-            engineComboBox.DataSource = enginesList;
+            //engineComboBox.DataSource = null;
+            //engineComboBox.DataSource = enginesList;
 
             try
             {
@@ -134,6 +134,8 @@ namespace CarDealer
                 //DataRow dr = this.carsBindingSource.Rows[IntPosition];
                 //dr.BeginEdit();
                 //dr[1] = "New Value";
+
+                //this.carsBindingSource.Insert(0, "String");
 
                 this.samochodyTableAdapter.Insert(
                     addBrandTextBox.Text.ToString(),
@@ -160,5 +162,6 @@ namespace CarDealer
         {
             System.Diagnostics.Debug.WriteLine("Zwalidowano!");
         }
+
     }
 }
