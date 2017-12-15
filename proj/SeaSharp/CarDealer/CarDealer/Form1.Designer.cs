@@ -79,6 +79,7 @@
             this.carBrandComboBox.Name = "carBrandComboBox";
             this.carBrandComboBox.Size = new System.Drawing.Size(121, 21);
             this.carBrandComboBox.TabIndex = 3;
+            this.carBrandComboBox.Text = "wybierz markę...";
             this.carBrandComboBox.SelectedIndexChanged += new System.EventHandler(this.carBrandComboBox_SelectedIndexChanged);
             // 
             // carsBindingSource
@@ -128,6 +129,7 @@
             this.carModelComboBox.Name = "carModelComboBox";
             this.carModelComboBox.Size = new System.Drawing.Size(121, 21);
             this.carModelComboBox.TabIndex = 6;
+            this.carModelComboBox.Text = "wybierz model...";
             this.carModelComboBox.SelectedIndexChanged += new System.EventHandler(this.carModelComboBox_SelectedIndexChanged);
             // 
             // isMetallicLacquerCheckBox
