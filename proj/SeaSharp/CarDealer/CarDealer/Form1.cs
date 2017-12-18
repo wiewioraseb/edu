@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarDealer.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CarDealer
 {
@@ -42,19 +44,36 @@ namespace CarDealer
         {
             InitializeComponent();
 
-            //carBrands.AddRange(initialCarBrands);
-            //cars.Add(initialCarBrands[0], opelModels);
-            //cars.Add(initialCarBrands[1], bmwModels);
-            //cars.Add(initialCarBrands[2], mitsubishiModels);
-            //cars.Add(initialCarBrands[3], citroenModels);
-            //cars.Add(initialCarBrands[4], toyotaModels);
+            //DataFactory x = new DataFactory();
+            
+            //Generic connection to db:
+            // https://msdn.microsoft.com/en-us/library/ms971568.aspx
+
         }
+
+
+        // PRZEKOPIOWANE Z TUTORIALA z ADO generic
+        public DataTable GetAllCustomers()
+        {
+            CustomersData cd = new CustomersData();
+            DataTable dt = cd.GetCustomers();
+            return dt;
+        }
+        public DataSet GetCustomerOrders()
+        {
+            // TBD
+            return null;
+        }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'car_dealer_dbDataSet.samochody' table. You can move, or remove it, as needed.
             this.samochodyTableAdapter.Fill(this.carDealerDataSet.samochody);
             System.Diagnostics.Debug.WriteLine("Form1_Load");
+
+            label10.Text = computer1.CPU.Architecture;
 
             carModelComboBox.Enabled = false;
             engineComboBox.Enabled = false;
