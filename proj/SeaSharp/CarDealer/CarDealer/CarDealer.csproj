@@ -74,6 +74,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>car_dealer_dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CustomersData.cs" />
+    <Compile Include="DataFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
