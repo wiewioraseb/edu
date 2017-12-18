@@ -56,6 +56,9 @@
             this.addLacquerTextBox = new System.Windows.Forms.TextBox();
             this.samochodyTableAdapter = new CarDealer.car_dealer_dbDataSetTableAdapters.samochodyTableAdapter();
             this.addNewCarButton = new System.Windows.Forms.Button();
+            this.computer1 = new CompInfo.Computer(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
@@ -79,7 +82,6 @@
             this.carBrandComboBox.Name = "carBrandComboBox";
             this.carBrandComboBox.Size = new System.Drawing.Size(121, 21);
             this.carBrandComboBox.TabIndex = 3;
-            this.carBrandComboBox.Text = "wybierz markę...";
             this.carBrandComboBox.SelectedIndexChanged += new System.EventHandler(this.carBrandComboBox_SelectedIndexChanged);
             // 
             // carsBindingSource
@@ -129,7 +131,6 @@
             this.carModelComboBox.Name = "carModelComboBox";
             this.carModelComboBox.Size = new System.Drawing.Size(121, 21);
             this.carModelComboBox.TabIndex = 6;
-            this.carModelComboBox.Text = "wybierz model...";
             this.carModelComboBox.SelectedIndexChanged += new System.EventHandler(this.carModelComboBox_SelectedIndexChanged);
             // 
             // isMetallicLacquerCheckBox
@@ -299,11 +300,31 @@
             this.addNewCarButton.UseVisualStyleBackColor = true;
             this.addNewCarButton.Click += new System.EventHandler(this.addNewCarButton_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(705, 292);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(705, 279);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(117, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Architektura procesora:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 323);
+            this.ClientSize = new System.Drawing.Size(834, 323);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.addNewCarButton);
             this.Controls.Add(this.addLacquerTextBox);
             this.Controls.Add(this.addEngineTextBox);
@@ -368,6 +389,9 @@
         private car_dealer_dbDataSet carDealerDataSet;
         private car_dealer_dbDataSetTableAdapters.samochodyTableAdapter samochodyTableAdapter;
         private System.Windows.Forms.Button addNewCarButton;
+        private CompInfo.Computer computer1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 
