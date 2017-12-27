@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace CarDealer.DataAccessLayer
 {
@@ -42,10 +46,10 @@ namespace CarDealer.DataAccessLayer
                     cnn = new SqlConnection
                        (ConnectionString);
                     break;
-                case DatabaseType.Oracle:
-                    cnn = new OracleConnection
-                       (ConnectionString);
-                    break;
+                //case DatabaseType.Oracle:
+                //    cnn = new OracleConnection
+                //       (ConnectionString);
+                //    break;
                 default:
                     cnn = new SqlConnection
                        (ConnectionString);
@@ -74,11 +78,11 @@ namespace CarDealer.DataAccessLayer
                        (SqlConnection)cnn);
                     break;
 
-                case DatabaseType.Oracle:
-                    cmd = new OracleCommand
-                       (CommandText,
-                       (OracleConnection)cnn);
-                    break;
+                //case DatabaseType.Oracle:
+                //    cmd = new OracleCommand
+                //       (CommandText,
+                //       (OracleConnection)cnn);
+                //    break;
                 default:
                     cmd = new SqlCommand
                        (CommandText,
@@ -106,10 +110,10 @@ namespace CarDealer.DataAccessLayer
                        ((SqlCommand)cmd);
                     break;
 
-                case DatabaseType.Oracle:
-                    da = new OracleDataAdapter
-                       ((OracleCommand)cmd);
-                    break;
+                //case DatabaseType.Oracle:
+                //    da = new OracleDataAdapter
+                //       ((OracleCommand)cmd);
+                //    break;
 
                 default:
                     da = new SqlDataAdapter
