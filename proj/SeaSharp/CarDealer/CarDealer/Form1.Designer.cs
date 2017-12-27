@@ -206,7 +206,7 @@
             // addEntryLabel
             // 
             this.addEntryLabel.AutoSize = true;
-            this.addEntryLabel.Location = new System.Drawing.Point(28, 175);
+            this.addEntryLabel.Location = new System.Drawing.Point(25, 300);
             this.addEntryLabel.Name = "addEntryLabel";
             this.addEntryLabel.Size = new System.Drawing.Size(59, 13);
             this.addEntryLabel.TabIndex = 18;
@@ -215,7 +215,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(512, 198);
+            this.label6.Location = new System.Drawing.Point(509, 323);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 27;
@@ -224,7 +224,7 @@
             // addMetalicLacquerCheckBox
             // 
             this.addMetalicLacquerCheckBox.AutoSize = true;
-            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(415, 213);
+            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(412, 338);
             this.addMetalicLacquerCheckBox.Name = "addMetalicLacquerCheckBox";
             this.addMetalicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
             this.addMetalicLacquerCheckBox.TabIndex = 25;
@@ -234,7 +234,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(288, 198);
+            this.label7.Location = new System.Drawing.Point(285, 323);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 24;
@@ -243,7 +243,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(158, 198);
+            this.label8.Location = new System.Drawing.Point(155, 323);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 22;
@@ -252,7 +252,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 198);
+            this.label9.Location = new System.Drawing.Point(25, 323);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 19;
@@ -260,28 +260,28 @@
             // 
             // addBrandTextBox
             // 
-            this.addBrandTextBox.Location = new System.Drawing.Point(31, 215);
+            this.addBrandTextBox.Location = new System.Drawing.Point(28, 340);
             this.addBrandTextBox.Name = "addBrandTextBox";
             this.addBrandTextBox.Size = new System.Drawing.Size(100, 20);
             this.addBrandTextBox.TabIndex = 28;
             // 
             // addModelTextBox
             // 
-            this.addModelTextBox.Location = new System.Drawing.Point(158, 215);
+            this.addModelTextBox.Location = new System.Drawing.Point(155, 340);
             this.addModelTextBox.Name = "addModelTextBox";
             this.addModelTextBox.Size = new System.Drawing.Size(100, 20);
             this.addModelTextBox.TabIndex = 29;
             // 
             // addEngineTextBox
             // 
-            this.addEngineTextBox.Location = new System.Drawing.Point(291, 215);
+            this.addEngineTextBox.Location = new System.Drawing.Point(288, 340);
             this.addEngineTextBox.Name = "addEngineTextBox";
             this.addEngineTextBox.Size = new System.Drawing.Size(100, 20);
             this.addEngineTextBox.TabIndex = 30;
             // 
             // addLacquerTextBox
             // 
-            this.addLacquerTextBox.Location = new System.Drawing.Point(512, 215);
+            this.addLacquerTextBox.Location = new System.Drawing.Point(509, 340);
             this.addLacquerTextBox.Name = "addLacquerTextBox";
             this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
             this.addLacquerTextBox.TabIndex = 31;
@@ -292,7 +292,7 @@
             // 
             // addNewCarButton
             // 
-            this.addNewCarButton.Location = new System.Drawing.Point(618, 215);
+            this.addNewCarButton.Location = new System.Drawing.Point(615, 340);
             this.addNewCarButton.Name = "addNewCarButton";
             this.addNewCarButton.Size = new System.Drawing.Size(75, 23);
             this.addNewCarButton.TabIndex = 33;
@@ -303,7 +303,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(705, 292);
+            this.label10.Location = new System.Drawing.Point(702, 417);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 34;
@@ -312,7 +312,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(705, 279);
+            this.label11.Location = new System.Drawing.Point(702, 404);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 13);
             this.label11.TabIndex = 35;
@@ -322,7 +322,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 323);
+            this.ClientSize = new System.Drawing.Size(834, 449);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.addNewCarButton);

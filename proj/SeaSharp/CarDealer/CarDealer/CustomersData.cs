@@ -43,17 +43,17 @@ namespace CarDealer.DataAccessLayer
             return dt;
         }
 
-        public CustomersDS GetCustomerOrders(string CustomerID)
-        {
-            // TBD
-            return null;
-        }
-        public CustomersList GetCustomersByCountry
-           (string CountryCode)
-        {
-            // TBD
-            return null;
-        }
+        //public CustomersDS GetCustomerOrders(string CustomerID)
+        //{
+        //    // TBD
+        //    return null;
+        //}
+        //public CustomersList GetCustomersByCountry
+        //   (string CountryCode)
+        //{
+        //    // TBD
+        //    return null;
+        //}
         public bool InsertCustomer()
         {
             // TBD 
