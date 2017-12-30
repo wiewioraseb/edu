@@ -1,0 +1,16 @@
+Bool, Boolean: These types are synonyms for TINYINT(1). 
+A value of zero is considered false. Non-zero values are considered true.
+
+CREATE TABLE `cardealer1`.`cars` (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+brand VARCHAR(30) NOT NULL,
+model VARCHAR(30) NOT NULL,
+car_engine VARCHAR(30) NOT NULL,
+production_year  YEAR(4) NOT NULL,
+lacquer_color VARCHAR(30) NOT NULL,
+has_metallic_lacquer TINYINT(1) NOT NULL,
+has_power_steering TINYINT(1) NOT NULL,
+has_automatic_transmission TINYINT(1) NOT NULL,
+has_air_conditioning TINYINT(1) NOT NULL,
+price INT(7) NOT NULL
+);
