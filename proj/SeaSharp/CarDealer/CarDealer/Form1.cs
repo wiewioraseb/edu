@@ -45,10 +45,19 @@ namespace CarDealer
             InitializeComponent();
 
             //DataFactory x = new DataFactory();
-            
+
             //Generic connection to db:
             // https://msdn.microsoft.com/en-us/library/ms971568.aspx
 
+            //Some example:
+            //https://www.codeproject.com/Articles/6217/An-ADO-NET-multi-database-multi-tier-solution
+
+            // Examples from 'best practises'
+            // https://msdn.microsoft.com/en-us/library/ms971481.aspx
+
+            // multiple databses with ado.net
+            // https://www.codeproject.com/Questions/503675/DataSetpluswithplusdifferentplusDatabasesplusorplu
+            // https://forums.asp.net/p/949947/1155679.aspx?Re+Using+two+different+databases+with+a+dataset+
         }
 
 
