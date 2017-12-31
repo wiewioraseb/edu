@@ -96,8 +96,8 @@
             // 
             // carBrandComboBox
             // 
-            this.carBrandComboBox.DataSource = this.carsBindingSource;
-            this.carBrandComboBox.DisplayMember = "marka";
+            this.carBrandComboBox.DataSource = this.cars1BindingSource;
+            this.carBrandComboBox.DisplayMember = "brand";
             this.carBrandComboBox.FormattingEnabled = true;
             this.carBrandComboBox.Location = new System.Drawing.Point(28, 45);
             this.carBrandComboBox.Name = "carBrandComboBox";
@@ -126,12 +126,13 @@
             // 
             // engineComboBox
             // 
+            this.engineComboBox.DataSource = this.cars1BindingSource;
+            this.engineComboBox.DisplayMember = "car_engine";
             this.engineComboBox.FormattingEnabled = true;
             this.engineComboBox.Location = new System.Drawing.Point(285, 44);
             this.engineComboBox.Name = "engineComboBox";
             this.engineComboBox.Size = new System.Drawing.Size(121, 21);
             this.engineComboBox.TabIndex = 8;
-            this.engineComboBox.Text = "wybierz silnik";
             this.engineComboBox.SelectedIndexChanged += new System.EventHandler(this.engineComboBox_SelectedIndexChanged);
             // 
             // label2
@@ -145,7 +146,7 @@
             // 
             // carModelComboBox
             // 
-            this.carModelComboBox.DataSource = this.carsBindingSource;
+            this.carModelComboBox.DataSource = this.cars1BindingSource;
             this.carModelComboBox.DisplayMember = "model";
             this.carModelComboBox.FormattingEnabled = true;
             this.carModelComboBox.Location = new System.Drawing.Point(158, 44);
@@ -176,12 +177,13 @@
             // 
             // lacquerColorComboBox
             // 
+            this.lacquerColorComboBox.DataSource = this.cars1BindingSource;
+            this.lacquerColorComboBox.DisplayMember = "lacquer_color";
             this.lacquerColorComboBox.FormattingEnabled = true;
             this.lacquerColorComboBox.Location = new System.Drawing.Point(509, 44);
             this.lacquerColorComboBox.Name = "lacquerColorComboBox";
             this.lacquerColorComboBox.Size = new System.Drawing.Size(121, 21);
             this.lacquerColorComboBox.TabIndex = 11;
-            this.lacquerColorComboBox.Text = "wybierz kolor";
             this.lacquerColorComboBox.SelectedIndexChanged += new System.EventHandler(this.lacquerColorComboBox_SelectedIndexChanged);
             // 
             // additionalOptionsCheckedListBox
