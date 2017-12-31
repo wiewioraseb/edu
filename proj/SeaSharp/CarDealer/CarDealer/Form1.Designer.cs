@@ -59,9 +59,14 @@
             this.computer1 = new CompInfo.Computer(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.cars1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carDealer1DataSet = new CarDealer.carDealer1DataSet();
+            this.carsTableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -318,6 +323,20 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Architektura procesora:";
             // 
+            // cars1BindingSource
+            // 
+            this.cars1BindingSource.DataMember = "cars";
+            this.cars1BindingSource.DataSource = this.carDealer1DataSet;
+            // 
+            // carDealer1DataSet
+            // 
+            this.carDealer1DataSet.DataSetName = "carDealer1DataSet";
+            this.carDealer1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carsTableAdapter
+            // 
+            this.carsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +374,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,6 +413,9 @@
         private CompInfo.Computer computer1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource cars1BindingSource;
+        private carDealer1DataSet carDealer1DataSet;
+        private carDealer1DataSetTableAdapters.carsTableAdapter carsTableAdapter;
     }
 }
 
