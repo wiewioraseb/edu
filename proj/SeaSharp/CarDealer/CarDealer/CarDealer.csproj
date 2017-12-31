@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>carDealer1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="carDealer2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>carDealer2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="car_dealer_dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +121,17 @@
     </None>
     <None Include="carDealer1DataSet.xss">
       <DependentUpon>carDealer1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="carDealer2DataSet.xsc">
+      <DependentUpon>carDealer2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="carDealer2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>carDealer2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="carDealer2DataSet.xss">
+      <DependentUpon>carDealer2DataSet.xsd</DependentUpon>
     </None>
     <None Include="car_dealer_dbDataSet.xsc">
       <DependentUpon>car_dealer_dbDataSet.xsd</DependentUpon>

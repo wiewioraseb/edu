@@ -43,5 +43,16 @@ namespace CarDealer.Properties {
                 return ((string)(this["cardealer1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=root;persistsecurityinfo=True;database=car" +
+            "dealer2")]
+        public string cardealer2ConnectionString {
+            get {
+                return ((string)(this["cardealer2ConnectionString"]));
+            }
+        }
     }
 }

@@ -70,7 +70,11 @@ namespace CarDealer
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'carDealer1DataSet.cars' table. You can move, or remove it, as needed.
-            this.carsTableAdapter.Fill(this.carDealer1DataSet.cars);
+            this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
+            // TODO: This line of code loads data into the 'carDealer2DataSet.cars' table. You can move, or remove it, as needed.
+            this.cars2TableAdapter.Fill(this.carDealer2DataSet.cars);
+            // TODO: This line of code loads data into the 'carDealer1DataSet.cars' table. You can move, or remove it, as needed.
+            this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
             // TODO: This line of code loads data into the 'car_dealer_dbDataSet.samochody' table. You can move, or remove it, as needed.
             this.samochodyTableAdapter.Fill(this.carDealerDataSet.samochody);
             System.Diagnostics.Debug.WriteLine("Form1_Load");

@@ -61,12 +61,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cars1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carDealer1DataSet = new CarDealer.carDealer1DataSet();
-            this.carsTableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
+            this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
+            this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
+            this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -333,9 +336,18 @@
             this.carDealer1DataSet.DataSetName = "carDealer1DataSet";
             this.carDealer1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // carsTableAdapter
+            // cars1TableAdapter
             // 
-            this.carsTableAdapter.ClearBeforeFill = true;
+            this.cars1TableAdapter.ClearBeforeFill = true;
+            // 
+            // carDealer2DataSet
+            // 
+            this.carDealer2DataSet.DataSetName = "carDealer2DataSet";
+            this.carDealer2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cars2TableAdapter
+            // 
+            this.cars2TableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -376,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,7 +428,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource cars1BindingSource;
         private carDealer1DataSet carDealer1DataSet;
-        private carDealer1DataSetTableAdapters.carsTableAdapter carsTableAdapter;
+        private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
+        private carDealer2DataSet carDealer2DataSet;
+        private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
     }
 }
 
