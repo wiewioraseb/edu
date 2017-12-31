@@ -42,6 +42,9 @@ namespace CarDealer
 
         public Form1()
         {
+            // For english exceptions
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+
             InitializeComponent();
 
             //DataFactory x = new DataFactory();
@@ -171,12 +174,17 @@ namespace CarDealer
 
                 //this.carsBindingSource.Insert(0, "String");
 
-                this.samochodyTableAdapter.Insert(
+                this.cars1TableAdapter.Insert(
                     addBrandTextBox.Text.ToString(),
                     addModelTextBox.Text.ToString(),
                     addEngineTextBox.Text.ToString(),
-                    "1990",
-                    2000
+                    System.DateTime.Today,
+                    "yellow",
+                    0,
+                    1,
+                    0,
+                    1,
+                    45000
                     );
 
                 this.Validate();
@@ -189,6 +197,9 @@ namespace CarDealer
             catch (System.Exception ex)
             {
                 MessageBox.Show("NIE udalo sie dodac nowego wpisu!");
+                System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu: " + ex.StackTrace);
+                System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu MESSAGE: " + ex.Message);
+
             }
         }
 
