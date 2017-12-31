@@ -158,7 +158,8 @@
             // isMetallicLacquerCheckBox
             // 
             this.isMetallicLacquerCheckBox.AutoSize = true;
-            this.isMetallicLacquerCheckBox.Location = new System.Drawing.Point(412, 44);
+            this.isMetallicLacquerCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cars1BindingSource, "has_metallic_lacquer", true));
+            this.isMetallicLacquerCheckBox.Location = new System.Drawing.Point(413, 44);
             this.isMetallicLacquerCheckBox.Name = "isMetallicLacquerCheckBox";
             this.isMetallicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
             this.isMetallicLacquerCheckBox.TabIndex = 10;
