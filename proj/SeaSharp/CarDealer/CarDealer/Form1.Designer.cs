@@ -64,12 +64,25 @@
             this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
             this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
             this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
+            this.mainDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carengineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productionyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lacquercolorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasmetalliclacquerDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.haspowersteeringDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasautomatictransmissionDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasairconditioningDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -349,11 +362,114 @@
             // 
             this.cars2TableAdapter.ClearBeforeFill = true;
             // 
+            // mainDataGridView
+            // 
+            this.mainDataGridView.AllowUserToAddRows = false;
+            this.mainDataGridView.AllowUserToDeleteRows = false;
+            this.mainDataGridView.AutoGenerateColumns = false;
+            this.mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.brandDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.carengineDataGridViewTextBoxColumn,
+            this.productionyearDataGridViewTextBoxColumn,
+            this.lacquercolorDataGridViewTextBoxColumn,
+            this.hasmetalliclacquerDataGridViewCheckBoxColumn,
+            this.haspowersteeringDataGridViewCheckBoxColumn,
+            this.hasautomatictransmissionDataGridViewCheckBoxColumn,
+            this.hasairconditioningDataGridViewCheckBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.mainDataGridView.DataSource = this.cars1BindingSource;
+            this.mainDataGridView.Location = new System.Drawing.Point(28, 159);
+            this.mainDataGridView.Name = "mainDataGridView";
+            this.mainDataGridView.ReadOnly = true;
+            this.mainDataGridView.Size = new System.Drawing.Size(791, 129);
+            this.mainDataGridView.TabIndex = 36;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "brand";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // carengineDataGridViewTextBoxColumn
+            // 
+            this.carengineDataGridViewTextBoxColumn.DataPropertyName = "car_engine";
+            this.carengineDataGridViewTextBoxColumn.HeaderText = "car_engine";
+            this.carengineDataGridViewTextBoxColumn.Name = "carengineDataGridViewTextBoxColumn";
+            this.carengineDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productionyearDataGridViewTextBoxColumn
+            // 
+            this.productionyearDataGridViewTextBoxColumn.DataPropertyName = "production_year";
+            this.productionyearDataGridViewTextBoxColumn.HeaderText = "production_year";
+            this.productionyearDataGridViewTextBoxColumn.Name = "productionyearDataGridViewTextBoxColumn";
+            this.productionyearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lacquercolorDataGridViewTextBoxColumn
+            // 
+            this.lacquercolorDataGridViewTextBoxColumn.DataPropertyName = "lacquer_color";
+            this.lacquercolorDataGridViewTextBoxColumn.HeaderText = "lacquer_color";
+            this.lacquercolorDataGridViewTextBoxColumn.Name = "lacquercolorDataGridViewTextBoxColumn";
+            this.lacquercolorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hasmetalliclacquerDataGridViewCheckBoxColumn
+            // 
+            this.hasmetalliclacquerDataGridViewCheckBoxColumn.DataPropertyName = "has_metallic_lacquer";
+            this.hasmetalliclacquerDataGridViewCheckBoxColumn.HeaderText = "has_metallic_lacquer";
+            this.hasmetalliclacquerDataGridViewCheckBoxColumn.Name = "hasmetalliclacquerDataGridViewCheckBoxColumn";
+            this.hasmetalliclacquerDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // haspowersteeringDataGridViewCheckBoxColumn
+            // 
+            this.haspowersteeringDataGridViewCheckBoxColumn.DataPropertyName = "has_power_steering";
+            this.haspowersteeringDataGridViewCheckBoxColumn.HeaderText = "has_power_steering";
+            this.haspowersteeringDataGridViewCheckBoxColumn.Name = "haspowersteeringDataGridViewCheckBoxColumn";
+            this.haspowersteeringDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasautomatictransmissionDataGridViewCheckBoxColumn
+            // 
+            this.hasautomatictransmissionDataGridViewCheckBoxColumn.DataPropertyName = "has_automatic_transmission";
+            this.hasautomatictransmissionDataGridViewCheckBoxColumn.HeaderText = "has_automatic_transmission";
+            this.hasautomatictransmissionDataGridViewCheckBoxColumn.Name = "hasautomatictransmissionDataGridViewCheckBoxColumn";
+            this.hasautomatictransmissionDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasairconditioningDataGridViewCheckBoxColumn
+            // 
+            this.hasairconditioningDataGridViewCheckBoxColumn.DataPropertyName = "has_air_conditioning";
+            this.hasairconditioningDataGridViewCheckBoxColumn.HeaderText = "has_air_conditioning";
+            this.hasairconditioningDataGridViewCheckBoxColumn.Name = "hasairconditioningDataGridViewCheckBoxColumn";
+            this.hasairconditioningDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 449);
+            this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.addNewCarButton);
@@ -389,6 +505,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,6 +548,18 @@
         private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
         private carDealer2DataSet carDealer2DataSet;
         private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
+        private System.Windows.Forms.DataGridView mainDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carengineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productionyearDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lacquercolorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasmetalliclacquerDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn haspowersteeringDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasautomatictransmissionDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasairconditioningDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
 
