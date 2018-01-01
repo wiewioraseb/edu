@@ -1335,7 +1335,7 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[5];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
@@ -1346,16 +1346,67 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
                 "`has_metallic_lacquer`, `has_power_steering`, `has_automatic_transmission`, `has" +
-                "_air_conditioning`, `price` FROM `cars` WHERE model = @model";
+                "_air_conditioning`, `price` FROM `cars` WHERE car_engine = @car_engine";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@car_engine";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "car_engine";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
+                "`has_metallic_lacquer`, `has_power_steering`, `has_automatic_transmission`, `has" +
+                "_air_conditioning`, `price` FROM `cars` WHERE model = @model";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@model";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 30;
             param.IsNullable = true;
             param.SourceColumn = "model";
-            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
+                "`has_metallic_lacquer`, `has_power_steering`, `has_automatic_transmission`, `has" +
+                "_air_conditioning`, `price` FROM `cars` WHERE model=@model AND car_engine=@car_e" +
+                "ngine";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@model";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "model";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@car_engine";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "car_engine";
+            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
+                "`has_metallic_lacquer`, `has_power_steering`, `has_automatic_transmission`, `has" +
+                "_air_conditioning`, `price` FROM `cars` WHERE production_year=@production_year";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@production_year";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "production_year";
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1386,13 +1437,76 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByModel(carDealer1DataSet.carsDataTable dataTable, string model) {
+        public virtual int FillByEngine(carDealer1DataSet.carsDataTable dataTable, string car_engine) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((car_engine == null)) {
+                throw new global::System.ArgumentNullException("car_engine");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(car_engine));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByModel(carDealer1DataSet.carsDataTable dataTable, string model) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((model == null)) {
                 throw new global::System.ArgumentNullException("model");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(model));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByModelEngine(carDealer1DataSet.carsDataTable dataTable, string model, string car_engine) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((model == null)) {
+                throw new global::System.ArgumentNullException("model");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(model));
+            }
+            if ((car_engine == null)) {
+                throw new global::System.ArgumentNullException("car_engine");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(car_engine));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProductionYear(carDealer1DataSet.carsDataTable dataTable, string production_year) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((production_year == null)) {
+                throw new global::System.ArgumentNullException("production_year");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(production_year));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

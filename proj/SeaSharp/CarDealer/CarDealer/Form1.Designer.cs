@@ -74,13 +74,27 @@
             this.hasairconditioningDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
-            this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
             this.fillByModelToolStrip = new System.Windows.Forms.ToolStrip();
             this.modelToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.modelToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByModelToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillByEngineToolStrip = new System.Windows.Forms.ToolStrip();
+            this.car_engineToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.car_engineToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByEngineToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillByModelEngineToolStrip = new System.Windows.Forms.ToolStrip();
+            this.modelToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.modelToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.car_engineToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.car_engineToolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByModelEngineToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
+            this.fillByProductionYearToolStrip = new System.Windows.Forms.ToolStrip();
+            this.production_yearToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.production_yearToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByProductionYearToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -89,6 +103,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
             this.fillByModelToolStrip.SuspendLayout();
+            this.fillByEngineToolStrip.SuspendLayout();
+            this.fillByModelEngineToolStrip.SuspendLayout();
+            this.fillByProductionYearToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -465,10 +482,6 @@
             this.carDealer2DataSet.DataSetName = "carDealer2DataSet";
             this.carDealer2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cars1TableAdapter
-            // 
-            this.cars1TableAdapter.ClearBeforeFill = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(744, 29);
@@ -494,6 +507,7 @@
             this.fillByModelToolStrip.Size = new System.Drawing.Size(839, 25);
             this.fillByModelToolStrip.TabIndex = 38;
             this.fillByModelToolStrip.Text = "fillByModelToolStrip";
+            this.fillByModelToolStrip.Visible = false;
             // 
             // modelToolStripLabel
             // 
@@ -504,21 +518,136 @@
             // modelToolStripTextBox
             // 
             this.modelToolStripTextBox.Name = "modelToolStripTextBox";
-            this.modelToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            this.modelToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
             // fillByModelToolStripButton
             // 
             this.fillByModelToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillByModelToolStripButton.Name = "fillByModelToolStripButton";
-            this.fillByModelToolStripButton.Size = new System.Drawing.Size(73, 19);
+            this.fillByModelToolStripButton.Size = new System.Drawing.Size(73, 22);
             this.fillByModelToolStripButton.Text = "FillByModel";
             this.fillByModelToolStripButton.Click += new System.EventHandler(this.fillByModelToolStripButton_Click);
+            // 
+            // fillByEngineToolStrip
+            // 
+            this.fillByEngineToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.car_engineToolStripLabel,
+            this.car_engineToolStripTextBox,
+            this.fillByEngineToolStripButton});
+            this.fillByEngineToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByEngineToolStrip.Name = "fillByEngineToolStrip";
+            this.fillByEngineToolStrip.Size = new System.Drawing.Size(839, 25);
+            this.fillByEngineToolStrip.TabIndex = 39;
+            this.fillByEngineToolStrip.Text = "fillByEngineToolStrip";
+            // 
+            // car_engineToolStripLabel
+            // 
+            this.car_engineToolStripLabel.Name = "car_engineToolStripLabel";
+            this.car_engineToolStripLabel.Size = new System.Drawing.Size(67, 22);
+            this.car_engineToolStripLabel.Text = "car_engine:";
+            // 
+            // car_engineToolStripTextBox
+            // 
+            this.car_engineToolStripTextBox.Name = "car_engineToolStripTextBox";
+            this.car_engineToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillByEngineToolStripButton
+            // 
+            this.fillByEngineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByEngineToolStripButton.Name = "fillByEngineToolStripButton";
+            this.fillByEngineToolStripButton.Size = new System.Drawing.Size(75, 22);
+            this.fillByEngineToolStripButton.Text = "FillByEngine";
+            this.fillByEngineToolStripButton.Click += new System.EventHandler(this.fillByEngineToolStripButton_Click);
+            // 
+            // fillByModelEngineToolStrip
+            // 
+            this.fillByModelEngineToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modelToolStripLabel1,
+            this.modelToolStripTextBox1,
+            this.car_engineToolStripLabel1,
+            this.car_engineToolStripTextBox1,
+            this.fillByModelEngineToolStripButton});
+            this.fillByModelEngineToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByModelEngineToolStrip.Name = "fillByModelEngineToolStrip";
+            this.fillByModelEngineToolStrip.Size = new System.Drawing.Size(839, 25);
+            this.fillByModelEngineToolStrip.TabIndex = 40;
+            this.fillByModelEngineToolStrip.Text = "fillByModelEngineToolStrip";
+            this.fillByModelEngineToolStrip.Visible = false;
+            // 
+            // modelToolStripLabel1
+            // 
+            this.modelToolStripLabel1.Name = "modelToolStripLabel1";
+            this.modelToolStripLabel1.Size = new System.Drawing.Size(44, 22);
+            this.modelToolStripLabel1.Text = "model:";
+            // 
+            // modelToolStripTextBox1
+            // 
+            this.modelToolStripTextBox1.Name = "modelToolStripTextBox1";
+            this.modelToolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+            // 
+            // car_engineToolStripLabel1
+            // 
+            this.car_engineToolStripLabel1.Name = "car_engineToolStripLabel1";
+            this.car_engineToolStripLabel1.Size = new System.Drawing.Size(67, 22);
+            this.car_engineToolStripLabel1.Text = "car_engine:";
+            // 
+            // car_engineToolStripTextBox1
+            // 
+            this.car_engineToolStripTextBox1.Name = "car_engineToolStripTextBox1";
+            this.car_engineToolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillByModelEngineToolStripButton
+            // 
+            this.fillByModelEngineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByModelEngineToolStripButton.Name = "fillByModelEngineToolStripButton";
+            this.fillByModelEngineToolStripButton.Size = new System.Drawing.Size(109, 22);
+            this.fillByModelEngineToolStripButton.Text = "FillByModelEngine";
+            this.fillByModelEngineToolStripButton.Click += new System.EventHandler(this.fillByModelEngineToolStripButton_Click);
+            // 
+            // cars1TableAdapter
+            // 
+            this.cars1TableAdapter.ClearBeforeFill = true;
+            // 
+            // fillByProductionYearToolStrip
+            // 
+            this.fillByProductionYearToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.production_yearToolStripLabel,
+            this.production_yearToolStripTextBox,
+            this.fillByProductionYearToolStripButton});
+            this.fillByProductionYearToolStrip.Location = new System.Drawing.Point(0, 50);
+            this.fillByProductionYearToolStrip.Name = "fillByProductionYearToolStrip";
+            this.fillByProductionYearToolStrip.Size = new System.Drawing.Size(839, 25);
+            this.fillByProductionYearToolStrip.TabIndex = 41;
+            this.fillByProductionYearToolStrip.Text = "fillByProductionYearToolStrip";
+            this.fillByProductionYearToolStrip.Visible = false;
+            // 
+            // production_yearToolStripLabel
+            // 
+            this.production_yearToolStripLabel.Name = "production_yearToolStripLabel";
+            this.production_yearToolStripLabel.Size = new System.Drawing.Size(96, 22);
+            this.production_yearToolStripLabel.Text = "production_year:";
+            // 
+            // production_yearToolStripTextBox
+            // 
+            this.production_yearToolStripTextBox.Name = "production_yearToolStripTextBox";
+            this.production_yearToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillByProductionYearToolStripButton
+            // 
+            this.fillByProductionYearToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByProductionYearToolStripButton.Name = "fillByProductionYearToolStripButton";
+            this.fillByProductionYearToolStripButton.Size = new System.Drawing.Size(120, 22);
+            this.fillByProductionYearToolStripButton.Text = "FillByProductionYear";
+            this.fillByProductionYearToolStripButton.Click += new System.EventHandler(this.fillByProductionYearToolStripButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 450);
+            this.Controls.Add(this.fillByProductionYearToolStrip);
+            this.Controls.Add(this.fillByModelEngineToolStrip);
+            this.Controls.Add(this.fillByEngineToolStrip);
             this.Controls.Add(this.fillByModelToolStrip);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mainDataGridView);
@@ -560,6 +689,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
             this.fillByModelToolStrip.ResumeLayout(false);
             this.fillByModelToolStrip.PerformLayout();
+            this.fillByEngineToolStrip.ResumeLayout(false);
+            this.fillByEngineToolStrip.PerformLayout();
+            this.fillByModelEngineToolStrip.ResumeLayout(false);
+            this.fillByModelEngineToolStrip.PerformLayout();
+            this.fillByProductionYearToolStrip.ResumeLayout(false);
+            this.fillByProductionYearToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,6 +754,20 @@
         private System.Windows.Forms.ToolStripLabel modelToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox modelToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fillByModelToolStripButton;
+        private System.Windows.Forms.ToolStrip fillByEngineToolStrip;
+        private System.Windows.Forms.ToolStripLabel car_engineToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox car_engineToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByEngineToolStripButton;
+        private System.Windows.Forms.ToolStrip fillByModelEngineToolStrip;
+        private System.Windows.Forms.ToolStripLabel modelToolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox modelToolStripTextBox1;
+        private System.Windows.Forms.ToolStripLabel car_engineToolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox car_engineToolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton fillByModelEngineToolStripButton;
+        private System.Windows.Forms.ToolStrip fillByProductionYearToolStrip;
+        private System.Windows.Forms.ToolStripLabel production_yearToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox production_yearToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByProductionYearToolStripButton;
     }
 }
 

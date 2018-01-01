@@ -192,7 +192,7 @@ namespace CarDealer
                 //this.carsBindingSource.EndEdit();
                 this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
                 this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
-
+                
                 MessageBox.Show("Dodano nowy wpis.");
             }
             catch (System.Exception ex)
@@ -221,10 +221,24 @@ namespace CarDealer
             // Czy to znaczy ze mozna zrobic custom query z uzyciem table adaptera?
             // https://msdn.microsoft.com/en-gb/library/ms171919.aspx
 
-            this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, "Polo");
 
 
+            try
+            {
+                //this.cars1TableAdapter.ClearBeforeFill = true;
+                this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, "Polo");
+                this.cars1TableAdapter.Update(this.cars1TableAdapter.GetData());
 
+                this.cars1TableAdapter.Fill(this.cars1TableAdapter.GetData());
+
+                this.cars1TableAdapter.FillByEngine(this.carDealer1DataSet.cars, "1.4");
+                //this.cars1TableAdapter.FillByModelEngine(this.carDealer1DataSet.cars, "Polo", null);
+
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         private void fillByModelToolStripButton_Click(object sender, EventArgs e)
@@ -232,6 +246,45 @@ namespace CarDealer
             try
             {
                 this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, modelToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByEngineToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cars1TableAdapter.FillByEngine(this.carDealer1DataSet.cars, car_engineToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByModelEngineToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cars1TableAdapter.FillByModelEngine(this.carDealer1DataSet.cars, modelToolStripTextBox1.Text, car_engineToolStripTextBox1.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByProductionYearToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cars1TableAdapter.FillByProductionYear(this.carDealer1DataSet.cars, production_yearToolStripTextBox.Text);
             }
             catch (System.Exception ex)
             {
