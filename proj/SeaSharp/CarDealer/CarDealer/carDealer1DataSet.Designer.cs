@@ -459,7 +459,7 @@ namespace CarDealer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public carsRow AddcarsRow(uint id, string brand, string model, string car_engine, int production_year, string lacquer_color, bool has_metallic_lacquer, bool has_power_steering, bool has_automatic_transmission, bool has_air_conditioning, int price) {
+            public carsRow AddcarsRow(uint id, string brand, string model, string car_engine, string production_year, string lacquer_color, bool has_metallic_lacquer, bool has_power_steering, bool has_automatic_transmission, bool has_air_conditioning, int price) {
                 carsRow rowcarsRow = ((carsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -526,7 +526,7 @@ namespace CarDealer {
                 base.Columns.Add(this.columnmodel);
                 this.columncar_engine = new global::System.Data.DataColumn("car_engine", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncar_engine);
-                this.columnproduction_year = new global::System.Data.DataColumn("production_year", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnproduction_year = new global::System.Data.DataColumn("production_year", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproduction_year);
                 this.columnlacquer_color = new global::System.Data.DataColumn("lacquer_color", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlacquer_color);
@@ -551,6 +551,7 @@ namespace CarDealer {
                 this.columncar_engine.AllowDBNull = false;
                 this.columncar_engine.MaxLength = 30;
                 this.columnproduction_year.AllowDBNull = false;
+                this.columnproduction_year.MaxLength = 4;
                 this.columnlacquer_color.AllowDBNull = false;
                 this.columnlacquer_color.MaxLength = 30;
                 this.columnhas_metallic_lacquer.AllowDBNull = false;
@@ -744,9 +745,9 @@ namespace CarDealer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int production_year {
+            public string production_year {
                 get {
-                    return ((int)(this[this.tablecars.production_yearColumn]));
+                    return ((string)(this[this.tablecars.production_yearColumn]));
                 }
                 set {
                     this[this.tablecars.production_yearColumn] = value;
@@ -1029,8 +1030,8 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Year;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "production_year";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -1113,8 +1114,8 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Year;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "production_year";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -1187,8 +1188,8 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Year;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "production_year";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -1268,8 +1269,8 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Year;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "production_year";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -1400,7 +1401,7 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(uint p1, string p2, string p3, string p4, System.DateTime p5, string p6, byte p7, byte p8, byte p9, byte p10, int p11) {
+        public virtual int Delete(uint p1, string p2, string p3, string p4, string p5, string p6, byte p7, byte p8, byte p9, byte p10, int p11) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((uint)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
@@ -1420,7 +1421,12 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
             }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(p5));
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
+            }
             if ((p6 == null)) {
                 throw new global::System.ArgumentNullException("p6");
             }
@@ -1452,7 +1458,7 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, string p3, System.DateTime p4, string p5, byte p6, byte p7, byte p8, byte p9, int p10) {
+        public virtual int Insert(string p1, string p2, string p3, string p4, string p5, byte p6, byte p7, byte p8, byte p9, int p10) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -1471,7 +1477,12 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
             }
@@ -1507,7 +1518,7 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
                     string p1, 
                     string p2, 
                     string p3, 
-                    System.DateTime p4, 
+                    string p4, 
                     string p5, 
                     byte p6, 
                     byte p7, 
@@ -1518,7 +1529,7 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
                     string p12, 
                     string p13, 
                     string p14, 
-                    System.DateTime p15, 
+                    string p15, 
                     string p16, 
                     byte p17, 
                     byte p18, 
@@ -1543,7 +1554,12 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
             }
@@ -1574,7 +1590,12 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p14));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(p15));
+            if ((p15 == null)) {
+                throw new global::System.ArgumentNullException("p15");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p15));
+            }
             if ((p16 == null)) {
                 throw new global::System.ArgumentNullException("p16");
             }

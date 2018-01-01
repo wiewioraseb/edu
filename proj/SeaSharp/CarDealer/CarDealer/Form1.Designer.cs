@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.carBrandComboBox = new System.Windows.Forms.ComboBox();
+            this.cars1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carDealerDataSet = new CarDealer.car_dealer_dbDataSet();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,12 +60,9 @@
             this.computer1 = new CompInfo.Computer(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.cars1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carDealer1DataSet = new CarDealer.carDealer1DataSet();
-            this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
-            this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
-            this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
+            this.carDealer1DataSet = new CarDealer.carDealer1DataSet();
+            this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,13 +74,14 @@
             this.hasautomatictransmissionDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hasairconditioningDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,6 +103,11 @@
             this.carBrandComboBox.Size = new System.Drawing.Size(121, 21);
             this.carBrandComboBox.TabIndex = 3;
             this.carBrandComboBox.SelectedIndexChanged += new System.EventHandler(this.carBrandComboBox_SelectedIndexChanged);
+            // 
+            // cars1BindingSource
+            // 
+            this.cars1BindingSource.DataMember = "cars";
+            this.cars1BindingSource.DataSource = this.carDealer1DataSet;
             // 
             // carsBindingSource
             // 
@@ -342,29 +346,6 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Architektura procesora:";
             // 
-            // cars1BindingSource
-            // 
-            this.cars1BindingSource.DataMember = "cars";
-            this.cars1BindingSource.DataSource = this.carDealer1DataSet;
-            // 
-            // carDealer1DataSet
-            // 
-            this.carDealer1DataSet.DataSetName = "carDealer1DataSet";
-            this.carDealer1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cars1TableAdapter
-            // 
-            this.cars1TableAdapter.ClearBeforeFill = true;
-            // 
-            // carDealer2DataSet
-            // 
-            this.carDealer2DataSet.DataSetName = "carDealer2DataSet";
-            this.carDealer2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cars2TableAdapter
-            // 
-            this.cars2TableAdapter.ClearBeforeFill = true;
-            // 
             // mainDataGridView
             // 
             this.mainDataGridView.AllowUserToAddRows = false;
@@ -389,6 +370,16 @@
             this.mainDataGridView.ReadOnly = true;
             this.mainDataGridView.Size = new System.Drawing.Size(791, 129);
             this.mainDataGridView.TabIndex = 36;
+            // 
+            // carDealer1DataSet
+            // 
+            this.carDealer1DataSet.DataSetName = "carDealer1DataSet";
+            this.carDealer1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carDealer2DataSet
+            // 
+            this.carDealer2DataSet.DataSetName = "carDealer2DataSet";
+            this.carDealer2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -467,6 +458,10 @@
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // cars1TableAdapter
+            // 
+            this.cars1TableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,13 +497,13 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,11 +542,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource cars1BindingSource;
-        private carDealer1DataSet carDealer1DataSet;
-        private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
-        private carDealer2DataSet carDealer2DataSet;
-        private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
         private System.Windows.Forms.DataGridView mainDataGridView;
+        private carDealer1DataSet carDealer1DataSet;
+        private carDealer2DataSet carDealer2DataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
@@ -563,6 +556,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasautomatictransmissionDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasairconditioningDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
     }
 }
 

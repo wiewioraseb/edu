@@ -83,10 +83,6 @@ namespace CarDealer
         {
             // TODO: This line of code loads data into the 'carDealer1DataSet.cars' table. You can move, or remove it, as needed.
             this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
-            // TODO: This line of code loads data into the 'carDealer2DataSet.cars' table. You can move, or remove it, as needed.
-            this.cars2TableAdapter.Fill(this.carDealer2DataSet.cars);
-            // TODO: This line of code loads data into the 'carDealer1DataSet.cars' table. You can move, or remove it, as needed.
-            this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
             // TODO: This line of code loads data into the 'car_dealer_dbDataSet.samochody' table. You can move, or remove it, as needed.
             this.samochodyTableAdapter.Fill(this.carDealerDataSet.samochody);
             System.Diagnostics.Debug.WriteLine("Form1_Load");
@@ -178,7 +174,7 @@ namespace CarDealer
                     addBrandTextBox.Text.ToString(),
                     addModelTextBox.Text.ToString(),
                     addEngineTextBox.Text.ToString(),
-                    System.DateTime.Today,
+                    "2017",
                     "yellow",
                     0,
                     1,
@@ -189,8 +185,8 @@ namespace CarDealer
 
                 this.Validate();
                 //this.carsBindingSource.EndEdit();
-                this.samochodyTableAdapter.Update(this.carDealerDataSet.samochody);
-                this.samochodyTableAdapter.Fill(this.carDealerDataSet.samochody);
+                this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
+                this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
 
                 MessageBox.Show("Dodano nowy wpis.");
             }
