@@ -217,6 +217,11 @@ namespace CarDealer
 
             this.cars2TableAdapter.Update(this.carDealer2DataSet.cars);
             this.cars2TableAdapter.Fill(this.carDealer2DataSet.cars);
+
+            // Czy to znaczy ze mozna zrobic custom query z uzyciem table adaptera?
+            // https://msdn.microsoft.com/en-gb/library/ms171919.aspx
+
+
         }
     }
 }
