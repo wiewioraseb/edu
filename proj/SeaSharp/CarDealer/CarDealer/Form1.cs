@@ -61,6 +61,9 @@ namespace CarDealer
             // multiple databses with ado.net
             // https://www.codeproject.com/Questions/503675/DataSetpluswithplusdifferentplusDatabasesplusorplu
             // https://forums.asp.net/p/949947/1155679.aspx?Re+Using+two+different+databases+with+a+dataset+
+
+            // Hack tableAdapter to execute dynamic select queries:
+            // https://www.codeproject.com/Articles/17324/Extending-TableAdapters-for-Dynamic-SQL
         }
 
 
@@ -210,7 +213,6 @@ namespace CarDealer
         {
             this.cars1BindingSource.DataSource = this.carDealer2DataSet;
             this.cars1BindingSource.DataMember = "cars";
-
 
 
             this.cars2TableAdapter.Update(this.carDealer2DataSet.cars);
