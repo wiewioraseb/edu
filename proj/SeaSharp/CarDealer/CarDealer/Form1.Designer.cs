@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.carBrandComboBox = new System.Windows.Forms.ComboBox();
             this.cars1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carDealer1DataSet = new CarDealer.carDealer1DataSet();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carDealerDataSet = new CarDealer.car_dealer_dbDataSet();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,8 +62,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
-            this.carDealer1DataSet = new CarDealer.carDealer1DataSet();
-            this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,13 +73,16 @@
             this.hasautomatictransmissionDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hasairconditioningDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
             this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +110,11 @@
             // 
             this.cars1BindingSource.DataMember = "cars";
             this.cars1BindingSource.DataSource = this.carDealer1DataSet;
+            // 
+            // carDealer1DataSet
+            // 
+            this.carDealer1DataSet.DataSetName = "carDealer1DataSet";
+            this.carDealer1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // carsBindingSource
             // 
@@ -371,16 +378,6 @@
             this.mainDataGridView.Size = new System.Drawing.Size(791, 129);
             this.mainDataGridView.TabIndex = 36;
             // 
-            // carDealer1DataSet
-            // 
-            this.carDealer1DataSet.DataSetName = "carDealer1DataSet";
-            this.carDealer1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carDealer2DataSet
-            // 
-            this.carDealer2DataSet.DataSetName = "carDealer2DataSet";
-            this.carDealer2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -458,15 +455,35 @@
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // carDealer2DataSet
+            // 
+            this.carDealer2DataSet.DataSetName = "carDealer2DataSet";
+            this.carDealer2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cars1TableAdapter
             // 
             this.cars1TableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(744, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cars2TableAdapter
+            // 
+            this.cars2TableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 449);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -498,11 +515,11 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -557,6 +574,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasairconditioningDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
+        private System.Windows.Forms.Button button1;
+        private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
     }
 }
 

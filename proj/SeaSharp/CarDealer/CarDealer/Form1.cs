@@ -81,6 +81,8 @@ namespace CarDealer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'carDealer2DataSet.cars' table. You can move, or remove it, as needed.
+            this.cars2TableAdapter.Fill(this.carDealer2DataSet.cars);
             // TODO: This line of code loads data into the 'carDealer1DataSet.cars' table. You can move, or remove it, as needed.
             this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
             // TODO: This line of code loads data into the 'car_dealer_dbDataSet.samochody' table. You can move, or remove it, as needed.
@@ -204,5 +206,15 @@ namespace CarDealer
             System.Diagnostics.Debug.WriteLine("Zwalidowano!");
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.cars1BindingSource.DataSource = this.carDealer2DataSet;
+            this.cars1BindingSource.DataMember = "cars";
+
+
+
+            this.cars2TableAdapter.Update(this.carDealer2DataSet.cars);
+            this.cars2TableAdapter.Fill(this.carDealer2DataSet.cars);
+        }
     }
 }
