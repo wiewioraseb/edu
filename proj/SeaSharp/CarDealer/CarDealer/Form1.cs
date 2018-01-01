@@ -211,16 +211,32 @@ namespace CarDealer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.cars1BindingSource.DataSource = this.carDealer2DataSet;
+            this.cars1BindingSource.DataSource = this.carDealer1DataSet;
             this.cars1BindingSource.DataMember = "cars";
 
 
-            this.cars2TableAdapter.Update(this.carDealer2DataSet.cars);
-            this.cars2TableAdapter.Fill(this.carDealer2DataSet.cars);
+            this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
+            this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
 
             // Czy to znaczy ze mozna zrobic custom query z uzyciem table adaptera?
             // https://msdn.microsoft.com/en-gb/library/ms171919.aspx
 
+            this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, "Polo");
+
+
+
+        }
+
+        private void fillByModelToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, modelToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

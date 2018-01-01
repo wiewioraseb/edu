@@ -1335,13 +1335,27 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
                 "`has_metallic_lacquer`, `has_power_steering`, `has_automatic_transmission`, `has" +
                 "_air_conditioning`, `price` FROM `cars`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT `id`, `brand`, `model`, `car_engine`, `production_year`, `lacquer_color`, " +
+                "`has_metallic_lacquer`, `has_power_steering`, `has_automatic_transmission`, `has" +
+                "_air_conditioning`, `price` FROM `cars` WHERE model = @model";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@model";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "model";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1366,6 +1380,25 @@ namespace CarDealer.carDealer1DataSetTableAdapters {
             carDealer1DataSet.carsDataTable dataTable = new carDealer1DataSet.carsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByModel(carDealer1DataSet.carsDataTable dataTable, string model) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((model == null)) {
+                throw new global::System.ArgumentNullException("model");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(model));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
