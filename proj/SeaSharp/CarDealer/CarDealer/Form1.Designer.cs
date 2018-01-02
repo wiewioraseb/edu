@@ -102,8 +102,6 @@
             // 
             // carBrandComboBox
             // 
-            this.carBrandComboBox.DataSource = this.cars1BindingSource;
-            this.carBrandComboBox.DisplayMember = "brand";
             this.carBrandComboBox.FormattingEnabled = true;
             this.carBrandComboBox.Location = new System.Drawing.Point(28, 45);
             this.carBrandComboBox.Name = "carBrandComboBox";
@@ -504,13 +502,13 @@
             // modelToolStripTextBox
             // 
             this.modelToolStripTextBox.Name = "modelToolStripTextBox";
-            this.modelToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            this.modelToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
             // fillByModelToolStripButton
             // 
             this.fillByModelToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillByModelToolStripButton.Name = "fillByModelToolStripButton";
-            this.fillByModelToolStripButton.Size = new System.Drawing.Size(73, 19);
+            this.fillByModelToolStripButton.Size = new System.Drawing.Size(73, 22);
             this.fillByModelToolStripButton.Text = "FillByModel";
             this.fillByModelToolStripButton.Click += new System.EventHandler(this.fillByModelToolStripButton_Click);
             // 

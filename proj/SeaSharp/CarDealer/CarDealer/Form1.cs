@@ -108,7 +108,13 @@ namespace CarDealer
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            carBrandComboBox.DataSource = CarsData.GetCars(
+                  "SELECT brand FROM cars WHERE id=5",
+                    DatabaseType.MySQL,
+                     "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True"
+);
+            System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
+
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
         {

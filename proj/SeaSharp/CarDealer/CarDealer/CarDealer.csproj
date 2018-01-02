@@ -83,6 +83,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>carDealer2DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CarsData.cs" />
     <Compile Include="car_dealer_dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
