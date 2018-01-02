@@ -211,8 +211,8 @@ namespace CarDealer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.cars1BindingSource.DataSource = this.carDealer1DataSet;
-            this.cars1BindingSource.DataMember = "cars";
+            //this.cars1BindingSource.DataSource = this.carDealer1DataSet;
+            //this.cars1BindingSource.DataMember = "cars";
 
 
             this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
@@ -227,17 +227,41 @@ namespace CarDealer
             {
                 //this.cars1TableAdapter.ClearBeforeFill = true;
                 this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, "Polo");
-                this.cars1TableAdapter.Update(this.cars1TableAdapter.GetData());
 
-                this.cars1TableAdapter.Fill(this.cars1TableAdapter.GetData());
+                //this.cars1BindingSource.DataSource = this.cars1TableAdapter.GetData();
+                //this.cars1BindingSource.DataMember = "cars";
 
-                this.cars1TableAdapter.FillByEngine(this.carDealer1DataSet.cars, "1.4");
+                //DataSet customerOrders = new DataSet("CustomerOrders");
+                //customerOrders = (DataSet)this.cars1BindingSource.DataSource;
+
+                DataTable testDataTable = new DataTable();
+                testDataTable = this.carDealer1DataSet.cars;
+
+
+                foreach (DataRow row in testDataTable.Rows)
+                {
+                    // ... Write value of first field as integer.
+                    Console.WriteLine(row.Field<UInt32>(0));
+                }
+
+                this.cars1TableAdapter.FillByEngine((carDealer1DataSet.carsDataTable)testDataTable, "1.4");
+
+
+                //this.cars1TableAdapter.Update(this.cars1TableAdapter.GetData());
+
+
+                //this.cars1TableAdapter.Fill(this.cars1TableAdapter.GetData());
+
+                //this.cars1TableAdapter.FillByEngine(this.carDealer1DataSet.cars, "1.4");
                 //this.cars1TableAdapter.FillByModelEngine(this.carDealer1DataSet.cars, "Polo", null);
 
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+
             }
         }
 
