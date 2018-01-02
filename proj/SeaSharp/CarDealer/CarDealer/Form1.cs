@@ -118,6 +118,15 @@ namespace CarDealer
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
         {
+            carBrandComboBox.DataSource = CarsData.GetCars(
+       "SELECT brand FROM cars WHERE id=5",
+         DatabaseType.MySQL,
+          "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True"
+);
+            carBrandComboBox.DisplayMember = "brand";
+
+            System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
+
             //carBrandComboBox.DataSource = carBrands;
             carModelComboBox.Enabled = true;
         }
