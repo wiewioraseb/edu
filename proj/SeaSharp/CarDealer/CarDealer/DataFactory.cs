@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.OleDb;
+using MySql.Data.MySqlClient;
 
 namespace CarDealer.DataAccessLayer
 {
@@ -14,7 +15,8 @@ namespace CarDealer.DataAccessLayer
     {
         Access,
         SQLServer,
-        Oracle
+        Oracle,
+        MySQL
         // any other data source type
     }
 
@@ -44,6 +46,10 @@ namespace CarDealer.DataAccessLayer
                     break;
                 case DatabaseType.SQLServer:
                     cnn = new SqlConnection
+                       (ConnectionString);
+                    break;
+                case DatabaseType.MySQL:
+                    cnn = new MySqlConnection
                        (ConnectionString);
                     break;
                 //case DatabaseType.Oracle:
@@ -77,7 +83,11 @@ namespace CarDealer.DataAccessLayer
                        (CommandText,
                        (SqlConnection)cnn);
                     break;
-
+                case DatabaseType.MySQL:
+                    cmd = new MySqlCommand
+                       (CommandText, 
+                       (MySqlConnection)cnn);
+                    break;
                 //case DatabaseType.Oracle:
                 //    cmd = new OracleCommand
                 //       (CommandText,
@@ -108,6 +118,11 @@ namespace CarDealer.DataAccessLayer
                 case DatabaseType.SQLServer:
                     da = new SqlDataAdapter
                        ((SqlCommand)cmd);
+                    break;
+
+                case DatabaseType.MySQL:
+                    da = new MySqlDataAdapter
+                       ((MySqlCommand)cmd);
                     break;
 
                 //case DatabaseType.Oracle:

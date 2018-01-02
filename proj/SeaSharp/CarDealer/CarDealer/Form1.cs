@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -223,8 +225,62 @@ namespace CarDealer
 
             this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, "Polo");
 
+            /*
+
+public DataTable GetData()
+{
+SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BarManConnectionString"].ConnectionString);
+conn.Open();
+string query = "SELECT * FROM [EventOne]";
+SqlCommand cmd = new SqlCommand(query, conn);
+
+DataTable dt = new DataTable();
+dt.Load(cmd.ExecuteReader());
+conn.Close();
+return dt;
+}
+
+ */
+
+            try
+            {
+
+                //System.Diagnostics.Debug.WriteLine("ConnectionString:" +
+                //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
+
+                System.Diagnostics.Debug.WriteLine(
+                    //"System.Configuration.ConfigurationManager.bakbkak: " + 
+                //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString,
+                "\n" +
+                    "System.Configuration.ConfigurationManager.ConnectionStrings: " + System.Configuration.ConfigurationManager.ConnectionStrings
+                    );
+
+                //SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
+                //IDbConnection connection = DataFactory.CreateConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString, DatabaseType.MySQL);
+                IDbConnection connection = DataFactory.CreateConnection(
+                    //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString,
+                    "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True", 
+                    //"Server=localhost;Database=cardealer1;Uid=root;Pwd=root;",
+                    DatabaseType.MySQL);
+                connection.Open();
+                IDbCommand sqlCommand = DataFactory.CreateCommand(
+                    "SELECT * FROM cars WHERE id=3",
+                    DatabaseType.MySQL,
+                    connection
+                    );
 
 
+                DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand, DatabaseType.MySQL);
+                DataTable newDataTable = new DataTable("cars22");
+                dataAdapter.Fill(newDataTable);
+                this.cars1BindingSource.DataSource = newDataTable;
+
+            }
+            catch (SqlException ex)
+            {
+                System.Diagnostics.Debug.WriteLine("SQL EXCEPTION! : " + ex.Message + "\n" + ex.StackTrace);
+
+            }
         }
 
         private void fillByModelToolStripButton_Click(object sender, EventArgs e)
