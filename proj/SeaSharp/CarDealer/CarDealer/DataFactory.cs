@@ -34,11 +34,11 @@ namespace CarDealer.DataAccessLayer
         private DataFactory() { }
 
         public static IDbConnection CreateConnection
-           (string ConnectionString, DatabaseType dbtype)
+           (string ConnectionString)
         {
             IDbConnection cnn;
 
-            switch (dbtype)
+            switch (CarsData.DatabaseType)
             {
                 case DatabaseType.Access:
                     cnn = new OleDbConnection
@@ -66,27 +66,26 @@ namespace CarDealer.DataAccessLayer
         }
 
 
-        public static IDbCommand CreateCommand
-           (string CommandText, DatabaseType dbtype, IDbConnection cnn)
+        public static IDbCommand CreateCommand(string CommandText)
         {
             IDbCommand cmd;
-            switch (dbtype)
+            switch (CarsData.DatabaseType)
             {
                 case DatabaseType.Access:
                     cmd = new OleDbCommand
                        (CommandText,
-                       (OleDbConnection)cnn);
+                       (OleDbConnection)CarsData.DbConnection);
                     break;
 
                 case DatabaseType.SQLServer:
                     cmd = new SqlCommand
                        (CommandText,
-                       (SqlConnection)cnn);
+                       (SqlConnection)CarsData.DbConnection);
                     break;
                 case DatabaseType.MySQL:
                     cmd = new MySqlCommand
                        (CommandText, 
-                       (MySqlConnection)cnn);
+                       (MySqlConnection)CarsData.DbConnection);
                     break;
                 //case DatabaseType.Oracle:
                 //    cmd = new OracleCommand
@@ -96,7 +95,7 @@ namespace CarDealer.DataAccessLayer
                 default:
                     cmd = new SqlCommand
                        (CommandText,
-                       (SqlConnection)cnn);
+                       (SqlConnection)CarsData.DbConnection);
                     break;
             }
 
@@ -104,11 +103,10 @@ namespace CarDealer.DataAccessLayer
         }
 
 
-        public static DbDataAdapter CreateAdapter
-           (IDbCommand cmd, DatabaseType dbtype)
+        public static DbDataAdapter CreateAdapter(IDbCommand cmd)
         {
             DbDataAdapter da;
-            switch (dbtype)
+            switch (CarsData.DatabaseType)
             {
                 case DatabaseType.Access:
                     da = new OleDbDataAdapter

@@ -12,24 +12,28 @@ namespace CarDealer
 {
     class CarsData
     {
-        public static DataTable GetCars(string sqlCommand, DatabaseType dbType, string connectionString)
+        private static string connString;
+        private static DatabaseType dbType;
+        private static IDbConnection dbConn;
+
+        public static string ConnectionString { get => connString; set => connString = value; }
+        public static DatabaseType DatabaseType { get => dbType; set => dbType = value; }
+        public static IDbConnection DbConnection { get => dbConn; set => dbConn = value; }
+
+        public static DataTable GetCars(string sqlCommand)
         {
             try
             {
-
                 IDbConnection cnn =
-               DataFactory.CreateConnection
-               (connectionString, dbType);
+               DataFactory.CreateConnection(ConnectionString);
 
                 cnn.Open();
-
-
+                
                 IDbCommand cmd =
-               DataFactory.CreateCommand(
-               sqlCommand, dbType, cnn);
+               DataFactory.CreateCommand(sqlCommand);
 
             DbDataAdapter dataAdapter =
-               DataFactory.CreateAdapter(cmd, dbType);
+               DataFactory.CreateAdapter(cmd);
 
             DataTable dataTable = new DataTable();
 

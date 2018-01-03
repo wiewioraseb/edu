@@ -108,21 +108,13 @@ namespace CarDealer
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            carBrandComboBox.DataSource = CarsData.GetCars(
-                  "SELECT brand FROM cars WHERE id=5",
-                    DatabaseType.MySQL,
-                     "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True"
-);
+            carBrandComboBox.DataSource = CarsData.GetCars("SELECT brand FROM cars WHERE id=5");
             System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
 
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
         {
-            carBrandComboBox.DataSource = CarsData.GetCars(
-       "SELECT brand FROM cars WHERE id=5",
-         DatabaseType.MySQL,
-          "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True"
-);
+            carBrandComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT brand FROM cars");
             carBrandComboBox.DisplayMember = "brand";
 
             System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
@@ -228,73 +220,31 @@ namespace CarDealer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.cars1BindingSource.DataSource = this.carDealer1DataSet;
-            this.cars1BindingSource.DataMember = "cars";
-
-
-            this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
-            this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
-
-            // Czy to znaczy ze mozna zrobic custom query z uzyciem table adaptera?
-            // https://msdn.microsoft.com/en-gb/library/ms171919.aspx
-
-            this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, "Polo");
-
-            /*
-
-public DataTable GetData()
-{
-SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BarManConnectionString"].ConnectionString);
-conn.Open();
-string query = "SELECT * FROM [EventOne]";
-SqlCommand cmd = new SqlCommand(query, conn);
-
-DataTable dt = new DataTable();
-dt.Load(cmd.ExecuteReader());
-conn.Close();
-return dt;
-}
-
- */
-
             try
             {
+                CarsData.ConnectionString = "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True";
+                CarsData.DatabaseType = DatabaseType.MySQL;
+                CarsData.DbConnection = DataFactory.CreateConnection(CarsData.ConnectionString);
 
                 //System.Diagnostics.Debug.WriteLine("ConnectionString:" +
                 //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
 
-                System.Diagnostics.Debug.WriteLine(
-                    //"System.Configuration.ConfigurationManager.bakbkak: " + 
-                //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString,
-                "\n" +
-                    "System.Configuration.ConfigurationManager.ConnectionStrings: " + System.Configuration.ConfigurationManager.ConnectionStrings
-                    );
+                //System.Diagnostics.Debug.WriteLine("dKLSDJasd");
 
                 //SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
                 //IDbConnection connection = DataFactory.CreateConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString, DatabaseType.MySQL);
-                IDbConnection connection = DataFactory.CreateConnection(
-                    //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString,
-                    "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True", 
-                    //"Server=localhost;Database=cardealer1;Uid=root;Pwd=root;",
-                    DatabaseType.MySQL);
-                connection.Open();
-                IDbCommand sqlCommand = DataFactory.CreateCommand(
-                    "SELECT * FROM cars WHERE id=3",
-                    DatabaseType.MySQL,
-                    connection
-                    );
+                CarsData.DbConnection.Open();
+                IDbCommand sqlCommand = DataFactory.CreateCommand("SELECT * FROM cars WHERE id=3");
 
-
-                DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand, DatabaseType.MySQL);
+                DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand);
                 DataTable newDataTable = new DataTable("cars22");
                 dataAdapter.Fill(newDataTable);
                 this.cars1BindingSource.DataSource = newDataTable;
-
+                CarsData.DbConnection.Close();
             }
             catch (SqlException ex)
             {
                 System.Diagnostics.Debug.WriteLine("SQL EXCEPTION! : " + ex.Message + "\n" + ex.StackTrace);
-
             }
         }
 

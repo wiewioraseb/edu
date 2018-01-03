@@ -23,18 +23,16 @@ namespace CarDealer.DataAccessLayer
                ["DatabaseType"]);
 
             IDbConnection cnn =
-               DataFactory.CreateConnection
-               (ConnectionString, dbtype);
+               DataFactory.CreateConnection(ConnectionString);
 
             string cmdString = "SELECT CustomerID" +
                ",CompanyName,ContactName FROM Customers";
 
             IDbCommand cmd =
-               DataFactory.CreateCommand(
-               cmdString, dbtype, cnn);
+               DataFactory.CreateCommand(cmdString);
 
             DbDataAdapter da =
-               DataFactory.CreateAdapter(cmd, dbtype);
+               DataFactory.CreateAdapter(cmd);
 
             DataTable dt = new DataTable("Customers");
 
