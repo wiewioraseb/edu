@@ -77,10 +77,6 @@
             this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
-            this.fillByModelToolStrip = new System.Windows.Forms.ToolStrip();
-            this.modelToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.modelToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByModelToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -88,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
-            this.fillByModelToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -481,43 +476,11 @@
             // 
             this.cars2TableAdapter.ClearBeforeFill = true;
             // 
-            // fillByModelToolStrip
-            // 
-            this.fillByModelToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modelToolStripLabel,
-            this.modelToolStripTextBox,
-            this.fillByModelToolStripButton});
-            this.fillByModelToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByModelToolStrip.Name = "fillByModelToolStrip";
-            this.fillByModelToolStrip.Size = new System.Drawing.Size(839, 25);
-            this.fillByModelToolStrip.TabIndex = 38;
-            this.fillByModelToolStrip.Text = "fillByModelToolStrip";
-            // 
-            // modelToolStripLabel
-            // 
-            this.modelToolStripLabel.Name = "modelToolStripLabel";
-            this.modelToolStripLabel.Size = new System.Drawing.Size(44, 22);
-            this.modelToolStripLabel.Text = "model:";
-            // 
-            // modelToolStripTextBox
-            // 
-            this.modelToolStripTextBox.Name = "modelToolStripTextBox";
-            this.modelToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillByModelToolStripButton
-            // 
-            this.fillByModelToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByModelToolStripButton.Name = "fillByModelToolStripButton";
-            this.fillByModelToolStripButton.Size = new System.Drawing.Size(73, 22);
-            this.fillByModelToolStripButton.Text = "FillByModel";
-            this.fillByModelToolStripButton.Click += new System.EventHandler(this.fillByModelToolStripButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 450);
-            this.Controls.Add(this.fillByModelToolStrip);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.label11);
@@ -556,8 +519,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
-            this.fillByModelToolStrip.ResumeLayout(false);
-            this.fillByModelToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,10 +574,6 @@
         private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
         private System.Windows.Forms.Button button1;
         private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
-        private System.Windows.Forms.ToolStrip fillByModelToolStrip;
-        private System.Windows.Forms.ToolStripLabel modelToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox modelToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByModelToolStripButton;
     }
 }
 

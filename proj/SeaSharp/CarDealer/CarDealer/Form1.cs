@@ -298,17 +298,5 @@ return dt;
             }
         }
 
-        private void fillByModelToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.cars1TableAdapter.FillByModel(this.carDealer1DataSet.cars, modelToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
     }
 }
