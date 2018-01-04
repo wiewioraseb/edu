@@ -98,7 +98,12 @@ namespace CarDealer
 
             label10.Text = computer1.CPU.Architecture;
 
-            carModelComboBox.Enabled = false;
+            foreach (CarDealerEnum enumValue in Enum.GetValues(typeof(CarDealerEnum)))
+            {
+                pickDbComboBox.Items.Add(enumValue.ToString());
+            }
+
+                carModelComboBox.Enabled = false;
             engineComboBox.Enabled = false;
             lacquerColorComboBox.Enabled = false;
 
@@ -238,8 +243,8 @@ namespace CarDealer
                 DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand);
                 DataTable newDataTable = new DataTable();
                 dataAdapter.Fill(newDataTable);
-                this.cars1BindingSource.DataSource = newDataTable;
                 CarsData.DbConnection.Close();
+                this.cars1BindingSource.DataSource = newDataTable;
             }
             catch (SqlException ex)
             {
@@ -263,14 +268,8 @@ namespace CarDealer
                     DatabaseConnection.Set();
                     break;
             }
-            CarsData.DbConnection.Open();
-            IDbCommand sqlCommand = DataFactory.CreateCommand("SELECT * FROM cars");
 
-            DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand);
-            DataTable newDataTable = new DataTable();
-            dataAdapter.Fill(newDataTable);
-            this.cars1BindingSource.DataSource = newDataTable;
-            CarsData.DbConnection.Close();
+            this.cars1BindingSource.DataSource = CarsData.GetCars();
         }
     }
 }

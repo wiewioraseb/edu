@@ -41,15 +41,15 @@ namespace CarDealer
         public static DatabaseType DatabaseType { get => dbType; set => dbType = value; }
         public static IDbConnection DbConnection { get => dbConn; set => dbConn = value; }
 
-        public static DataTable GetCars(string sqlCommand)
+        public static DataTable GetCars(string sqlCommand = "SELECT * FROM cars")
         {
             try
             {
-                IDbConnection cnn =
-               DataFactory.CreateConnection(ConnectionString);
+                // IDbConnection cnn =
+                //DataFactory.CreateConnection(ConnectionString);
 
-                cnn.Open();
-                
+                CarsData.DbConnection.Open();
+
                 IDbCommand cmd =
                DataFactory.CreateCommand(sqlCommand);
 
@@ -59,8 +59,8 @@ namespace CarDealer
             DataTable dataTable = new DataTable();
 
                 dataAdapter.Fill(dataTable);
-                cnn.Close();
-            return dataTable;
+                CarsData.DbConnection.Close();
+                return dataTable;
             }
             catch (SqlException ex)
             {
