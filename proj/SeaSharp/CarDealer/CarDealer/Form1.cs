@@ -44,6 +44,10 @@ namespace CarDealer
 
         public Form1()
         {
+            CarsData.ConnectionString = CarDealerConnectionString.CarDealer1;
+            CarsData.DatabaseType = DatabaseType.MySQL;
+            CarsData.DbConnection = DataFactory.CreateConnection(CarsData.ConnectionString);
+
             // For english exceptions
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
@@ -222,7 +226,7 @@ namespace CarDealer
         {
             try
             {
-                CarsData.ConnectionString = "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True";
+                CarsData.ConnectionString = CarDealerConnectionString.CarDealer2;
                 CarsData.DatabaseType = DatabaseType.MySQL;
                 CarsData.DbConnection = DataFactory.CreateConnection(CarsData.ConnectionString);
 
