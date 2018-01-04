@@ -44,9 +44,7 @@ namespace CarDealer
 
         public Form1()
         {
-            CarsData.ConnectionString = CarDealerConnectionString.CarDealer1;
-            CarsData.DatabaseType = DatabaseType.MySQL;
-            CarsData.DbConnection = DataFactory.CreateConnection(CarsData.ConnectionString);
+            DatabaseConnection.Set();
 
             // For english exceptions
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
@@ -113,7 +111,7 @@ namespace CarDealer
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             carBrandComboBox.DataSource = CarsData.GetCars("SELECT brand FROM cars WHERE id=5");
-            System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
+            System.Diagnostics.Debug.WriteLine("Car Brand SelectedIndexChanged Event!");
 
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
@@ -226,10 +224,7 @@ namespace CarDealer
         {
             try
             {
-                CarsData.ConnectionString = CarDealerConnectionString.CarDealer2;
-                CarsData.DatabaseType = DatabaseType.MySQL;
-                CarsData.DbConnection = DataFactory.CreateConnection(CarsData.ConnectionString);
-
+                DatabaseConnection.Set(CarDealerConnectionString.carDealer2);
                 //System.Diagnostics.Debug.WriteLine("ConnectionString:" +
                 //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
 
@@ -238,10 +233,10 @@ namespace CarDealer
                 //SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
                 //IDbConnection connection = DataFactory.CreateConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString, DatabaseType.MySQL);
                 CarsData.DbConnection.Open();
-                IDbCommand sqlCommand = DataFactory.CreateCommand("SELECT * FROM cars WHERE id=3");
+                IDbCommand sqlCommand = DataFactory.CreateCommand("SELECT * FROM cars");
 
                 DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand);
-                DataTable newDataTable = new DataTable("cars22");
+                DataTable newDataTable = new DataTable();
                 dataAdapter.Fill(newDataTable);
                 this.cars1BindingSource.DataSource = newDataTable;
                 CarsData.DbConnection.Close();
@@ -252,5 +247,30 @@ namespace CarDealer
             }
         }
 
+        private void pickDbComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedDatabase = ((ComboBox)sender).SelectedIndex;
+
+            switch (selectedDatabase)
+            {
+                case (int)CarDealerEnum.CarDealer1:
+                    DatabaseConnection.Set(CarDealerConnectionString.carDealer1);
+                    break;
+                case (int)CarDealerEnum.CarDealer2:
+                    DatabaseConnection.Set(CarDealerConnectionString.carDealer2);
+                    break;
+                default:
+                    DatabaseConnection.Set();
+                    break;
+            }
+            CarsData.DbConnection.Open();
+            IDbCommand sqlCommand = DataFactory.CreateCommand("SELECT * FROM cars");
+
+            DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand);
+            DataTable newDataTable = new DataTable();
+            dataAdapter.Fill(newDataTable);
+            this.cars1BindingSource.DataSource = newDataTable;
+            CarsData.DbConnection.Close();
+        }
     }
 }

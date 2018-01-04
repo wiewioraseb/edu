@@ -12,11 +12,24 @@ namespace CarDealer
 {
     public abstract class CarDealerConnectionString
     {
-        private static string carDealer1 = "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True";
-        private static string carDealer2 = "server=localhost;user id=root;password=root;database=cardealer2;persistsecurityinfo=True";
+        public const string carDealer1 = "server=localhost;user id=root;password=root;database=cardealer1;persistsecurityinfo=True";
+        public const string carDealer2 = "server=localhost;user id=root;password=root;database=cardealer2;persistsecurityinfo=True";
+    }
 
-        public static string CarDealer1 { get => carDealer1; private set => carDealer1 = value; }
-        public static string CarDealer2 { get => carDealer2; private set => carDealer2 = value; }
+    public enum CarDealerEnum
+    {
+        CarDealer1,
+        CarDealer2
+    }
+
+    public class DatabaseConnection
+    {
+        public static void Set(string connectionString = CarDealerConnectionString.carDealer1)
+        {
+            CarsData.ConnectionString = connectionString;
+            CarsData.DatabaseType = DatabaseType.MySQL;
+            CarsData.DbConnection = DataFactory.CreateConnection(connectionString);
+        }
     }
     class CarsData
     {
