@@ -215,22 +215,17 @@ namespace CarDealer
         {
             try
             {
-                DatabaseConnection.Set(CarDealerConnectionString.carDealer2);
-                //System.Diagnostics.Debug.WriteLine("ConnectionString:" +
-                //System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
+                string sqlQuery = "SELECT * FROM cars";
+                carBrandComboBox.
 
-                //System.Diagnostics.Debug.WriteLine("dKLSDJasd");
+                foreach (object itemChecked in additionalOptionsCheckedListBox.CheckedItems)
+                {
+                    DataRowView castedItem = itemChecked as DataRowView;
+                    string comapnyName = castedItem["CompanyName"];
+                    int? id = castedItem["ID"];
+                }
 
-                //SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString);
-                //IDbConnection connection = DataFactory.CreateConnection(System.Configuration.ConfigurationManager.ConnectionStrings["localhost(cardealer1)"].ConnectionString, DatabaseType.MySQL);
-                CarsData.DbConnection.Open();
-                IDbCommand sqlCommand = DataFactory.CreateCommand("SELECT * FROM cars");
-
-                DbDataAdapter dataAdapter = DataFactory.CreateAdapter(sqlCommand);
-                DataTable newDataTable = new DataTable();
-                dataAdapter.Fill(newDataTable);
-                CarsData.DbConnection.Close();
-                this.cars1BindingSource.DataSource = newDataTable;
+                this.cars1BindingSource.DataSource = CarsData.GetCars(sqlQuery);
             }
             catch (SqlException ex)
             {
