@@ -70,22 +70,6 @@ namespace CarDealer
             // https://www.codeproject.com/Articles/17324/Extending-TableAdapters-for-Dynamic-SQL
         }
 
-
-        // PRZEKOPIOWANE Z TUTORIALA z ADO generic
-        public DataTable GetAllCustomers()
-        {
-            CustomersData cd = new CustomersData();
-            DataTable dt = cd.GetCustomers();
-            return dt;
-        }
-        public DataSet GetCustomerOrders()
-        {
-            // TBD
-            return null;
-        }
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'carDealer2DataSet.cars' table. You can move, or remove it, as needed.
