@@ -87,9 +87,9 @@ namespace CarDealer
                 pickDbComboBox.Items.Add(enumValue.ToString());
             }
 
-                carModelComboBox.Enabled = false;
-            engineComboBox.Enabled = false;
-            lacquerColorComboBox.Enabled = false;
+            //carModelComboBox.Enabled = false;
+            //engineComboBox.Enabled = false;
+            //lacquerColorComboBox.Enabled = false;
 
             carBrandComboBox.DropDown += new EventHandler(carBrandComboBox_DropDown);
             carModelComboBox.DropDown += new EventHandler(carModelComboBox_DropDown);
@@ -123,9 +123,8 @@ namespace CarDealer
         }
         private void carModelComboBox_DropDown(object sender, EventArgs e)
         {
-            //String selectedCarBrand = carBrandComboBox.SelectedItem.ToString();
-            //carModelComboBox.DataSource = cars[selectedCarBrand];
-            engineComboBox.Enabled = true;
+            carModelComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT model FROM cars");
+            carModelComboBox.DisplayMember = "model";
         }
 
         private void engineComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,8 +133,8 @@ namespace CarDealer
         }
         private void engineComboBox_DropDown(object sender, EventArgs e)
         {
-            engineComboBox.DataSource = enginesList;
-            lacquerColorComboBox.Enabled = true;
+            engineComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT engine FROM cars");
+            engineComboBox.DisplayMember = "engine";
         }
 
         private void isMetallicLacquerCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -149,8 +148,11 @@ namespace CarDealer
         }
         private void lacquerColorComboBox_DropDown(object sender, EventArgs e)
         {
-            lacquerColorComboBox.DataSource = isMetallicLacquerCheckBox.Checked ? metallicLacquerColors : lacquerColors;
-
+            bool isMetallicType = isMetallicLacquerCheckBox.Checked;
+            MessageBox.Show("metallicType: " + isMetallicType);
+            string appendToSqlQuery = isMetallicType ? "WHERE has_metallic_lacquer=1" : "";
+            lacquerColorComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT lacquer_color FROM cars" + appendToSqlQuery);
+            lacquerColorComboBox.DisplayMember = "lacquer_color";
         }
 
         private void additionalOptionsCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
