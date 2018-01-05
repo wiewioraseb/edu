@@ -92,26 +92,65 @@ namespace CarDealer
             //lacquerColorComboBox.Enabled = false;
 
             carBrandComboBox.DropDown += new EventHandler(carBrandComboBox_DropDown);
+            carBrandComboBox.SelectionChangeCommitted += new EventHandler(carBrandComboBox_SelectionChangeCommitted);
             carModelComboBox.DropDown += new EventHandler(carModelComboBox_DropDown);
+            carModelComboBox.SelectionChangeCommitted += new EventHandler(carModelComboBox_SelectionChangeCommitted);
             engineComboBox.DropDown += new EventHandler(engineComboBox_DropDown);
+            //engineComboBox.SelectionChangeCommitted += new EventHandler(engineComboBox_SelectionChangeCommitted);
             lacquerColorComboBox.DropDown += new EventHandler(lacquerColorComboBox_DropDown);
+            //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            carBrandComboBox.DataSource = CarsData.GetCars("SELECT brand FROM cars WHERE id=5");
-            System.Diagnostics.Debug.WriteLine("Car Brand SelectedIndexChanged Event!");
-
         }
         private void carBrandComboBox_DropDown(object sender, EventArgs e)
         {
             carBrandComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT brand FROM cars");
             carBrandComboBox.DisplayMember = "brand";
 
-            System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
+            /* System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
 
             //carBrandComboBox.DataSource = carBrands;
-            carModelComboBox.Enabled = true;
+            carModelComboBox.Enabled = true; */
+        }
+        private void carBrandComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //this.cars1BindingSource.DataSource = CarsData.GetCars("SELECT DISTINCT brand FROM cars");
+            System.Diagnostics.Debug.WriteLine("instanceOf: " + this.cars1BindingSource.DataSource.GetType());
+
+            DataTable queriedDataTable;
+
+            if (this.cars1BindingSource.DataSource is DataSet)
+            {
+                System.Diagnostics.Debug.WriteLine("DATASET TYPE!");
+                queriedDataTable = ((DataSet)this.cars1BindingSource.DataSource).Tables["cars"];
+            }
+            else if(this.cars1BindingSource.DataSource.GetType() == typeof(DataTable))
+            {
+                System.Diagnostics.Debug.WriteLine("DATATABLE TYPE!");
+                queriedDataTable = ((DataTable)this.cars1BindingSource.DataSource);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("OTHER TYPE!");
+                queriedDataTable = ((DataTable)this.cars1BindingSource.DataSource);
+            }
+
+            //this.cars1BindingSource.DataSource = null;
+
+            DataTable resultDataTable = queriedDataTable
+                .Select("brand = '" + carBrandComboBox.Text + "'").CopyToDataTable();
+
+            foreach (DataRow row in resultDataTable.Rows)
+            {
+                System.Diagnostics.Debug.WriteLine("DataRow: " + row.ItemArray[1] + " " + row.ItemArray[2]);
+            }
+
+            this.cars1BindingSource.DataSource = resultDataTable;
+              
+
+            //carBrandComboBox.DisplayMember = "brand";
         }
 
         private void carModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,15 +165,19 @@ namespace CarDealer
             carModelComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT model FROM cars");
             carModelComboBox.DisplayMember = "model";
         }
+        private void carModelComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            carModelComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT model FROM cars");
+            carModelComboBox.DisplayMember = "model";
+        }
 
         private void engineComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
         private void engineComboBox_DropDown(object sender, EventArgs e)
         {
-            engineComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT engine FROM cars");
-            engineComboBox.DisplayMember = "engine";
+            engineComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT car_engine FROM cars");
+            engineComboBox.DisplayMember = "car_engine";
         }
 
         private void isMetallicLacquerCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -215,17 +258,21 @@ namespace CarDealer
         {
             try
             {
+                /*
                 string sqlQuery = "SELECT * FROM cars";
-                carBrandComboBox.
+                sqlQuery += " WHERE ";
+                sqlQuery += "  brand=" + carBrandComboBox.Text;
+                sqlQuery += " AND model=" + carModelComboBox.Text;
+                sqlQuery += " AND car_engine=" + engineComboBox.Text;
+
 
                 foreach (object itemChecked in additionalOptionsCheckedListBox.CheckedItems)
                 {
-                    DataRowView castedItem = itemChecked as DataRowView;
-                    string comapnyName = castedItem["CompanyName"];
-                    int? id = castedItem["ID"];
+                    itemChecked.Checked ?
                 }
 
                 this.cars1BindingSource.DataSource = CarsData.GetCars(sqlQuery);
+                */
             }
             catch (SqlException ex)
             {
