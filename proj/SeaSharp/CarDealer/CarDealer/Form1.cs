@@ -16,32 +16,6 @@ namespace CarDealer
 {
     public partial class Form1 : Form
     {
-        Dictionary<String, List<String>> cars = new Dictionary<String, List<String>>();
-        List<String> carBrands = new List<String>();
-        //List<String> carModels = new List<String>();
-        //List<String> engines = new List<String>();
-
-        String[] initialCarBrands = { "Opel", "BMW", "Mitsubishi", "Citroen", "Toyota" };
-        //String[] opelModels = { "Astra", "Omega", "Mokka", "Insignia", "Zefira" };
-        List<String> opelModels = new List<String>(new String[] { "Astra", "Omega", "Mokka", "Insignia", "Zefira" });
-        //List<String> opelEngines = new List<String>(new String[] { "1.3", "1.6", "2.0"});
-        //String[] bmwModels = { "E46", "X6", "M235i", "X4", "M2" };
-        List<String> bmwModels = new List<String>(new String[] { "E46", "X6", "M235i", "X4", "M2" });
-        //List<String> bmwEngines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
-        //String[] mitsubishiModels = { "Lancer", "Outlander", "Colt", "Pajero", "Sigma" };
-        List<String> mitsubishiModels = new List<String>(new String[] { "Lancer", "Outlander", "Colt", "Pajero", "Sigma" });
-        //List<String> mitsubishiEngines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
-        //String[] citroenModels = { "C3", "Nemo", "C5", "Axel", "Evasion" };
-        List<String> citroenModels = new List<String>(new String[] { "C3", "Nemo", "C5", "Axel", "Evasion" });
-        //List<String> citroenEngines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
-        //String[] toyotaModels = { "Camry", "Premio", "Prius", "Corolla", "Cruiser" };
-        List<String> toyotaModels = new List<String>(new String[] { "Camry", "Premio", "Prius", "Corolla", "Cruiser" });
-        //List<String> toyotaEngines = new List<String>(new String[] { "1.3", "1.6", "2.0" });
-
-        List<String> enginesList = new List<String>(new String[] { "1.3", "1.6", "2.0" });
-        List<String> lacquerColors = new List<String>(new String[] { "czarny", "biały", "żółty", "zielony", "niebieski", "szary", "czerwony", "fioletowy" });
-        List<String> metallicLacquerColors = new List<String>(new String[] { "czarny", "zielony", "niebieski", "czerwony"});
-
         public Form1()
         {
             DatabaseConnection.Set();
