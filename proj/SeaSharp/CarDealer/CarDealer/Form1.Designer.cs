@@ -42,7 +42,6 @@
             this.isMetallicLacquerCheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lacquerColorComboBox = new System.Windows.Forms.ComboBox();
-            this.additionalOptionsCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.carAvatarPB = new System.Windows.Forms.PictureBox();
             this.carAvatarLabel = new System.Windows.Forms.Label();
@@ -78,6 +77,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
             this.pickDbComboBox = new System.Windows.Forms.ComboBox();
+            this.automaticTransmissionCheckBox = new System.Windows.Forms.CheckBox();
+            this.airConditionCheckBox = new System.Windows.Forms.CheckBox();
+            this.powerSteeringCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -191,19 +193,6 @@
             this.lacquerColorComboBox.TabIndex = 11;
             this.lacquerColorComboBox.SelectedIndexChanged += new System.EventHandler(this.lacquerColorComboBox_SelectedIndexChanged);
             // 
-            // additionalOptionsCheckedListBox
-            // 
-            this.additionalOptionsCheckedListBox.FormattingEnabled = true;
-            this.additionalOptionsCheckedListBox.Items.AddRange(new object[] {
-            "Automatyczna skrzynia biegów",
-            "Klimatyzacja",
-            "Wspomaganie"});
-            this.additionalOptionsCheckedListBox.Location = new System.Drawing.Point(28, 94);
-            this.additionalOptionsCheckedListBox.Name = "additionalOptionsCheckedListBox";
-            this.additionalOptionsCheckedListBox.Size = new System.Drawing.Size(132, 49);
-            this.additionalOptionsCheckedListBox.TabIndex = 15;
-            this.additionalOptionsCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.additionalOptionsCheckedListBox_SelectedIndexChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -234,7 +223,7 @@
             // addEntryLabel
             // 
             this.addEntryLabel.AutoSize = true;
-            this.addEntryLabel.Location = new System.Drawing.Point(25, 300);
+            this.addEntryLabel.Location = new System.Drawing.Point(25, 361);
             this.addEntryLabel.Name = "addEntryLabel";
             this.addEntryLabel.Size = new System.Drawing.Size(59, 13);
             this.addEntryLabel.TabIndex = 18;
@@ -243,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(509, 323);
+            this.label6.Location = new System.Drawing.Point(509, 384);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 27;
@@ -252,7 +241,7 @@
             // addMetalicLacquerCheckBox
             // 
             this.addMetalicLacquerCheckBox.AutoSize = true;
-            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(412, 338);
+            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(412, 399);
             this.addMetalicLacquerCheckBox.Name = "addMetalicLacquerCheckBox";
             this.addMetalicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
             this.addMetalicLacquerCheckBox.TabIndex = 25;
@@ -262,7 +251,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(285, 323);
+            this.label7.Location = new System.Drawing.Point(285, 384);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 24;
@@ -271,7 +260,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(155, 323);
+            this.label8.Location = new System.Drawing.Point(155, 384);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 22;
@@ -280,7 +269,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 323);
+            this.label9.Location = new System.Drawing.Point(25, 384);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 19;
@@ -288,28 +277,28 @@
             // 
             // addBrandTextBox
             // 
-            this.addBrandTextBox.Location = new System.Drawing.Point(28, 340);
+            this.addBrandTextBox.Location = new System.Drawing.Point(28, 401);
             this.addBrandTextBox.Name = "addBrandTextBox";
             this.addBrandTextBox.Size = new System.Drawing.Size(100, 20);
             this.addBrandTextBox.TabIndex = 28;
             // 
             // addModelTextBox
             // 
-            this.addModelTextBox.Location = new System.Drawing.Point(155, 340);
+            this.addModelTextBox.Location = new System.Drawing.Point(155, 401);
             this.addModelTextBox.Name = "addModelTextBox";
             this.addModelTextBox.Size = new System.Drawing.Size(100, 20);
             this.addModelTextBox.TabIndex = 29;
             // 
             // addEngineTextBox
             // 
-            this.addEngineTextBox.Location = new System.Drawing.Point(288, 340);
+            this.addEngineTextBox.Location = new System.Drawing.Point(288, 401);
             this.addEngineTextBox.Name = "addEngineTextBox";
             this.addEngineTextBox.Size = new System.Drawing.Size(100, 20);
             this.addEngineTextBox.TabIndex = 30;
             // 
             // addLacquerTextBox
             // 
-            this.addLacquerTextBox.Location = new System.Drawing.Point(509, 340);
+            this.addLacquerTextBox.Location = new System.Drawing.Point(509, 401);
             this.addLacquerTextBox.Name = "addLacquerTextBox";
             this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
             this.addLacquerTextBox.TabIndex = 31;
@@ -320,7 +309,7 @@
             // 
             // addNewCarButton
             // 
-            this.addNewCarButton.Location = new System.Drawing.Point(615, 340);
+            this.addNewCarButton.Location = new System.Drawing.Point(615, 401);
             this.addNewCarButton.Name = "addNewCarButton";
             this.addNewCarButton.Size = new System.Drawing.Size(75, 23);
             this.addNewCarButton.TabIndex = 33;
@@ -331,7 +320,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(702, 417);
+            this.label10.Location = new System.Drawing.Point(702, 444);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 34;
@@ -340,7 +329,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(702, 404);
+            this.label11.Location = new System.Drawing.Point(702, 431);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 13);
             this.label11.TabIndex = 35;
@@ -365,10 +354,10 @@
             this.hasairconditioningDataGridViewCheckBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.mainDataGridView.DataSource = this.cars1BindingSource;
-            this.mainDataGridView.Location = new System.Drawing.Point(28, 159);
+            this.mainDataGridView.Location = new System.Drawing.Point(28, 172);
             this.mainDataGridView.Name = "mainDataGridView";
             this.mainDataGridView.ReadOnly = true;
-            this.mainDataGridView.Size = new System.Drawing.Size(791, 129);
+            this.mainDataGridView.Size = new System.Drawing.Size(791, 116);
             this.mainDataGridView.TabIndex = 36;
             // 
             // idDataGridViewTextBoxColumn
@@ -480,11 +469,44 @@
             this.pickDbComboBox.TabIndex = 38;
             this.pickDbComboBox.SelectedIndexChanged += new System.EventHandler(this.pickDbComboBox_SelectedIndexChanged);
             // 
+            // automaticTransmissionCheckBox
+            // 
+            this.automaticTransmissionCheckBox.AutoSize = true;
+            this.automaticTransmissionCheckBox.Location = new System.Drawing.Point(28, 117);
+            this.automaticTransmissionCheckBox.Name = "automaticTransmissionCheckBox";
+            this.automaticTransmissionCheckBox.Size = new System.Drawing.Size(134, 17);
+            this.automaticTransmissionCheckBox.TabIndex = 39;
+            this.automaticTransmissionCheckBox.Text = "Automatyczna skrzynia";
+            this.automaticTransmissionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // airConditionCheckBox
+            // 
+            this.airConditionCheckBox.AutoSize = true;
+            this.airConditionCheckBox.Location = new System.Drawing.Point(28, 140);
+            this.airConditionCheckBox.Name = "airConditionCheckBox";
+            this.airConditionCheckBox.Size = new System.Drawing.Size(84, 17);
+            this.airConditionCheckBox.TabIndex = 40;
+            this.airConditionCheckBox.Text = "Klimatyzacja";
+            this.airConditionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // powerSteeringCheckBox
+            // 
+            this.powerSteeringCheckBox.AutoSize = true;
+            this.powerSteeringCheckBox.Location = new System.Drawing.Point(28, 94);
+            this.powerSteeringCheckBox.Name = "powerSteeringCheckBox";
+            this.powerSteeringCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.powerSteeringCheckBox.TabIndex = 41;
+            this.powerSteeringCheckBox.Text = "Wspomaganie";
+            this.powerSteeringCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 450);
+            this.ClientSize = new System.Drawing.Size(839, 513);
+            this.Controls.Add(this.powerSteeringCheckBox);
+            this.Controls.Add(this.airConditionCheckBox);
+            this.Controls.Add(this.automaticTransmissionCheckBox);
             this.Controls.Add(this.pickDbComboBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mainDataGridView);
@@ -503,7 +525,6 @@
             this.Controls.Add(this.addEntryLabel);
             this.Controls.Add(this.carAvatarLabel);
             this.Controls.Add(this.carAvatarPB);
-            this.Controls.Add(this.additionalOptionsCheckedListBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lacquerColorComboBox);
@@ -540,7 +561,6 @@
         internal System.Windows.Forms.CheckBox isMetallicLacquerCheckBox;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.ComboBox lacquerColorComboBox;
-        internal System.Windows.Forms.CheckedListBox additionalOptionsCheckedListBox;
         internal System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox carAvatarPB;
         private System.Windows.Forms.Label carAvatarLabel;
@@ -580,6 +600,9 @@
         private System.Windows.Forms.Button button1;
         private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
         private System.Windows.Forms.ComboBox pickDbComboBox;
+        private System.Windows.Forms.CheckBox automaticTransmissionCheckBox;
+        private System.Windows.Forms.CheckBox airConditionCheckBox;
+        private System.Windows.Forms.CheckBox powerSteeringCheckBox;
     }
 }
 

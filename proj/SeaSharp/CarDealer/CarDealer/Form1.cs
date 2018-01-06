@@ -249,6 +249,12 @@ namespace CarDealer
                     ("car_engine='" + engineComboBox.Text + "'") : null);
                 queryElements.Add((lacquerColorComboBox.SelectedIndex > -1) ?
                     ("lacquer_color='" + lacquerColorComboBox.Text + "'") : null);
+                queryElements.Add(automaticTransmissionCheckBox.Checked ?
+                    ("has_automatic_transmission='" + 1 + "'") : null);
+                queryElements.Add(powerSteeringCheckBox.Checked ?
+                    ("has_power_steering='" + 1 + "'") : null);
+                queryElements.Add(airConditionCheckBox.Checked ?
+                    ("has_air_conditioning='" + 1 + "'") : null);
 
                 queryElements.RemoveAll(query => query == null);
                 if (queryElements.Count > 0)
@@ -265,15 +271,9 @@ namespace CarDealer
                         sqlQuery += query + " AND ";
                     }
                 }
-
+                
                 System.Diagnostics.Debug.WriteLine("sqlQuery : " + sqlQuery);
-
-
-                foreach (object itemChecked in additionalOptionsCheckedListBox.CheckedItems)
-                {
-                    //itemChecked.Checked ?
-                }
-
+                
                 this.cars1BindingSource.DataSource = CarsData.GetCars(sqlQuery);
                 
             }
