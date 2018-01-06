@@ -247,6 +247,8 @@ namespace CarDealer
                     ("model='" + carModelComboBox.Text + "'") : null);
                 queryElements.Add((engineComboBox.SelectedIndex > -1) ?
                     ("car_engine='" + engineComboBox.Text + "'") : null);
+                queryElements.Add(isMetallicLacquerCheckBox.Checked ?
+                    ("has_metallic_lacquer='" + 1 + "'") : null);
                 queryElements.Add((lacquerColorComboBox.SelectedIndex > -1) ?
                     ("lacquer_color='" + lacquerColorComboBox.Text + "'") : null);
                 queryElements.Add(automaticTransmissionCheckBox.Checked ?
@@ -256,7 +258,7 @@ namespace CarDealer
                 queryElements.Add(airConditionCheckBox.Checked ?
                     ("has_air_conditioning='" + 1 + "'") : null);
 
-                queryElements.RemoveAll(query => query == null);
+                queryElements.RemoveAll(query => query == null || query.Equals(""));
                 if (queryElements.Count > 0)
                 {
                     sqlQuery += " WHERE ";
