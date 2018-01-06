@@ -207,23 +207,25 @@ namespace CarDealer
                 string insertQuery = "INSERT INTO cars " +
          "(brand, model, car_engine, production_year, lacquer_color, has_metallic_lacquer, has_power_steering, has_automatic_transmission, has_air_conditioning, price) " +
        "VALUES (" +
-       carBrand + ", " +
-       carModel + ", " +
-       carEngine + ", " +
-       prodYear + ", " +
-       lacquerColor + ", " +
-       hasMetallicLacquer + ", " +
-       hasPowerSteering + ", " +
-       hasAutomaticTransmission + ", " +
-       hasAirConditioning + ", " +
-       price +") ";
+       "'" + carBrand + "', " +
+       "'" + carModel + "', " +
+       "'" + carEngine + "', " +
+       "'" + prodYear + "', " +
+       "'" + lacquerColor + "', " +
+       "'" + hasMetallicLacquer + "', " +
+       "'" + hasPowerSteering + "', " +
+       "'" + hasAutomaticTransmission + "', " +
+       "'" + hasAirConditioning + "', " +
+       "'" + price + "') ";
 
                 System.Diagnostics.Debug.WriteLine("Insert query: " + insertQuery);
                 
                 CarsData.InsertCar(insertQuery);
+                MessageBox.Show("Dodano nowy samochód do komisu: " + CarsData.DbConnection.Database);
             }
             catch (System.Exception ex)
             {
+                CarsData.DbConnection.Close();
                 MessageBox.Show("NIE udalo sie dodac nowego wpisu! \n" + ex.Message);
                 System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu: " + ex.StackTrace);
                 System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu MESSAGE: " + ex.Message);
