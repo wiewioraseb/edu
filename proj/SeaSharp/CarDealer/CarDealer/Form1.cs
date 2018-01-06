@@ -116,6 +116,7 @@ namespace CarDealer
         }
         private void carBrandComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            /*
             //this.cars1BindingSource.DataSource = CarsData.GetCars("SELECT DISTINCT brand FROM cars");
             System.Diagnostics.Debug.WriteLine("instanceOf: " + this.cars1BindingSource.DataSource.GetType());
 
@@ -139,18 +140,22 @@ namespace CarDealer
 
             //this.cars1BindingSource.DataSource = null;
 
-            DataTable resultDataTable = queriedDataTable
-                .Select("brand = '" + carBrandComboBox.Text + "'").CopyToDataTable();
+            System.Diagnostics.Debug.WriteLine(
+                "carBrandComboBox.Text: " + carBrandComboBox.Text +
+                " carBrandComboBox.SelectedText: " + carBrandComboBox.SelectedText +
+                " carBrandComboBox.GetItemText(c.SelectedItem): " + carBrandComboBox.GetItemText(carBrandComboBox.SelectedItem)
+                );
 
-            foreach (DataRow row in resultDataTable.Rows)
-            {
-                System.Diagnostics.Debug.WriteLine("DataRow: " + row.ItemArray[1] + " " + row.ItemArray[2]);
-            }
+            string filter = carBrandComboBox.GetItemText(carBrandComboBox.SelectedItem);
+            DataRow[] filteredDataTableRows = queriedDataTable.Select("brand = '" + filter + "'");
+            DataTable resultDataTable = filteredDataTableRows.Any() ?
+                filteredDataTableRows.CopyToDataTable() : new DataTable();
 
             this.cars1BindingSource.DataSource = resultDataTable;
               
 
             //carBrandComboBox.DisplayMember = "brand";
+            */
         }
 
         private void carModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,8 +172,8 @@ namespace CarDealer
         }
         private void carModelComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            carModelComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT model FROM cars");
-            carModelComboBox.DisplayMember = "model";
+            /*carModelComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT model FROM cars");
+            carModelComboBox.DisplayMember = "model";*/
         }
 
         private void engineComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -258,21 +263,45 @@ namespace CarDealer
         {
             try
             {
-                /*
                 string sqlQuery = "SELECT * FROM cars";
-                sqlQuery += " WHERE ";
-                sqlQuery += "  brand=" + carBrandComboBox.Text;
-                sqlQuery += " AND model=" + carModelComboBox.Text;
-                sqlQuery += " AND car_engine=" + engineComboBox.Text;
+
+
+                List<string> queryElements = new List<string>();
+                queryElements.Add( (carBrandComboBox.SelectedIndex > -1) ? 
+                    ("brand='" + carBrandComboBox.Text+"'") : null);
+                queryElements.Add((carModelComboBox.SelectedIndex > -1) ?
+                    ("model='" + carModelComboBox.Text + "'") : null);
+                queryElements.Add((engineComboBox.SelectedIndex > -1) ?
+                    ("car_engine='" + engineComboBox.Text + "'") : null);
+                queryElements.Add((lacquerColorComboBox.SelectedIndex > -1) ?
+                    ("lacquer_color='" + lacquerColorComboBox.Text + "'") : null);
+
+                queryElements.RemoveAll(query => query == null);
+                if (queryElements.Count > 0)
+                {
+                    sqlQuery += " WHERE ";
+      
+                    foreach (string query in queryElements)
+                    {
+                        if (queryElements.IndexOf(query) == queryElements.Count-1)
+                        {
+                            sqlQuery += query;
+                            break;
+                        }
+                        sqlQuery += query + " AND ";
+                    }
+                }
+
+                System.Diagnostics.Debug.WriteLine("sqlQuery : " + sqlQuery);
 
 
                 foreach (object itemChecked in additionalOptionsCheckedListBox.CheckedItems)
                 {
-                    itemChecked.Checked ?
+                    //itemChecked.Checked ?
                 }
 
                 this.cars1BindingSource.DataSource = CarsData.GetCars(sqlQuery);
-                */
+                
             }
             catch (SqlException ex)
             {
