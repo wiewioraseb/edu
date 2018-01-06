@@ -73,7 +73,7 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carDealer2DataSet = new CarDealer.carDealer2DataSet();
             this.cars1TableAdapter = new CarDealer.carDealer1DataSetTableAdapters.carsTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.cars2TableAdapter = new CarDealer.carDealer2DataSetTableAdapters.carsTableAdapter();
             this.pickDbComboBox = new System.Windows.Forms.ComboBox();
             this.automaticTransmissionCheckBox = new System.Windows.Forms.CheckBox();
@@ -437,15 +437,15 @@
             // 
             this.cars1TableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // searchButton
             // 
-            this.button1.Location = new System.Drawing.Point(744, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.searchButton.Location = new System.Drawing.Point(744, 45);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 37;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // cars2TableAdapter
             // 
@@ -508,7 +508,7 @@
             this.Controls.Add(this.airConditionCheckBox);
             this.Controls.Add(this.automaticTransmissionCheckBox);
             this.Controls.Add(this.pickDbComboBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -597,7 +597,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasairconditioningDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private carDealer1DataSetTableAdapters.carsTableAdapter cars1TableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button searchButton;
         private carDealer2DataSetTableAdapters.carsTableAdapter cars2TableAdapter;
         private System.Windows.Forms.ComboBox pickDbComboBox;
         private System.Windows.Forms.CheckBox automaticTransmissionCheckBox;
