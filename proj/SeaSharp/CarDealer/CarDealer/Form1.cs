@@ -161,7 +161,7 @@ namespace CarDealer
 
         private void isMetallicLacquerCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            lacquerColorComboBox.DataSource = new DataTable();
         }
 
         private void lacquerColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,8 +171,8 @@ namespace CarDealer
         private void lacquerColorComboBox_DropDown(object sender, EventArgs e)
         {
             bool isMetallicType = isMetallicLacquerCheckBox.Checked;
-            MessageBox.Show("metallicType: " + isMetallicType);
-            string appendToSqlQuery = isMetallicType ? "WHERE has_metallic_lacquer=1" : "";
+            //MessageBox.Show("metallicType: " + isMetallicType);
+            string appendToSqlQuery = isMetallicType ? " WHERE has_metallic_lacquer=1" : "";
             lacquerColorComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT lacquer_color FROM cars" + appendToSqlQuery);
             lacquerColorComboBox.DisplayMember = "lacquer_color";
         }
