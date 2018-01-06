@@ -73,6 +73,7 @@ namespace CarDealer
             //engineComboBox.SelectionChangeCommitted += new EventHandler(engineComboBox_SelectionChangeCommitted);
             lacquerColorComboBox.DropDown += new EventHandler(lacquerColorComboBox_DropDown);
             //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
+            mainDataGridView.CellClick += new DataGridViewCellEventHandler(mainDataGridView_CellClick);
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -303,6 +304,21 @@ namespace CarDealer
             }
 
             this.cars1BindingSource.DataSource = CarsData.GetCars();
+        }
+
+        private void mainDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void mainDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            string carBrand = this.mainDataGridView.Rows[rowIndex].Cells[1].Value.ToString();
+
+            System.Diagnostics.Debug.WriteLine("DataGridView CellClick : " + carBrand);
+
+            carAvatarPB.Image =
+                (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand);
         }
     }
 }

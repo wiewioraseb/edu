@@ -204,6 +204,7 @@
             // 
             // carAvatarPB
             // 
+            this.carAvatarPB.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cars1BindingSource, "model", true));
             this.carAvatarPB.Location = new System.Drawing.Point(646, 94);
             this.carAvatarPB.Name = "carAvatarPB";
             this.carAvatarPB.Size = new System.Drawing.Size(100, 50);
@@ -359,6 +360,7 @@
             this.mainDataGridView.ReadOnly = true;
             this.mainDataGridView.Size = new System.Drawing.Size(791, 116);
             this.mainDataGridView.TabIndex = 36;
+            this.mainDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mainDataGridView_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
