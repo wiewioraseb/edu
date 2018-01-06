@@ -121,4 +121,28 @@
   <data name="toyota_cruiser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toyota_cruiser.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="toyota" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toyota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ford" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ford.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mitsubishi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mitsubishi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fiat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fiat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="honda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\honda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="renault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\renault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -165,6 +165,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\fiat.jpg" />
+    <Content Include="Resources\ford.jpg" />
+    <None Include="Resources\vw.jpg" />
+    <None Include="Resources\honda.png" />
+    <Content Include="Resources\mitsubishi.jpg" />
+    <None Include="Resources\renault.jpg" />
+    <None Include="Resources\seat.png" />
+    <Content Include="Resources\toyota.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

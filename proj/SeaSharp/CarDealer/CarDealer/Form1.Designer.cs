@@ -43,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lacquerColorComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.carAvatarPB = new System.Windows.Forms.PictureBox();
             this.carAvatarLabel = new System.Windows.Forms.Label();
             this.addEntryLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -80,13 +79,14 @@
             this.automaticTransmissionCheckBox = new System.Windows.Forms.CheckBox();
             this.airConditionCheckBox = new System.Windows.Forms.CheckBox();
             this.powerSteeringCheckBox = new System.Windows.Forms.CheckBox();
+            this.carAvatarPB = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,7 +166,6 @@
             // isMetallicLacquerCheckBox
             // 
             this.isMetallicLacquerCheckBox.AutoSize = true;
-            this.isMetallicLacquerCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cars1BindingSource, "has_metallic_lacquer", true));
             this.isMetallicLacquerCheckBox.Location = new System.Drawing.Point(413, 44);
             this.isMetallicLacquerCheckBox.Name = "isMetallicLacquerCheckBox";
             this.isMetallicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
@@ -201,16 +200,6 @@
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "Opcje dodatkowe:";
-            // 
-            // carAvatarPB
-            // 
-            this.carAvatarPB.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cars1BindingSource, "model", true));
-            this.carAvatarPB.Location = new System.Drawing.Point(646, 94);
-            this.carAvatarPB.Name = "carAvatarPB";
-            this.carAvatarPB.Size = new System.Drawing.Size(100, 50);
-            this.carAvatarPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.carAvatarPB.TabIndex = 16;
-            this.carAvatarPB.TabStop = false;
             // 
             // carAvatarLabel
             // 
@@ -358,7 +347,7 @@
             this.mainDataGridView.Location = new System.Drawing.Point(28, 172);
             this.mainDataGridView.Name = "mainDataGridView";
             this.mainDataGridView.ReadOnly = true;
-            this.mainDataGridView.Size = new System.Drawing.Size(791, 116);
+            this.mainDataGridView.Size = new System.Drawing.Size(791, 175);
             this.mainDataGridView.TabIndex = 36;
             this.mainDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mainDataGridView_CellContentClick);
             // 
@@ -501,6 +490,15 @@
             this.powerSteeringCheckBox.Text = "Wspomaganie";
             this.powerSteeringCheckBox.UseVisualStyleBackColor = true;
             // 
+            // carAvatarPB
+            // 
+            this.carAvatarPB.Location = new System.Drawing.Point(646, 94);
+            this.carAvatarPB.Name = "carAvatarPB";
+            this.carAvatarPB.Size = new System.Drawing.Size(100, 50);
+            this.carAvatarPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.carAvatarPB.TabIndex = 16;
+            this.carAvatarPB.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,9 +542,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

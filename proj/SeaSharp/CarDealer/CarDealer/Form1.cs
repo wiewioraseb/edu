@@ -317,8 +317,11 @@ namespace CarDealer
 
             System.Diagnostics.Debug.WriteLine("DataGridView CellClick : " + carBrand);
 
-            carAvatarPB.Image =
-                (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand);
+            this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand.ToLower());
+            this.carAvatarPB.Refresh();
+
+            //carAvatarPB.Image =
+            //    (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand);
         }
     }
 }
