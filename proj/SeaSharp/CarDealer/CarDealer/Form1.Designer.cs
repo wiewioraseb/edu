@@ -136,8 +136,6 @@
             // 
             // engineComboBox
             // 
-            this.engineComboBox.DataSource = this.cars1BindingSource;
-            this.engineComboBox.DisplayMember = "car_engine";
             this.engineComboBox.FormattingEnabled = true;
             this.engineComboBox.Location = new System.Drawing.Point(285, 44);
             this.engineComboBox.Name = "engineComboBox";
@@ -156,8 +154,6 @@
             // 
             // carModelComboBox
             // 
-            this.carModelComboBox.DataSource = this.cars1BindingSource;
-            this.carModelComboBox.DisplayMember = "model";
             this.carModelComboBox.FormattingEnabled = true;
             this.carModelComboBox.Location = new System.Drawing.Point(158, 44);
             this.carModelComboBox.Name = "carModelComboBox";
@@ -188,8 +184,6 @@
             // 
             // lacquerColorComboBox
             // 
-            this.lacquerColorComboBox.DataSource = this.cars1BindingSource;
-            this.lacquerColorComboBox.DisplayMember = "lacquer_color";
             this.lacquerColorComboBox.FormattingEnabled = true;
             this.lacquerColorComboBox.Location = new System.Drawing.Point(509, 44);
             this.lacquerColorComboBox.Name = "lacquerColorComboBox";
