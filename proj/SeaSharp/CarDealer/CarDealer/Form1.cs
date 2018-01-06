@@ -135,10 +135,6 @@ namespace CarDealer
 
         private void carModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //carAvatarPB.
-            //this.carAvatarPB.Image = global::CarDealer.Properties.Resources.toyota_cruiser;
-            this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject("toyota_cruiser");
-
         }
         private void carModelComboBox_DropDown(object sender, EventArgs e)
         {
@@ -147,8 +143,6 @@ namespace CarDealer
         }
         private void carModelComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            /*carModelComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT model FROM cars");
-            carModelComboBox.DisplayMember = "model";*/
         }
 
         private void engineComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,7 +161,6 @@ namespace CarDealer
 
         private void lacquerColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
         private void lacquerColorComboBox_DropDown(object sender, EventArgs e)
         {
@@ -239,7 +232,6 @@ namespace CarDealer
             try
             {
                 string sqlQuery = "SELECT * FROM cars";
-
 
                 List<string> queryElements = new List<string>();
                 queryElements.Add( (carBrandComboBox.SelectedIndex > -1) ? 
@@ -314,14 +306,7 @@ namespace CarDealer
         {
             int rowIndex = e.RowIndex;
             string carBrand = this.mainDataGridView.Rows[rowIndex].Cells[1].Value.ToString();
-
-            System.Diagnostics.Debug.WriteLine("DataGridView CellClick : " + carBrand);
-
             this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand.ToLower());
-            this.carAvatarPB.Refresh();
-
-            //carAvatarPB.Image =
-            //    (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand);
         }
     }
 }
