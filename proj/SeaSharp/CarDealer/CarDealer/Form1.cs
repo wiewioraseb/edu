@@ -178,44 +178,53 @@ namespace CarDealer
 
         private void addNewCarButton_Click(object sender, EventArgs e)
         {
-            // BindingList: https://stackoverflow.com/questions/9758577/c-sharp-datagridview-not-updated-when-datasource-is-changed 
-            //enginesList.Add(addEngineTextBox.Text);
-            // dirty hack
-            //engineComboBox.DataSource = null;
-            //engineComboBox.DataSource = enginesList;
 
             try
             {
-                //this.carsBindingSource.AddNew();
-                //DataRow dr = this.carsBindingSource.Rows[IntPosition];
-                //dr.BeginEdit();
-                //dr[1] = "New Value";
+               
+                string carBrand = !addBrandTextBox.Text.Equals("") ?
+                    (addBrandTextBox.Text) : null;
+                string carModel = !addModelTextBox.Text.Equals("") ?
+                    (addModelTextBox.Text) : null;
+                string carEngine = !addEngineTextBox.Text.Equals("") ?
+                    (addEngineTextBox.Text) : null;
+                string prodYear = !addProdYearTextBox.Text.Equals("") ?
+                    (addProdYearTextBox.Text) : null;
+                string lacquerColor = !addLacquerTextBox.Text.Equals("") ?
+                    (addLacquerTextBox.Text) : null;
+                string hasMetallicLacquer = addMetalicLacquerCheckBox.Checked ?
+                    "1" : "0";
+                string hasPowerSteering = addPowerSteeringCheckBox.Checked ?
+                    "1" : "0";
+                string hasAutomaticTransmission = addAutomaticTransmissionCheckBox.Checked ?
+                    "1" : "0";
+                string hasAirConditioning = addAirConditionCheckBox.Checked ?
+                    "1" : "0";
+                string price = !addPriceTextBox.Text.Equals("") ?
+                    (addPriceTextBox.Text) : null;
 
-                //this.carsBindingSource.Insert(0, "String");
 
-                this.cars1TableAdapter.Insert(
-                    addBrandTextBox.Text.ToString(),
-                    addModelTextBox.Text.ToString(),
-                    addEngineTextBox.Text.ToString(),
-                    "2017",
-                    "yellow",
-                    0,
-                    1,
-                    0,
-                    1,
-                    45000
-                    );
+                string insertQuery = "INSERT INTO cars " +
+         "(brand, model, car_engine, production_year, lacquer_color, has_metallic_lacquer, has_power_steering, has_automatic_transmission, has_air_conditioning, price) " +
+       "VALUES (" +
+       carBrand + ", " +
+       carModel + ", " +
+       carEngine + ", " +
+       prodYear + ", " +
+       lacquerColor + ", " +
+       hasMetallicLacquer + ", " +
+       hasPowerSteering + ", " +
+       hasAutomaticTransmission + ", " +
+       hasAirConditioning + ", " +
+       price +") ";
 
-                this.Validate();
-                //this.carsBindingSource.EndEdit();
-                this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
-                this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
-
-                MessageBox.Show("Dodano nowy wpis.");
+                System.Diagnostics.Debug.WriteLine("Insert query: " + insertQuery);
+                
+                CarsData.InsertCar(insertQuery);
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("NIE udalo sie dodac nowego wpisu!");
+                MessageBox.Show("NIE udalo sie dodac nowego wpisu! \n" + ex.Message);
                 System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu: " + ex.StackTrace);
                 System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu MESSAGE: " + ex.Message);
 
