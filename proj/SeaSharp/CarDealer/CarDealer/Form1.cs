@@ -183,15 +183,15 @@ namespace CarDealer
             {
                
                 string carBrand = !addBrandTextBox.Text.Equals("") ?
-                    (addBrandTextBox.Text) : null;
+                    "'"+(addBrandTextBox.Text)+"'" : "NULL";
                 string carModel = !addModelTextBox.Text.Equals("") ?
-                    (addModelTextBox.Text) : null;
+                    "'"+(addModelTextBox.Text)+"'" : "NULL";
                 string carEngine = !addEngineTextBox.Text.Equals("") ?
-                    (addEngineTextBox.Text) : null;
+                    "'"+(addEngineTextBox.Text)+"'" : "NULL";
                 string prodYear = !addProdYearTextBox.Text.Equals("") ?
-                    (addProdYearTextBox.Text) : null;
+                    "'"+(addProdYearTextBox.Text)+"'" : "NULL";
                 string lacquerColor = !addLacquerTextBox.Text.Equals("") ?
-                    (addLacquerTextBox.Text) : null;
+                    "'"+(addLacquerTextBox.Text)+"'" : "NULL";
                 string hasMetallicLacquer = addMetalicLacquerCheckBox.Checked ?
                     "1" : "0";
                 string hasPowerSteering = addPowerSteeringCheckBox.Checked ?
@@ -201,26 +201,26 @@ namespace CarDealer
                 string hasAirConditioning = addAirConditionCheckBox.Checked ?
                     "1" : "0";
                 string price = !addPriceTextBox.Text.Equals("") ?
-                    (addPriceTextBox.Text) : null;
+                    "'"+(addPriceTextBox.Text)+"'" : "NULL";
 
 
                 string insertQuery = "INSERT INTO cars " +
          "(brand, model, car_engine, production_year, lacquer_color, has_metallic_lacquer, has_power_steering, has_automatic_transmission, has_air_conditioning, price) " +
        "VALUES (" +
-       "'" + carBrand + "', " +
-       "'" + carModel + "', " +
-       "'" + carEngine + "', " +
-       "'" + prodYear + "', " +
-       "'" + lacquerColor + "', " +
+       "" + carBrand + ", " +
+       "" + carModel + ", " +
+       "" + carEngine + ", " +
+       "" + prodYear + ", " +
+       "" + lacquerColor + ", " +
        "'" + hasMetallicLacquer + "', " +
        "'" + hasPowerSteering + "', " +
        "'" + hasAutomaticTransmission + "', " +
        "'" + hasAirConditioning + "', " +
-       "'" + price + "') ";
+       "" + price + ") ";
 
                 System.Diagnostics.Debug.WriteLine("Insert query: " + insertQuery);
-                
                 CarsData.InsertCar(insertQuery);
+                this.cars1BindingSource.DataSource = CarsData.GetCars();
                 MessageBox.Show("Dodano nowy samochód do komisu: " + CarsData.DbConnection.Database);
             }
             catch (System.Exception ex)

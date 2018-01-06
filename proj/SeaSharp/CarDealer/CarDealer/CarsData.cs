@@ -71,38 +71,6 @@ namespace CarDealer
 
         public static void InsertCar(string sqlCommand)
         {
-            
-                /*
-
-                    //this.carsBindingSource.AddNew();
-                    //DataRow dr = this.carsBindingSource.Rows[IntPosition];
-                    //dr.BeginEdit();
-                    //dr[1] = "New Value";
-
-                    //this.carsBindingSource.Insert(0, "String");
-
-                    this.cars1TableAdapter.Insert(
-                        addBrandTextBox.Text.ToString(),
-                        addModelTextBox.Text.ToString(),
-                        addEngineTextBox.Text.ToString(),
-                        "2017",
-                        "yellow",
-                        0,
-                        1,
-                        0,
-                        1,
-                        45000
-                        );
-
-                    this.Validate();
-                    //this.carsBindingSource.EndEdit();
-                    this.cars1TableAdapter.Update(this.carDealer1DataSet.cars);
-                    this.cars1TableAdapter.Fill(this.carDealer1DataSet.cars);
-
-                    MessageBox.Show("Dodano nowy wpis.");
-                    */
-
- 
                 CarsData.DbConnection.Open();
 
                 IDbCommand cmd =
@@ -115,7 +83,6 @@ namespace CarDealer
 
                 dataAdapter.Fill(dataTable);
                 CarsData.DbConnection.Close();
-                
         }
     }
 }
