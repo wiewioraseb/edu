@@ -19,7 +19,15 @@ namespace CarDealer.security
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
+            if (loginTextBox.Text.Equals("123") && passTextBox.Text.Equals("123"))
+            {
+                MessageBox.Show("Logowanie powiodło się!");
+                this.Hide();
+            } 
+            else
+            {
+                MessageBox.Show("Niepoprawne dane logowania!");
+            }
         }
     }
 }
