@@ -90,6 +90,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.showLoginButton = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.loggedInUserLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -600,11 +602,32 @@
             this.showLoginButton.UseVisualStyleBackColor = true;
             this.showLoginButton.Click += new System.EventHandler(this.showLoginButton_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(316, 1);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 13);
+            this.label15.TabIndex = 52;
+            this.label15.Text = "Zalogowany jako:";
+            // 
+            // loggedInUserLabel
+            // 
+            this.loggedInUserLabel.AutoSize = true;
+            this.loggedInUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.loggedInUserLabel.Location = new System.Drawing.Point(403, 1);
+            this.loggedInUserLabel.Name = "loggedInUserLabel";
+            this.loggedInUserLabel.Size = new System.Drawing.Size(36, 13);
+            this.loggedInUserLabel.TabIndex = 53;
+            this.loggedInUserLabel.Text = "Gość";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 520);
+            this.Controls.Add(this.loggedInUserLabel);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.showLoginButton);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -724,6 +747,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button showLoginButton;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label loggedInUserLabel;
     }
 }
 

@@ -280,6 +280,10 @@ namespace CarDealer
                 MessageBox.Show("Wylogowano administratora!");
                 showLoginButton.Text = "Logowanie";
 
+                loggedInUserLabel.Text = "Gość";
+                //dodac label jaki uzytkownik
+                 //   ukryc te dolne kontrolki
+
             }
             else
             {
@@ -296,6 +300,7 @@ namespace CarDealer
             if (Authentication.Authorized)
             {
                 showLoginButton.Text = "Wyloguj";
+                loggedInUserLabel.Text = "Administrator";
 
             }
 
