@@ -22,13 +22,21 @@ namespace CarDealer.security
         {
             if (loginTextBox.Text.Equals("123") && passTextBox.Text.Equals("123"))
             {
+                Authentication.Authorized = true;
                 MessageBox.Show("Logowanie powiodło się!");
-                this.Hide();
+                this.Close();
             } 
             else
             {
                 MessageBox.Show("Niepoprawne dane logowania!");
             }
         }
+    }
+
+    public class Authentication
+    {
+        private static bool authorized = false;
+
+        public static bool Authorized { get => authorized; set => authorized = value; }
     }
 }

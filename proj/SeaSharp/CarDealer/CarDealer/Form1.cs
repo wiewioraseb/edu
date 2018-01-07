@@ -61,11 +61,7 @@ namespace CarDealer
             {
                 pickDbComboBox.Items.Add(enumValue.ToString());
             }
-
-            //carModelComboBox.Enabled = false;
-            //engineComboBox.Enabled = false;
-            //lacquerColorComboBox.Enabled = false;
-
+            
             carBrandComboBox.DropDown += new EventHandler(carBrandComboBox_DropDown);
             carBrandComboBox.SelectionChangeCommitted += new EventHandler(carBrandComboBox_SelectionChangeCommitted);
             carModelComboBox.DropDown += new EventHandler(carModelComboBox_DropDown);
@@ -84,54 +80,9 @@ namespace CarDealer
         {
             carBrandComboBox.DataSource = CarsData.GetCars("SELECT DISTINCT brand FROM cars");
             carBrandComboBox.DisplayMember = "brand";
-
-            /* System.Diagnostics.Debug.WriteLine("Car Brand DropDown Event!");
-
-            //carBrandComboBox.DataSource = carBrands;
-            carModelComboBox.Enabled = true; */
         }
         private void carBrandComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            /*
-            //this.cars1BindingSource.DataSource = CarsData.GetCars("SELECT DISTINCT brand FROM cars");
-            System.Diagnostics.Debug.WriteLine("instanceOf: " + this.cars1BindingSource.DataSource.GetType());
-
-            DataTable queriedDataTable;
-
-            if (this.cars1BindingSource.DataSource is DataSet)
-            {
-                System.Diagnostics.Debug.WriteLine("DATASET TYPE!");
-                queriedDataTable = ((DataSet)this.cars1BindingSource.DataSource).Tables["cars"];
-            }
-            else if(this.cars1BindingSource.DataSource.GetType() == typeof(DataTable))
-            {
-                System.Diagnostics.Debug.WriteLine("DATATABLE TYPE!");
-                queriedDataTable = ((DataTable)this.cars1BindingSource.DataSource);
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("OTHER TYPE!");
-                queriedDataTable = ((DataTable)this.cars1BindingSource.DataSource);
-            }
-
-            //this.cars1BindingSource.DataSource = null;
-
-            System.Diagnostics.Debug.WriteLine(
-                "carBrandComboBox.Text: " + carBrandComboBox.Text +
-                " carBrandComboBox.SelectedText: " + carBrandComboBox.SelectedText +
-                " carBrandComboBox.GetItemText(c.SelectedItem): " + carBrandComboBox.GetItemText(carBrandComboBox.SelectedItem)
-                );
-
-            string filter = carBrandComboBox.GetItemText(carBrandComboBox.SelectedItem);
-            DataRow[] filteredDataTableRows = queriedDataTable.Select("brand = '" + filter + "'");
-            DataTable resultDataTable = filteredDataTableRows.Any() ?
-                filteredDataTableRows.CopyToDataTable() : new DataTable();
-
-            this.cars1BindingSource.DataSource = resultDataTable;
-              
-
-            //carBrandComboBox.DisplayMember = "brand";
-            */
         }
 
         private void carModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -323,8 +274,31 @@ namespace CarDealer
 
         private void showLoginButton_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+            if (Authentication.Authorized)
+            {
+                Authentication.Authorized = false;
+                MessageBox.Show("Wylogowano administratora!");
+                showLoginButton.Text = "Logowanie";
+
+            }
+            else
+            {
+                LoginForm loginForm = new LoginForm();
+                loginForm.FormClosed += LoginForm_FormClosed;
+                loginForm.Show();
+            }
+            
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("LoginForm was closed");
+            if (Authentication.Authorized)
+            {
+                showLoginButton.Text = "Wyloguj";
+
+            }
+
         }
     }
 }
