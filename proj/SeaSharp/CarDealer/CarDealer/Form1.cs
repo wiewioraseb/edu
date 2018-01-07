@@ -1,4 +1,5 @@
 ﻿using CarDealer.DataAccessLayer;
+using CarDealer.security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -322,7 +323,8 @@ namespace CarDealer
 
         private void showLoginButton_Click(object sender, EventArgs e)
         {
-
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }

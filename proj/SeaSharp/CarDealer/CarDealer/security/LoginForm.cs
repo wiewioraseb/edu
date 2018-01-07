@@ -15,6 +15,7 @@ namespace CarDealer.security
         public LoginForm()
         {
             InitializeComponent();
+            passTextBox.PasswordChar = '*';
         }
 
         private void loginButton_Click(object sender, EventArgs e)
