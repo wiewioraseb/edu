@@ -44,18 +44,7 @@
             this.lacquerColorComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.carAvatarLabel = new System.Windows.Forms.Label();
-            this.addEntryLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.addMetalicLacquerCheckBox = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.addBrandTextBox = new System.Windows.Forms.TextBox();
-            this.addModelTextBox = new System.Windows.Forms.TextBox();
-            this.addEngineTextBox = new System.Windows.Forms.TextBox();
-            this.addLacquerTextBox = new System.Windows.Forms.TextBox();
             this.samochodyTableAdapter = new CarDealer.car_dealer_dbDataSetTableAdapters.samochodyTableAdapter();
-            this.addNewCarButton = new System.Windows.Forms.Button();
             this.computer1 = new CompInfo.Computer(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -80,18 +69,30 @@
             this.airConditionCheckBox = new System.Windows.Forms.CheckBox();
             this.powerSteeringCheckBox = new System.Windows.Forms.CheckBox();
             this.carAvatarPB = new System.Windows.Forms.PictureBox();
-            this.addPowerSteeringCheckBox = new System.Windows.Forms.CheckBox();
-            this.addAirConditionCheckBox = new System.Windows.Forms.CheckBox();
-            this.addAutomaticTransmissionCheckBox = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.addProdYearTextBox = new System.Windows.Forms.TextBox();
-            this.addPriceTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.showLoginButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.loggedInUserLabel = new System.Windows.Forms.Label();
+            this.newCarPanel = new System.Windows.Forms.Panel();
+            this.addPowerSteeringCheckBox = new System.Windows.Forms.CheckBox();
+            this.addAirConditionCheckBox = new System.Windows.Forms.CheckBox();
+            this.addAutomaticTransmissionCheckBox = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.addEngineTextBox = new System.Windows.Forms.TextBox();
+            this.addModelTextBox = new System.Windows.Forms.TextBox();
+            this.addBrandTextBox = new System.Windows.Forms.TextBox();
+            this.addMetalicLacquerCheckBox = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.addEntryLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.addPriceTextBox = new System.Windows.Forms.TextBox();
+            this.addProdYearTextBox = new System.Windows.Forms.TextBox();
+            this.addLacquerTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.addNewCarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -99,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).BeginInit();
+            this.newCarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -222,107 +224,14 @@
             this.carAvatarLabel.TabIndex = 17;
             this.carAvatarLabel.Text = "Miniaturka:";
             // 
-            // addEntryLabel
-            // 
-            this.addEntryLabel.AutoSize = true;
-            this.addEntryLabel.Location = new System.Drawing.Point(25, 361);
-            this.addEntryLabel.Name = "addEntryLabel";
-            this.addEntryLabel.Size = new System.Drawing.Size(59, 13);
-            this.addEntryLabel.TabIndex = 18;
-            this.addEntryLabel.Text = "Dodaj wpis";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(509, 384);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Kolor lakieru:";
-            // 
-            // addMetalicLacquerCheckBox
-            // 
-            this.addMetalicLacquerCheckBox.AutoSize = true;
-            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(412, 399);
-            this.addMetalicLacquerCheckBox.Name = "addMetalicLacquerCheckBox";
-            this.addMetalicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
-            this.addMetalicLacquerCheckBox.TabIndex = 25;
-            this.addMetalicLacquerCheckBox.Text = "Lakier metalik";
-            this.addMetalicLacquerCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(285, 384);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Silnik:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(155, 384);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Model:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 384);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Marka samochodu:";
-            // 
-            // addBrandTextBox
-            // 
-            this.addBrandTextBox.Location = new System.Drawing.Point(28, 401);
-            this.addBrandTextBox.Name = "addBrandTextBox";
-            this.addBrandTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addBrandTextBox.TabIndex = 28;
-            // 
-            // addModelTextBox
-            // 
-            this.addModelTextBox.Location = new System.Drawing.Point(155, 401);
-            this.addModelTextBox.Name = "addModelTextBox";
-            this.addModelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addModelTextBox.TabIndex = 29;
-            // 
-            // addEngineTextBox
-            // 
-            this.addEngineTextBox.Location = new System.Drawing.Point(288, 401);
-            this.addEngineTextBox.Name = "addEngineTextBox";
-            this.addEngineTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addEngineTextBox.TabIndex = 30;
-            // 
-            // addLacquerTextBox
-            // 
-            this.addLacquerTextBox.Location = new System.Drawing.Point(509, 401);
-            this.addLacquerTextBox.Name = "addLacquerTextBox";
-            this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addLacquerTextBox.TabIndex = 31;
-            // 
             // samochodyTableAdapter
             // 
             this.samochodyTableAdapter.ClearBeforeFill = true;
             // 
-            // addNewCarButton
-            // 
-            this.addNewCarButton.Location = new System.Drawing.Point(448, 467);
-            this.addNewCarButton.Name = "addNewCarButton";
-            this.addNewCarButton.Size = new System.Drawing.Size(75, 23);
-            this.addNewCarButton.TabIndex = 33;
-            this.addNewCarButton.Text = "Dodaj nowy samochod";
-            this.addNewCarButton.UseVisualStyleBackColor = true;
-            this.addNewCarButton.Click += new System.EventHandler(this.addNewCarButton_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(710, 490);
+            this.label10.Location = new System.Drawing.Point(748, 528);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 34;
@@ -331,7 +240,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(710, 477);
+            this.label11.Location = new System.Drawing.Point(748, 515);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 13);
             this.label11.TabIndex = 35;
@@ -512,36 +421,6 @@
             this.carAvatarPB.TabIndex = 16;
             this.carAvatarPB.TabStop = false;
             // 
-            // addPowerSteeringCheckBox
-            // 
-            this.addPowerSteeringCheckBox.AutoSize = true;
-            this.addPowerSteeringCheckBox.Location = new System.Drawing.Point(34, 444);
-            this.addPowerSteeringCheckBox.Name = "addPowerSteeringCheckBox";
-            this.addPowerSteeringCheckBox.Size = new System.Drawing.Size(94, 17);
-            this.addPowerSteeringCheckBox.TabIndex = 46;
-            this.addPowerSteeringCheckBox.Text = "Wspomaganie";
-            this.addPowerSteeringCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // addAirConditionCheckBox
-            // 
-            this.addAirConditionCheckBox.AutoSize = true;
-            this.addAirConditionCheckBox.Location = new System.Drawing.Point(34, 490);
-            this.addAirConditionCheckBox.Name = "addAirConditionCheckBox";
-            this.addAirConditionCheckBox.Size = new System.Drawing.Size(84, 17);
-            this.addAirConditionCheckBox.TabIndex = 45;
-            this.addAirConditionCheckBox.Text = "Klimatyzacja";
-            this.addAirConditionCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // addAutomaticTransmissionCheckBox
-            // 
-            this.addAutomaticTransmissionCheckBox.AutoSize = true;
-            this.addAutomaticTransmissionCheckBox.Location = new System.Drawing.Point(34, 467);
-            this.addAutomaticTransmissionCheckBox.Name = "addAutomaticTransmissionCheckBox";
-            this.addAutomaticTransmissionCheckBox.Size = new System.Drawing.Size(134, 17);
-            this.addAutomaticTransmissionCheckBox.TabIndex = 44;
-            this.addAutomaticTransmissionCheckBox.Text = "Automatyczna skrzynia";
-            this.addAutomaticTransmissionCheckBox.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(319, 811);
@@ -550,47 +429,6 @@
             this.button1.TabIndex = 43;
             this.button1.Text = "Dodaj nowy samochod";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(31, 428);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 13);
-            this.label12.TabIndex = 42;
-            this.label12.Text = "Opcje dodatkowe:";
-            // 
-            // addProdYearTextBox
-            // 
-            this.addProdYearTextBox.Location = new System.Drawing.Point(630, 401);
-            this.addProdYearTextBox.Name = "addProdYearTextBox";
-            this.addProdYearTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addProdYearTextBox.TabIndex = 47;
-            // 
-            // addPriceTextBox
-            // 
-            this.addPriceTextBox.Location = new System.Drawing.Point(744, 400);
-            this.addPriceTextBox.Name = "addPriceTextBox";
-            this.addPriceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addPriceTextBox.TabIndex = 48;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(627, 384);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Rok produkcji";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(744, 383);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "Cena";
             // 
             // showLoginButton
             // 
@@ -621,23 +459,207 @@
             this.loggedInUserLabel.TabIndex = 53;
             this.loggedInUserLabel.Text = "Gość";
             // 
+            // newCarPanel
+            // 
+            this.newCarPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.newCarPanel.Controls.Add(this.addNewCarButton);
+            this.newCarPanel.Controls.Add(this.label14);
+            this.newCarPanel.Controls.Add(this.label13);
+            this.newCarPanel.Controls.Add(this.addPriceTextBox);
+            this.newCarPanel.Controls.Add(this.addProdYearTextBox);
+            this.newCarPanel.Controls.Add(this.addLacquerTextBox);
+            this.newCarPanel.Controls.Add(this.label6);
+            this.newCarPanel.Controls.Add(this.addPowerSteeringCheckBox);
+            this.newCarPanel.Controls.Add(this.addAirConditionCheckBox);
+            this.newCarPanel.Controls.Add(this.addAutomaticTransmissionCheckBox);
+            this.newCarPanel.Controls.Add(this.label12);
+            this.newCarPanel.Controls.Add(this.addEngineTextBox);
+            this.newCarPanel.Controls.Add(this.addModelTextBox);
+            this.newCarPanel.Controls.Add(this.addBrandTextBox);
+            this.newCarPanel.Controls.Add(this.addMetalicLacquerCheckBox);
+            this.newCarPanel.Controls.Add(this.label7);
+            this.newCarPanel.Controls.Add(this.label8);
+            this.newCarPanel.Controls.Add(this.label9);
+            this.newCarPanel.Controls.Add(this.addEntryLabel);
+            this.newCarPanel.Location = new System.Drawing.Point(12, 353);
+            this.newCarPanel.Name = "newCarPanel";
+            this.newCarPanel.Size = new System.Drawing.Size(845, 159);
+            this.newCarPanel.TabIndex = 54;
+            // 
+            // addPowerSteeringCheckBox
+            // 
+            this.addPowerSteeringCheckBox.AutoSize = true;
+            this.addPowerSteeringCheckBox.Location = new System.Drawing.Point(22, 91);
+            this.addPowerSteeringCheckBox.Name = "addPowerSteeringCheckBox";
+            this.addPowerSteeringCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.addPowerSteeringCheckBox.TabIndex = 58;
+            this.addPowerSteeringCheckBox.Text = "Wspomaganie";
+            this.addPowerSteeringCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // addAirConditionCheckBox
+            // 
+            this.addAirConditionCheckBox.AutoSize = true;
+            this.addAirConditionCheckBox.Location = new System.Drawing.Point(22, 137);
+            this.addAirConditionCheckBox.Name = "addAirConditionCheckBox";
+            this.addAirConditionCheckBox.Size = new System.Drawing.Size(84, 17);
+            this.addAirConditionCheckBox.TabIndex = 57;
+            this.addAirConditionCheckBox.Text = "Klimatyzacja";
+            this.addAirConditionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // addAutomaticTransmissionCheckBox
+            // 
+            this.addAutomaticTransmissionCheckBox.AutoSize = true;
+            this.addAutomaticTransmissionCheckBox.Location = new System.Drawing.Point(22, 114);
+            this.addAutomaticTransmissionCheckBox.Name = "addAutomaticTransmissionCheckBox";
+            this.addAutomaticTransmissionCheckBox.Size = new System.Drawing.Size(134, 17);
+            this.addAutomaticTransmissionCheckBox.TabIndex = 56;
+            this.addAutomaticTransmissionCheckBox.Text = "Automatyczna skrzynia";
+            this.addAutomaticTransmissionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(19, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 13);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "Opcje dodatkowe:";
+            // 
+            // addEngineTextBox
+            // 
+            this.addEngineTextBox.Location = new System.Drawing.Point(276, 48);
+            this.addEngineTextBox.Name = "addEngineTextBox";
+            this.addEngineTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addEngineTextBox.TabIndex = 54;
+            // 
+            // addModelTextBox
+            // 
+            this.addModelTextBox.Location = new System.Drawing.Point(143, 48);
+            this.addModelTextBox.Name = "addModelTextBox";
+            this.addModelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addModelTextBox.TabIndex = 53;
+            // 
+            // addBrandTextBox
+            // 
+            this.addBrandTextBox.Location = new System.Drawing.Point(16, 48);
+            this.addBrandTextBox.Name = "addBrandTextBox";
+            this.addBrandTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addBrandTextBox.TabIndex = 52;
+            // 
+            // addMetalicLacquerCheckBox
+            // 
+            this.addMetalicLacquerCheckBox.AutoSize = true;
+            this.addMetalicLacquerCheckBox.Location = new System.Drawing.Point(400, 46);
+            this.addMetalicLacquerCheckBox.Name = "addMetalicLacquerCheckBox";
+            this.addMetalicLacquerCheckBox.Size = new System.Drawing.Size(91, 17);
+            this.addMetalicLacquerCheckBox.TabIndex = 51;
+            this.addMetalicLacquerCheckBox.Text = "Lakier metalik";
+            this.addMetalicLacquerCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(273, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Silnik:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(143, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "Model:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 13);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "Marka samochodu:";
+            // 
+            // addEntryLabel
+            // 
+            this.addEntryLabel.AutoSize = true;
+            this.addEntryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addEntryLabel.Location = new System.Drawing.Point(13, 8);
+            this.addEntryLabel.Name = "addEntryLabel";
+            this.addEntryLabel.Size = new System.Drawing.Size(138, 13);
+            this.addEntryLabel.TabIndex = 47;
+            this.addEntryLabel.Text = "Dodaj nowy samochód:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(732, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Cena";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(615, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 63;
+            this.label13.Text = "Rok produkcji";
+            // 
+            // addPriceTextBox
+            // 
+            this.addPriceTextBox.Location = new System.Drawing.Point(732, 47);
+            this.addPriceTextBox.Name = "addPriceTextBox";
+            this.addPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addPriceTextBox.TabIndex = 62;
+            // 
+            // addProdYearTextBox
+            // 
+            this.addProdYearTextBox.Location = new System.Drawing.Point(618, 48);
+            this.addProdYearTextBox.Name = "addProdYearTextBox";
+            this.addProdYearTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addProdYearTextBox.TabIndex = 61;
+            // 
+            // addLacquerTextBox
+            // 
+            this.addLacquerTextBox.Location = new System.Drawing.Point(497, 48);
+            this.addLacquerTextBox.Name = "addLacquerTextBox";
+            this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addLacquerTextBox.TabIndex = 60;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(497, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Kolor lakieru:";
+            // 
+            // addNewCarButton
+            // 
+            this.addNewCarButton.Location = new System.Drawing.Point(330, 126);
+            this.addNewCarButton.Name = "addNewCarButton";
+            this.addNewCarButton.Size = new System.Drawing.Size(75, 23);
+            this.addNewCarButton.TabIndex = 65;
+            this.addNewCarButton.Text = "Dodaj nowy samochod";
+            this.addNewCarButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 520);
+            this.ClientSize = new System.Drawing.Size(877, 544);
+            this.Controls.Add(this.newCarPanel);
             this.Controls.Add(this.loggedInUserLabel);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.showLoginButton);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.addPriceTextBox);
-            this.Controls.Add(this.addProdYearTextBox);
-            this.Controls.Add(this.addPowerSteeringCheckBox);
-            this.Controls.Add(this.addAirConditionCheckBox);
-            this.Controls.Add(this.addAutomaticTransmissionCheckBox);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.powerSteeringCheckBox);
             this.Controls.Add(this.airConditionCheckBox);
             this.Controls.Add(this.automaticTransmissionCheckBox);
@@ -646,17 +668,6 @@
             this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.addNewCarButton);
-            this.Controls.Add(this.addLacquerTextBox);
-            this.Controls.Add(this.addEngineTextBox);
-            this.Controls.Add(this.addModelTextBox);
-            this.Controls.Add(this.addBrandTextBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.addMetalicLacquerCheckBox);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.addEntryLabel);
             this.Controls.Add(this.carAvatarLabel);
             this.Controls.Add(this.carAvatarPB);
             this.Controls.Add(this.label5);
@@ -679,6 +690,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carAvatarPB)).EndInit();
+            this.newCarPanel.ResumeLayout(false);
+            this.newCarPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -698,20 +711,9 @@
         internal System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox carAvatarPB;
         private System.Windows.Forms.Label carAvatarLabel;
-        private System.Windows.Forms.Label addEntryLabel;
-        internal System.Windows.Forms.Label label6;
-        internal System.Windows.Forms.CheckBox addMetalicLacquerCheckBox;
-        internal System.Windows.Forms.Label label7;
-        internal System.Windows.Forms.Label label8;
-        internal System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox addBrandTextBox;
-        private System.Windows.Forms.TextBox addModelTextBox;
-        private System.Windows.Forms.TextBox addEngineTextBox;
-        private System.Windows.Forms.TextBox addLacquerTextBox;
         private System.Windows.Forms.BindingSource carsBindingSource;
         private car_dealer_dbDataSet carDealerDataSet;
         private car_dealer_dbDataSetTableAdapters.samochodyTableAdapter samochodyTableAdapter;
-        private System.Windows.Forms.Button addNewCarButton;
         private CompInfo.Computer computer1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -737,18 +739,30 @@
         private System.Windows.Forms.CheckBox automaticTransmissionCheckBox;
         private System.Windows.Forms.CheckBox airConditionCheckBox;
         private System.Windows.Forms.CheckBox powerSteeringCheckBox;
-        private System.Windows.Forms.CheckBox addPowerSteeringCheckBox;
-        private System.Windows.Forms.CheckBox addAirConditionCheckBox;
-        private System.Windows.Forms.CheckBox addAutomaticTransmissionCheckBox;
         private System.Windows.Forms.Button button1;
-        internal System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox addProdYearTextBox;
-        private System.Windows.Forms.TextBox addPriceTextBox;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button showLoginButton;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label loggedInUserLabel;
+        private System.Windows.Forms.Panel newCarPanel;
+        private System.Windows.Forms.Button addNewCarButton;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox addPriceTextBox;
+        private System.Windows.Forms.TextBox addProdYearTextBox;
+        private System.Windows.Forms.TextBox addLacquerTextBox;
+        internal System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox addPowerSteeringCheckBox;
+        private System.Windows.Forms.CheckBox addAirConditionCheckBox;
+        private System.Windows.Forms.CheckBox addAutomaticTransmissionCheckBox;
+        internal System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox addEngineTextBox;
+        private System.Windows.Forms.TextBox addModelTextBox;
+        private System.Windows.Forms.TextBox addBrandTextBox;
+        internal System.Windows.Forms.CheckBox addMetalicLacquerCheckBox;
+        internal System.Windows.Forms.Label label7;
+        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label addEntryLabel;
     }
 }
 

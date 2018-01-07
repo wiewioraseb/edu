@@ -61,7 +61,9 @@ namespace CarDealer
             {
                 pickDbComboBox.Items.Add(enumValue.ToString());
             }
-            
+
+            newCarPanel.Visible = false;
+
             carBrandComboBox.DropDown += new EventHandler(carBrandComboBox_DropDown);
             carBrandComboBox.SelectionChangeCommitted += new EventHandler(carBrandComboBox_SelectionChangeCommitted);
             carModelComboBox.DropDown += new EventHandler(carModelComboBox_DropDown);
@@ -281,8 +283,8 @@ namespace CarDealer
                 showLoginButton.Text = "Logowanie";
 
                 loggedInUserLabel.Text = "Gość";
-                //dodac label jaki uzytkownik
-                 //   ukryc te dolne kontrolki
+
+                newCarPanel.Visible = false;
 
             }
             else
@@ -301,7 +303,7 @@ namespace CarDealer
             {
                 showLoginButton.Text = "Wyloguj";
                 loggedInUserLabel.Text = "Administrator";
-
+                newCarPanel.Visible = true;
             }
 
         }
