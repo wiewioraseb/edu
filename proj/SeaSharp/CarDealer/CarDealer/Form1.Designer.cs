@@ -89,6 +89,7 @@
             this.addPriceTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.showLoginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -213,7 +214,7 @@
             // carAvatarLabel
             // 
             this.carAvatarLabel.AutoSize = true;
-            this.carAvatarLabel.Location = new System.Drawing.Point(646, 75);
+            this.carAvatarLabel.Location = new System.Drawing.Point(717, 94);
             this.carAvatarLabel.Name = "carAvatarLabel";
             this.carAvatarLabel.Size = new System.Drawing.Size(59, 13);
             this.carAvatarLabel.TabIndex = 17;
@@ -448,7 +449,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(744, 45);
+            this.searchButton.Location = new System.Drawing.Point(636, 45);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 37;
@@ -463,10 +464,11 @@
             // pickDbComboBox
             // 
             this.pickDbComboBox.FormattingEnabled = true;
-            this.pickDbComboBox.Location = new System.Drawing.Point(706, 12);
+            this.pickDbComboBox.Location = new System.Drawing.Point(655, 12);
             this.pickDbComboBox.Name = "pickDbComboBox";
             this.pickDbComboBox.Size = new System.Drawing.Size(121, 21);
             this.pickDbComboBox.TabIndex = 38;
+            this.pickDbComboBox.Text = "Komis";
             this.pickDbComboBox.SelectedIndexChanged += new System.EventHandler(this.pickDbComboBox_SelectedIndexChanged);
             // 
             // automaticTransmissionCheckBox
@@ -501,7 +503,7 @@
             // 
             // carAvatarPB
             // 
-            this.carAvatarPB.Location = new System.Drawing.Point(646, 94);
+            this.carAvatarPB.Location = new System.Drawing.Point(717, 113);
             this.carAvatarPB.Name = "carAvatarPB";
             this.carAvatarPB.Size = new System.Drawing.Size(100, 50);
             this.carAvatarPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -588,11 +590,22 @@
             this.label14.TabIndex = 50;
             this.label14.Text = "Cena";
             // 
+            // showLoginButton
+            // 
+            this.showLoginButton.Location = new System.Drawing.Point(782, 10);
+            this.showLoginButton.Name = "showLoginButton";
+            this.showLoginButton.Size = new System.Drawing.Size(75, 23);
+            this.showLoginButton.TabIndex = 51;
+            this.showLoginButton.Text = "Logowanie";
+            this.showLoginButton.UseVisualStyleBackColor = true;
+            this.showLoginButton.Click += new System.EventHandler(this.showLoginButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 520);
+            this.Controls.Add(this.showLoginButton);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.addPriceTextBox);
@@ -710,6 +723,7 @@
         private System.Windows.Forms.TextBox addPriceTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button showLoginButton;
     }
 }
 

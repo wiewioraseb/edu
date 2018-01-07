@@ -319,5 +319,10 @@ namespace CarDealer
             string carBrand = this.mainDataGridView.Rows[rowIndex].Cells[1].Value.ToString();
             this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand.ToLower());
         }
+
+        private void showLoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
