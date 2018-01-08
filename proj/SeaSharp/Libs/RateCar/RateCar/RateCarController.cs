@@ -16,6 +16,10 @@ namespace RateCar
         public RateCarController()
         {
             InitializeComponent();
+
+            ratedCarIdCB.Enabled = false;
+            ratedCarBrandCB.Enabled = false;
+            ratedCarModelCB.Enabled = false;
         }
 
         private void RateCarController_Load(object sender, EventArgs e)
