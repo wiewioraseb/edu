@@ -14,6 +14,8 @@ namespace RateCar
     public partial class RateCarController: UserControl
     {
         public event EventHandler RateComboBox_SelectedIndexChanged;
+        
+
         public RateCarController()
         {
             InitializeComponent();
@@ -28,19 +30,35 @@ namespace RateCar
             System.Diagnostics.Debug.WriteLine("RateCarController_Load");
 
             threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
-            // this.mainDataGridView.DataSource = this.cars1BindingSource;
 
+
+            Control parentControl = this.Parent;
+            parentControl.MouseEnter += new EventHandler(parent_OnFormLoad);
+
+        }
+
+        private bool firstTimeEvent = true;
+        private void parent_OnFormLoad(object sender, EventArgs e)
+        {
+            if (firstTimeEvent)
+            {
+                System.Diagnostics.Debug.WriteLine("Initilizing CHILD CONTROLLER!");
+
+                threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
+                ratedCarIdCB.DataSource = GetDataService.BindingSourceFromHost;
+                ratedCarIdCB.DisplayMember = "id";
+                ratedCarBrandCB.DataSource = GetDataService.BindingSourceFromHost;
+                ratedCarBrandCB.DisplayMember = "brand";
+                ratedCarModelCB.DataSource = GetDataService.BindingSourceFromHost;
+                ratedCarModelCB.DisplayMember = "model";
+
+                firstTimeEvent = false;
+            }
         }
 
         private void showBest3Button_Click(object sender, EventArgs e)
         {
-            threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
-            ratedCarIdCB.DataSource = GetDataService.BindingSourceFromHost;
-            ratedCarIdCB.DisplayMember = "id";
-            ratedCarBrandCB.DataSource = GetDataService.BindingSourceFromHost;
-            ratedCarBrandCB.DisplayMember = "brand";
-            ratedCarModelCB.DataSource = GetDataService.BindingSourceFromHost;
-            ratedCarModelCB.DisplayMember = "model";
+
         }
 
         private void giveRateComboBox_SelectedIndexChanged(object sender, EventArgs e)

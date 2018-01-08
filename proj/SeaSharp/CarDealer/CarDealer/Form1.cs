@@ -17,6 +17,8 @@ namespace CarDealer
 {
     public partial class Form1 : Form
     {
+        public event EventHandler OnParentLoad;
+
         public Form1()
         {
             DatabaseConnection.Set();
@@ -78,14 +80,16 @@ namespace CarDealer
             //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
             mainDataGridView.CellClick += new DataGridViewCellEventHandler(mainDataGridView_CellClick);
 
-            rateCarController.RateComboBox_SelectedIndexChanged += new EventHandler(RateComboBox_SelectedIndexChanged);
-
-
+            if (OnParentLoad != null)
+            {
+                // Event leci on mouse enter Form1
+                this.OnParentLoad(sender, e);
+            }
         }
 
+    
         protected void RateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //handle the event 
             System.Diagnostics.Debug.WriteLine("Rate " + ((ComboBox)sender).Text + "  from RateComboBox recieved in parent");
         }
 
