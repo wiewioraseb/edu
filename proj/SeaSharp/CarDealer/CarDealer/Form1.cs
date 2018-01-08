@@ -86,7 +86,7 @@ namespace CarDealer
         protected void RateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //handle the event 
-            System.Diagnostics.Debug.WriteLine("Rate from RateComboBox recieved in parent");
+            System.Diagnostics.Debug.WriteLine("Rate " + ((ComboBox)sender).Text + "  from RateComboBox recieved in parent");
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)

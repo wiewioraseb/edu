@@ -49,7 +49,7 @@ namespace RateCar
             
             if (this.RateComboBox_SelectedIndexChanged != null)
             {
-                this.RateComboBox_SelectedIndexChanged(this, e);
+                this.RateComboBox_SelectedIndexChanged(sender, e);
             }
         }
     }
