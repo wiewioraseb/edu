@@ -12,5 +12,8 @@ has_metallic_lacquer TINYINT(1) NOT NULL,
 has_power_steering TINYINT(1) NOT NULL,
 has_automatic_transmission TINYINT(1) NOT NULL,
 has_air_conditioning TINYINT(1) NOT NULL,
-price INT(7) NOT NULL
+price INT(7) NOT NULL,
+avg_rate float(4) DEFAULT 0 NOT NULL,
+no_rates int(4) DEFAULT 0 NOT NULL,
+sum_rates int(6) DEFAULT 0 NOT NULL
 );
