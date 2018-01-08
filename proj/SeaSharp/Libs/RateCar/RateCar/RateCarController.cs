@@ -31,7 +31,7 @@ namespace RateCar
 
             threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
 
-
+            // Event catched from partent when mouse enter
             Control parentControl = this.Parent;
             parentControl.MouseEnter += new EventHandler(parent_OnFormLoad);
 
@@ -56,9 +56,21 @@ namespace RateCar
             }
         }
 
+        private bool isBestAvgCars = true;
         private void showBest3Button_Click(object sender, EventArgs e)
         {
+            isBestAvgCars = false;
+            if (isBestAvgCars)
+            {
+                best3Label.Text = "Najwyzej oceniane:";
+                "SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3";
+            }
+            else
+            {
+                best3Label.Text = "Najczęściej oceniane:";
+                "SELECT * FROM cars ORDER BY no_rate DESC LIMIT 3";
 
+            }
         }
 
         private void giveRateComboBox_SelectedIndexChanged(object sender, EventArgs e)
