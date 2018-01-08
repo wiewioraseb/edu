@@ -151,6 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.showBest3Button);
             this.Controls.Add(this.threeRatedCarDataGridView);
             this.Controls.Add(this.label5);
@@ -163,7 +164,7 @@
             this.Controls.Add(this.ratedCarModelTB);
             this.Controls.Add(this.ratedCarBrandTB);
             this.Name = "RateCarController";
-            this.Size = new System.Drawing.Size(247, 217);
+            this.Size = new System.Drawing.Size(248, 215);
             ((System.ComponentModel.ISupportInitialize)(this.threeRatedCarDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
