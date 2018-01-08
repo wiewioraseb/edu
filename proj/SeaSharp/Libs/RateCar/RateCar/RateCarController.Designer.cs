@@ -35,6 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.giveRateComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.threeRatedCarDataGridView = new System.Windows.Forms.DataGridView();
+            this.showBest3Button = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.threeRatedCarDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ratedCarBrandTB
@@ -94,10 +99,62 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Oceń samochód";
             // 
+            // giveRateComboBox
+            // 
+            this.giveRateComboBox.FormattingEnabled = true;
+            this.giveRateComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.giveRateComboBox.Location = new System.Drawing.Point(96, 74);
+            this.giveRateComboBox.Name = "giveRateComboBox";
+            this.giveRateComboBox.Size = new System.Drawing.Size(41, 21);
+            this.giveRateComboBox.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(48, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Ocena:";
+            // 
+            // threeRatedCarDataGridView
+            // 
+            this.threeRatedCarDataGridView.AllowUserToAddRows = false;
+            this.threeRatedCarDataGridView.AllowUserToDeleteRows = false;
+            this.threeRatedCarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.threeRatedCarDataGridView.Location = new System.Drawing.Point(5, 112);
+            this.threeRatedCarDataGridView.Name = "threeRatedCarDataGridView";
+            this.threeRatedCarDataGridView.ReadOnly = true;
+            this.threeRatedCarDataGridView.Size = new System.Drawing.Size(239, 73);
+            this.threeRatedCarDataGridView.TabIndex = 9;
+            // 
+            // showBest3Button
+            // 
+            this.showBest3Button.Location = new System.Drawing.Point(66, 191);
+            this.showBest3Button.Name = "showBest3Button";
+            this.showBest3Button.Size = new System.Drawing.Size(153, 23);
+            this.showBest3Button.TabIndex = 10;
+            this.showBest3Button.Text = "Pokaz najczesciej oceniane";
+            this.showBest3Button.UseVisualStyleBackColor = true;
+            // 
             // RateCarController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.showBest3Button);
+            this.Controls.Add(this.threeRatedCarDataGridView);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.giveRateComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -107,6 +164,7 @@
             this.Controls.Add(this.ratedCarBrandTB);
             this.Name = "RateCarController";
             this.Size = new System.Drawing.Size(247, 217);
+            ((System.ComponentModel.ISupportInitialize)(this.threeRatedCarDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +179,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox giveRateComboBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView threeRatedCarDataGridView;
+        private System.Windows.Forms.Button showBest3Button;
     }
 }
