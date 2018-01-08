@@ -56,6 +56,8 @@ namespace CarDealer
             System.Diagnostics.Debug.WriteLine("Form1_Load");
 
             label10.Text = computer1.CPU.Architecture;
+            //label10.Text = RateCar.service.GetDataService.TESTINGX;
+
 
             foreach (CarDealerEnum enumValue in Enum.GetValues(typeof(CarDealerEnum)))
             {

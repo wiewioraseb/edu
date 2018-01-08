@@ -93,7 +93,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.addEntryLabel = new System.Windows.Forms.Label();
-            this.rateCarController1 = new RateCar.RateCarController();
+            this.rateCarController = new RateCar.RateCarController();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -651,20 +651,20 @@
             this.addEntryLabel.TabIndex = 47;
             this.addEntryLabel.Text = "Dodaj nowy samochód:";
             // 
-            // rateCarController1
+            // rateCarController
             // 
-            this.rateCarController1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rateCarController1.Location = new System.Drawing.Point(836, 113);
-            this.rateCarController1.Name = "rateCarController1";
-            this.rateCarController1.Size = new System.Drawing.Size(248, 215);
-            this.rateCarController1.TabIndex = 55;
+            this.rateCarController.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rateCarController.Location = new System.Drawing.Point(836, 113);
+            this.rateCarController.Name = "rateCarController";
+            this.rateCarController.Size = new System.Drawing.Size(248, 215);
+            this.rateCarController.TabIndex = 55;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 544);
-            this.Controls.Add(this.rateCarController1);
+            this.Controls.Add(this.rateCarController);
             this.Controls.Add(this.newCarPanel);
             this.Controls.Add(this.loggedInUserLabel);
             this.Controls.Add(this.label15);
@@ -773,7 +773,7 @@
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label addEntryLabel;
-        private RateCar.RateCarController rateCarController1;
+        private RateCar.RateCarController rateCarController;
     }
 }
 
