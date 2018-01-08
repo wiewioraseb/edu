@@ -57,7 +57,7 @@ namespace CarDealer
 
             label10.Text = computer1.CPU.Architecture;
             //label10.Text = RateCar.service.GetDataService.TESTINGX;
-
+            RateCar.service.GetDataService.BindingSourceFromHost = this.cars1BindingSource;
 
             foreach (CarDealerEnum enumValue in Enum.GetValues(typeof(CarDealerEnum)))
             {
