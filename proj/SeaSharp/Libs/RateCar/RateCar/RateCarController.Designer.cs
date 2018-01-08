@@ -140,7 +140,7 @@
             // ratedCarIdCB
             // 
             this.ratedCarIdCB.FormattingEnabled = true;
-            this.ratedCarIdCB.Location = new System.Drawing.Point(3, 45);
+            this.ratedCarIdCB.Location = new System.Drawing.Point(3, 46);
             this.ratedCarIdCB.Name = "ratedCarIdCB";
             this.ratedCarIdCB.Size = new System.Drawing.Size(39, 21);
             this.ratedCarIdCB.TabIndex = 12;
