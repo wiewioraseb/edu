@@ -97,6 +97,7 @@
             this.giveRateComboBox.Name = "giveRateComboBox";
             this.giveRateComboBox.Size = new System.Drawing.Size(41, 21);
             this.giveRateComboBox.TabIndex = 7;
+            this.giveRateComboBox.SelectedIndexChanged += new System.EventHandler(this.giveRateComboBox_SelectedIndexChanged);
             // 
             // label5
             // 

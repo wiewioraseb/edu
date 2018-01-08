@@ -77,6 +77,16 @@ namespace CarDealer
             lacquerColorComboBox.DropDown += new EventHandler(lacquerColorComboBox_DropDown);
             //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
             mainDataGridView.CellClick += new DataGridViewCellEventHandler(mainDataGridView_CellClick);
+
+            rateCarController.RateComboBox_SelectedIndexChanged += new EventHandler(RateComboBox_SelectedIndexChanged);
+
+
+        }
+
+        protected void RateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //handle the event 
+            System.Diagnostics.Debug.WriteLine("Rate from RateComboBox recieved in parent");
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)

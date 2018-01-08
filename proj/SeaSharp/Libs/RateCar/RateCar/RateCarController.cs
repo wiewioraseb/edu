@@ -13,6 +13,7 @@ namespace RateCar
 {
     public partial class RateCarController: UserControl
     {
+        public event EventHandler RateComboBox_SelectedIndexChanged;
         public RateCarController()
         {
             InitializeComponent();
@@ -42,6 +43,14 @@ namespace RateCar
             ratedCarModelCB.DisplayMember = "model";
         }
 
-
+        private void giveRateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("New rate " + ((ComboBox)sender).Text + " has been given for car ID: " + ratedCarIdCB.Text);
+            
+            if (this.RateComboBox_SelectedIndexChanged != null)
+            {
+                this.RateComboBox_SelectedIndexChanged(this, e);
+            }
+        }
     }
 }
