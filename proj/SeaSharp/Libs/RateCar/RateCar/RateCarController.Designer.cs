@@ -39,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.threeRatedCarDataGridView = new System.Windows.Forms.DataGridView();
             this.showBest3Button = new System.Windows.Forms.Button();
+            this.best3Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.threeRatedCarDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,15 +133,15 @@
             this.threeRatedCarDataGridView.AllowUserToAddRows = false;
             this.threeRatedCarDataGridView.AllowUserToDeleteRows = false;
             this.threeRatedCarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.threeRatedCarDataGridView.Location = new System.Drawing.Point(5, 112);
+            this.threeRatedCarDataGridView.Location = new System.Drawing.Point(3, 119);
             this.threeRatedCarDataGridView.Name = "threeRatedCarDataGridView";
             this.threeRatedCarDataGridView.ReadOnly = true;
-            this.threeRatedCarDataGridView.Size = new System.Drawing.Size(239, 73);
+            this.threeRatedCarDataGridView.Size = new System.Drawing.Size(239, 138);
             this.threeRatedCarDataGridView.TabIndex = 9;
             // 
             // showBest3Button
             // 
-            this.showBest3Button.Location = new System.Drawing.Point(66, 191);
+            this.showBest3Button.Location = new System.Drawing.Point(92, 263);
             this.showBest3Button.Name = "showBest3Button";
             this.showBest3Button.Size = new System.Drawing.Size(153, 23);
             this.showBest3Button.TabIndex = 10;
@@ -148,11 +149,21 @@
             this.showBest3Button.UseVisualStyleBackColor = true;
             this.showBest3Button.Click += new System.EventHandler(this.showBest3Button_Click);
             // 
+            // best3Label
+            // 
+            this.best3Label.AutoSize = true;
+            this.best3Label.Location = new System.Drawing.Point(4, 100);
+            this.best3Label.Name = "best3Label";
+            this.best3Label.Size = new System.Drawing.Size(99, 13);
+            this.best3Label.TabIndex = 11;
+            this.best3Label.Text = "Najwyzej oceniane:";
+            // 
             // RateCarController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.best3Label);
             this.Controls.Add(this.showBest3Button);
             this.Controls.Add(this.threeRatedCarDataGridView);
             this.Controls.Add(this.label5);
@@ -165,7 +176,8 @@
             this.Controls.Add(this.ratedCarModelTB);
             this.Controls.Add(this.ratedCarBrandTB);
             this.Name = "RateCarController";
-            this.Size = new System.Drawing.Size(248, 215);
+            this.Size = new System.Drawing.Size(248, 289);
+            this.Load += new System.EventHandler(this.RateCarController_Load);
             ((System.ComponentModel.ISupportInitialize)(this.threeRatedCarDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,5 +197,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView threeRatedCarDataGridView;
         private System.Windows.Forms.Button showBest3Button;
+        private System.Windows.Forms.Label best3Label;
     }
 }

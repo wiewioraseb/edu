@@ -654,9 +654,9 @@
             // rateCarController
             // 
             this.rateCarController.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rateCarController.Location = new System.Drawing.Point(836, 113);
+            this.rateCarController.Location = new System.Drawing.Point(834, 62);
             this.rateCarController.Name = "rateCarController";
-            this.rateCarController.Size = new System.Drawing.Size(248, 215);
+            this.rateCarController.Size = new System.Drawing.Size(248, 290);
             this.rateCarController.TabIndex = 55;
             // 
             // Form1
