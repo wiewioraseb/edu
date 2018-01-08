@@ -30,7 +30,7 @@ namespace RateCar
         private void showBest3Button_Click(object sender, EventArgs e)
         {
             threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
-            ratedCarIdTB.DataBindings = GetDataService.BindingSourceFromHost;
+            ratedCarIdTB. = GetDataService.BindingSourceFromHost;
         }
 
 

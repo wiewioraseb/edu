@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ratedCarBrandTB = new System.Windows.Forms.TextBox();
-            this.ratedCarModelTB = new System.Windows.Forms.TextBox();
-            this.ratedCarIdTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,29 +37,11 @@
             this.threeRatedCarDataGridView = new System.Windows.Forms.DataGridView();
             this.showBest3Button = new System.Windows.Forms.Button();
             this.best3Label = new System.Windows.Forms.Label();
+            this.ratedCarIdCB = new System.Windows.Forms.ComboBox();
+            this.ratedCarBrandCB = new System.Windows.Forms.ComboBox();
+            this.ratedCarModelCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.threeRatedCarDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ratedCarBrandTB
-            // 
-            this.ratedCarBrandTB.Location = new System.Drawing.Point(37, 48);
-            this.ratedCarBrandTB.Name = "ratedCarBrandTB";
-            this.ratedCarBrandTB.Size = new System.Drawing.Size(100, 20);
-            this.ratedCarBrandTB.TabIndex = 0;
-            // 
-            // ratedCarModelTB
-            // 
-            this.ratedCarModelTB.Location = new System.Drawing.Point(144, 48);
-            this.ratedCarModelTB.Name = "ratedCarModelTB";
-            this.ratedCarModelTB.Size = new System.Drawing.Size(100, 20);
-            this.ratedCarModelTB.TabIndex = 1;
-            // 
-            // ratedCarIdTB
-            // 
-            this.ratedCarIdTB.Location = new System.Drawing.Point(5, 48);
-            this.ratedCarIdTB.Name = "ratedCarIdTB";
-            this.ratedCarIdTB.Size = new System.Drawing.Size(26, 20);
-            this.ratedCarIdTB.TabIndex = 2;
             // 
             // label1
             // 
@@ -158,11 +137,38 @@
             this.best3Label.TabIndex = 11;
             this.best3Label.Text = "Najwyzej oceniane:";
             // 
+            // ratedCarIdCB
+            // 
+            this.ratedCarIdCB.FormattingEnabled = true;
+            this.ratedCarIdCB.Location = new System.Drawing.Point(3, 45);
+            this.ratedCarIdCB.Name = "ratedCarIdCB";
+            this.ratedCarIdCB.Size = new System.Drawing.Size(39, 21);
+            this.ratedCarIdCB.TabIndex = 12;
+            // 
+            // ratedCarBrandCB
+            // 
+            this.ratedCarBrandCB.FormattingEnabled = true;
+            this.ratedCarBrandCB.Location = new System.Drawing.Point(49, 46);
+            this.ratedCarBrandCB.Name = "ratedCarBrandCB";
+            this.ratedCarBrandCB.Size = new System.Drawing.Size(88, 21);
+            this.ratedCarBrandCB.TabIndex = 13;
+            // 
+            // ratedCarModelCB
+            // 
+            this.ratedCarModelCB.FormattingEnabled = true;
+            this.ratedCarModelCB.Location = new System.Drawing.Point(144, 46);
+            this.ratedCarModelCB.Name = "ratedCarModelCB";
+            this.ratedCarModelCB.Size = new System.Drawing.Size(98, 21);
+            this.ratedCarModelCB.TabIndex = 14;
+            // 
             // RateCarController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.ratedCarModelCB);
+            this.Controls.Add(this.ratedCarBrandCB);
+            this.Controls.Add(this.ratedCarIdCB);
             this.Controls.Add(this.best3Label);
             this.Controls.Add(this.showBest3Button);
             this.Controls.Add(this.threeRatedCarDataGridView);
@@ -172,9 +178,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ratedCarIdTB);
-            this.Controls.Add(this.ratedCarModelTB);
-            this.Controls.Add(this.ratedCarBrandTB);
             this.Name = "RateCarController";
             this.Size = new System.Drawing.Size(248, 289);
             this.Load += new System.EventHandler(this.RateCarController_Load);
@@ -185,10 +188,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox ratedCarBrandTB;
-        private System.Windows.Forms.TextBox ratedCarModelTB;
-        private System.Windows.Forms.TextBox ratedCarIdTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -198,5 +197,8 @@
         private System.Windows.Forms.DataGridView threeRatedCarDataGridView;
         private System.Windows.Forms.Button showBest3Button;
         private System.Windows.Forms.Label best3Label;
+        private System.Windows.Forms.ComboBox ratedCarIdCB;
+        private System.Windows.Forms.ComboBox ratedCarBrandCB;
+        private System.Windows.Forms.ComboBox ratedCarModelCB;
     }
 }
