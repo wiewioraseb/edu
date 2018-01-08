@@ -74,6 +74,13 @@
             this.label15 = new System.Windows.Forms.Label();
             this.loggedInUserLabel = new System.Windows.Forms.Label();
             this.newCarPanel = new System.Windows.Forms.Panel();
+            this.addNewCarButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.addPriceTextBox = new System.Windows.Forms.TextBox();
+            this.addProdYearTextBox = new System.Windows.Forms.TextBox();
+            this.addLacquerTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.addPowerSteeringCheckBox = new System.Windows.Forms.CheckBox();
             this.addAirConditionCheckBox = new System.Windows.Forms.CheckBox();
             this.addAutomaticTransmissionCheckBox = new System.Windows.Forms.CheckBox();
@@ -86,13 +93,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.addEntryLabel = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.addPriceTextBox = new System.Windows.Forms.TextBox();
-            this.addProdYearTextBox = new System.Windows.Forms.TextBox();
-            this.addLacquerTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.addNewCarButton = new System.Windows.Forms.Button();
+            this.rateCarController1 = new RateCar.RateCarController();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -486,6 +487,63 @@
             this.newCarPanel.Size = new System.Drawing.Size(845, 159);
             this.newCarPanel.TabIndex = 54;
             // 
+            // addNewCarButton
+            // 
+            this.addNewCarButton.Location = new System.Drawing.Point(330, 126);
+            this.addNewCarButton.Name = "addNewCarButton";
+            this.addNewCarButton.Size = new System.Drawing.Size(75, 23);
+            this.addNewCarButton.TabIndex = 65;
+            this.addNewCarButton.Text = "Dodaj nowy samochod";
+            this.addNewCarButton.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(732, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Cena";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(615, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 63;
+            this.label13.Text = "Rok produkcji";
+            // 
+            // addPriceTextBox
+            // 
+            this.addPriceTextBox.Location = new System.Drawing.Point(732, 47);
+            this.addPriceTextBox.Name = "addPriceTextBox";
+            this.addPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addPriceTextBox.TabIndex = 62;
+            // 
+            // addProdYearTextBox
+            // 
+            this.addProdYearTextBox.Location = new System.Drawing.Point(618, 48);
+            this.addProdYearTextBox.Name = "addProdYearTextBox";
+            this.addProdYearTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addProdYearTextBox.TabIndex = 61;
+            // 
+            // addLacquerTextBox
+            // 
+            this.addLacquerTextBox.Location = new System.Drawing.Point(497, 48);
+            this.addLacquerTextBox.Name = "addLacquerTextBox";
+            this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addLacquerTextBox.TabIndex = 60;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(497, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Kolor lakieru:";
+            // 
             // addPowerSteeringCheckBox
             // 
             this.addPowerSteeringCheckBox.AutoSize = true;
@@ -593,68 +651,20 @@
             this.addEntryLabel.TabIndex = 47;
             this.addEntryLabel.Text = "Dodaj nowy samochód:";
             // 
-            // label14
+            // rateCarController1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(732, 30);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 64;
-            this.label14.Text = "Cena";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(615, 31);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
-            this.label13.TabIndex = 63;
-            this.label13.Text = "Rok produkcji";
-            // 
-            // addPriceTextBox
-            // 
-            this.addPriceTextBox.Location = new System.Drawing.Point(732, 47);
-            this.addPriceTextBox.Name = "addPriceTextBox";
-            this.addPriceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addPriceTextBox.TabIndex = 62;
-            // 
-            // addProdYearTextBox
-            // 
-            this.addProdYearTextBox.Location = new System.Drawing.Point(618, 48);
-            this.addProdYearTextBox.Name = "addProdYearTextBox";
-            this.addProdYearTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addProdYearTextBox.TabIndex = 61;
-            // 
-            // addLacquerTextBox
-            // 
-            this.addLacquerTextBox.Location = new System.Drawing.Point(497, 48);
-            this.addLacquerTextBox.Name = "addLacquerTextBox";
-            this.addLacquerTextBox.Size = new System.Drawing.Size(100, 20);
-            this.addLacquerTextBox.TabIndex = 60;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(497, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "Kolor lakieru:";
-            // 
-            // addNewCarButton
-            // 
-            this.addNewCarButton.Location = new System.Drawing.Point(330, 126);
-            this.addNewCarButton.Name = "addNewCarButton";
-            this.addNewCarButton.Size = new System.Drawing.Size(75, 23);
-            this.addNewCarButton.TabIndex = 65;
-            this.addNewCarButton.Text = "Dodaj nowy samochod";
-            this.addNewCarButton.UseVisualStyleBackColor = true;
+            this.rateCarController1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rateCarController1.Location = new System.Drawing.Point(836, 113);
+            this.rateCarController1.Name = "rateCarController1";
+            this.rateCarController1.Size = new System.Drawing.Size(248, 215);
+            this.rateCarController1.TabIndex = 55;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 544);
+            this.ClientSize = new System.Drawing.Size(1094, 544);
+            this.Controls.Add(this.rateCarController1);
             this.Controls.Add(this.newCarPanel);
             this.Controls.Add(this.loggedInUserLabel);
             this.Controls.Add(this.label15);
@@ -763,6 +773,7 @@
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label addEntryLabel;
+        private RateCar.RateCarController rateCarController1;
     }
 }
 

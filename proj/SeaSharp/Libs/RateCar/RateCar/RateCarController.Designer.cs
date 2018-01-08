@@ -146,6 +146,7 @@
             this.showBest3Button.TabIndex = 10;
             this.showBest3Button.Text = "Pokaz najczesciej oceniane";
             this.showBest3Button.UseVisualStyleBackColor = true;
+            this.showBest3Button.Click += new System.EventHandler(this.showBest3Button_Click);
             // 
             // RateCarController
             // 

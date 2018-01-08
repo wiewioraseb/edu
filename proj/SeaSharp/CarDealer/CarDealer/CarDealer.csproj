@@ -204,5 +204,11 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\RateCar\RateCar\RateCar.csproj">
+      <Project>{f07d2cdc-1842-413a-8dc7-7f386e3c36b4}</Project>
+      <Name>RateCar</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
