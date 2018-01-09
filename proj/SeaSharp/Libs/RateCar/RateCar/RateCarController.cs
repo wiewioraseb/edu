@@ -44,7 +44,10 @@ namespace RateCar
         {
             System.Diagnostics.Debug.WriteLine("Event in RateCarController on Parent Form load.");
 
-            threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
+            //threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
+            threeRatedCarDataGridView.DataSource = GetDataService.DataTableFromHost;
+
+
             ratedCarIdCB.DataSource = GetDataService.BindingSourceFromHost;
             ratedCarIdCB.DisplayMember = "id";
             ratedCarBrandCB.DataSource = GetDataService.BindingSourceFromHost;

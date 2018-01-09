@@ -60,6 +60,8 @@ namespace CarDealer
             label10.Text = computer1.CPU.Architecture;
             //label10.Text = RateCar.service.GetDataService.TESTINGX;
             RateCar.service.GetDataService.BindingSourceFromHost = this.cars1BindingSource;
+            RateCar.service.GetDataService.DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
+
 
             // this.mainDataGridView.DataSource = this.cars1BindingSource;
 
