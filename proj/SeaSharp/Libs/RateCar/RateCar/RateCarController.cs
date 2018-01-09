@@ -35,6 +35,22 @@ namespace RateCar
             Control parentControl = this.Parent;
             parentControl.MouseEnter += new EventHandler(parent_OnFormLoad);
 
+            //ParentForm parentForm = this.ParentForm.Load;
+
+            this.ParentForm.Load += new EventHandler(parentForm_Load);
+        }
+
+        private void parentForm_Load(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Event in RateCarController on Parent Form load.");
+
+            threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
+            ratedCarIdCB.DataSource = GetDataService.BindingSourceFromHost;
+            ratedCarIdCB.DisplayMember = "id";
+            ratedCarBrandCB.DataSource = GetDataService.BindingSourceFromHost;
+            ratedCarBrandCB.DisplayMember = "brand";
+            ratedCarModelCB.DataSource = GetDataService.BindingSourceFromHost;
+            ratedCarModelCB.DisplayMember = "model";
         }
 
         private bool firstTimeEvent = true;
@@ -44,14 +60,6 @@ namespace RateCar
             {
                 System.Diagnostics.Debug.WriteLine("Initilizing CHILD CONTROLLER!");
 
-                threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
-                ratedCarIdCB.DataSource = GetDataService.BindingSourceFromHost;
-                ratedCarIdCB.DisplayMember = "id";
-                ratedCarBrandCB.DataSource = GetDataService.BindingSourceFromHost;
-                ratedCarBrandCB.DisplayMember = "brand";
-                ratedCarModelCB.DataSource = GetDataService.BindingSourceFromHost;
-                ratedCarModelCB.DisplayMember = "model";
-
                 firstTimeEvent = false;
             }
         }
@@ -59,17 +67,19 @@ namespace RateCar
         private bool isBestAvgCars = true;
         private void showBest3Button_Click(object sender, EventArgs e)
         {
-            isBestAvgCars = false;
+            isBestAvgCars = !isBestAvgCars;
             if (isBestAvgCars)
             {
                 best3Label.Text = "Najwyzej oceniane:";
-                "SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3";
+                showBest3Button.Text = "Pokaz najczesciej oceniane";
+                //"SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3";
             }
             else
             {
                 best3Label.Text = "Najczęściej oceniane:";
-                "SELECT * FROM cars ORDER BY no_rate DESC LIMIT 3";
-
+                showBest3Button.Text = "Pokaz najwyzej oceniane";
+                //"SELECT * FROM cars ORDER BY no_rate DESC LIMIT 3";
+                //isBestAvgCars = true;
             }
         }
 
