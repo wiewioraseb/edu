@@ -60,7 +60,8 @@ namespace CarDealer
             label10.Text = computer1.CPU.Architecture;
             //label10.Text = RateCar.service.GetDataService.TESTINGX;
             RateCar.service.GetDataService.BindingSourceFromHost = this.cars1BindingSource;
-            RateCar.service.GetDataService.DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
+            RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY no_rates DESC LIMIT 3");
+            RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
 
 
             // this.mainDataGridView.DataSource = this.cars1BindingSource;
@@ -81,6 +82,8 @@ namespace CarDealer
             lacquerColorComboBox.DropDown += new EventHandler(lacquerColorComboBox_DropDown);
             //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
             mainDataGridView.CellClick += new DataGridViewCellEventHandler(mainDataGridView_CellClick);
+
+            rateCarController.SelectedIndexChangedInRateCB += new EventHandler(RateComboBox_SelectedIndexChanged);
 
             if (OnParentLoad != null)
             {
@@ -281,6 +284,9 @@ namespace CarDealer
             }
 
             this.cars1BindingSource.DataSource = CarsData.GetCars();
+
+            RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY no_rates DESC LIMIT 3");
+            RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
         }
 
         private void mainDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

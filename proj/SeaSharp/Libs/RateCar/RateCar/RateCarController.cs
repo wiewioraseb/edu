@@ -13,7 +13,7 @@ namespace RateCar
 {
     public partial class RateCarController: UserControl
     {
-        public event EventHandler RateComboBox_SelectedIndexChanged;
+        public event EventHandler SelectedIndexChangedInRateCB;
         
 
         public RateCarController()
@@ -44,16 +44,14 @@ namespace RateCar
         {
             System.Diagnostics.Debug.WriteLine("Event in RateCarController on Parent Form load.");
 
-            //threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
-            threeRatedCarDataGridView.DataSource = GetDataService.DataTableFromHost;
-
-
             ratedCarIdCB.DataSource = GetDataService.BindingSourceFromHost;
             ratedCarIdCB.DisplayMember = "id";
             ratedCarBrandCB.DataSource = GetDataService.BindingSourceFromHost;
             ratedCarBrandCB.DisplayMember = "brand";
             ratedCarModelCB.DataSource = GetDataService.BindingSourceFromHost;
             ratedCarModelCB.DisplayMember = "model";
+
+            threeRatedCarDataGridView.DataSource = GetDataService.Best3DataTableFromHost;
         }
 
         private bool firstTimeEvent = true;
@@ -75,12 +73,15 @@ namespace RateCar
             {
                 best3Label.Text = "Najwyzej oceniane:";
                 showBest3Button.Text = "Pokaz najczesciej oceniane";
+                threeRatedCarDataGridView.DataSource = GetDataService.Best3DataTableFromHost;
                 //"SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3";
             }
             else
             {
                 best3Label.Text = "Najczęściej oceniane:";
                 showBest3Button.Text = "Pokaz najwyzej oceniane";
+                threeRatedCarDataGridView.DataSource = GetDataService.Most3DataTableFromHost;
+
                 //"SELECT * FROM cars ORDER BY no_rate DESC LIMIT 3";
                 //isBestAvgCars = true;
             }
@@ -90,9 +91,9 @@ namespace RateCar
         {
             System.Diagnostics.Debug.WriteLine("New rate " + ((ComboBox)sender).Text + " has been given for car ID: " + ratedCarIdCB.Text);
             
-            if (this.RateComboBox_SelectedIndexChanged != null)
+            if (this.SelectedIndexChangedInRateCB != null)
             {
-                this.RateComboBox_SelectedIndexChanged(sender, e);
+                this.SelectedIndexChangedInRateCB(sender, e);
             }
         }
     }
