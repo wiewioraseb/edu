@@ -8,16 +8,17 @@ namespace RateCar.events
 {
     public class RateEventArgs : EventArgs
     {
-        private readonly string test;
+        private readonly int id;
+        private readonly string model;
 
-        public RateEventArgs(string test)
+        public RateEventArgs(int id, string model)
         {
-            this.test = test;
+            this.id = id;
+            this.model = model;
         }
 
-        public string Test
-        {
-            get { return this.test; }
-        }
+        public int Id{ get { return this.id; }}
+        public string Model { get { return this.model; }}
+
     }
 }

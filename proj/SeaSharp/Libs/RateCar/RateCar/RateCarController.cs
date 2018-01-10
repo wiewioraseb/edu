@@ -99,11 +99,9 @@ namespace RateCar
         {
             System.Diagnostics.Debug.WriteLine("New rate " + ((ComboBox)sender).Text + " has been given for car ID: " + ratedCarIdCB.Text);
 
-            //new RateEventArgs("EGESZEGE");
-
             if (this.SelectedIndexChangedInRateCB != null)
             {
-                this.SelectedIndexChangedInRateCB(sender, new RateEventArgs("EGESZEGE"));
+                this.SelectedIndexChangedInRateCB(sender, new RateEventArgs(Int32.Parse(ratedCarIdCB.Text), ratedCarModelCB.Text));
             }
         }
     }
