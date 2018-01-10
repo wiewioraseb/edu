@@ -27,24 +27,6 @@ namespace CarDealer
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             InitializeComponent();
-
-            //DataFactory x = new DataFactory();
-
-            //Generic connection to db:
-            // https://msdn.microsoft.com/en-us/library/ms971568.aspx
-
-            //Some example:
-            //https://www.codeproject.com/Articles/6217/An-ADO-NET-multi-database-multi-tier-solution
-
-            // Examples from 'best practises'
-            // https://msdn.microsoft.com/en-us/library/ms971481.aspx
-
-            // multiple databses with ado.net
-            // https://www.codeproject.com/Questions/503675/DataSetpluswithplusdifferentplusDatabasesplusorplu
-            // https://forums.asp.net/p/949947/1155679.aspx?Re+Using+two+different+databases+with+a+dataset+
-
-            // Hack tableAdapter to execute dynamic select queries:
-            // https://www.codeproject.com/Articles/17324/Extending-TableAdapters-for-Dynamic-SQL
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,13 +40,10 @@ namespace CarDealer
             System.Diagnostics.Debug.WriteLine("Form1_Load");
 
             label10.Text = computer1.CPU.Architecture;
-            //label10.Text = RateCar.service.GetDataService.TESTINGX;
+
             RateCar.service.GetDataService.BindingSourceFromHost = this.cars1BindingSource;
             RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY no_rates DESC LIMIT 3");
             RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
-
-
-            // this.mainDataGridView.DataSource = this.cars1BindingSource;
 
             foreach (CarDealerEnum enumValue in Enum.GetValues(typeof(CarDealerEnum)))
             {
@@ -91,7 +70,6 @@ namespace CarDealer
                 this.OnParentLoad(sender, e);
             }
         }
-
     
         protected void RateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -283,10 +261,10 @@ namespace CarDealer
                     break;
             }
 
-            this.cars1BindingSource.DataSource = CarsData.GetCars();
-
             RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY no_rates DESC LIMIT 3");
             RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
+
+            this.cars1BindingSource.DataSource = CarsData.GetCars();
         }
 
         private void mainDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

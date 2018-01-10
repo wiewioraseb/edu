@@ -35,8 +35,6 @@ namespace RateCar
             Control parentControl = this.Parent;
             parentControl.MouseEnter += new EventHandler(parent_OnFormLoad);
 
-            //ParentForm parentForm = this.ParentForm.Load;
-
             this.ParentForm.Load += new EventHandler(parentForm_Load);
         }
 
@@ -50,6 +48,17 @@ namespace RateCar
             ratedCarBrandCB.DisplayMember = "brand";
             ratedCarModelCB.DataSource = GetDataService.BindingSourceFromHost;
             ratedCarModelCB.DisplayMember = "model";
+
+            threeRatedCarDataGridView.DataSource = GetDataService.Best3DataTableFromHost;
+
+            GetDataService.BindingSourceFromHost.DataSourceChanged += new EventHandler(bindingSourceFromHost_DSChanged);
+        }
+
+        private void bindingSourceFromHost_DSChanged(object sender, EventArgs e)
+        {
+            isBestAvgCars = true;
+            best3Label.Text = "Najwyzej oceniane:";
+            showBest3Button.Text = "Pokaz najczesciej oceniane";
 
             threeRatedCarDataGridView.DataSource = GetDataService.Best3DataTableFromHost;
         }
