@@ -84,5 +84,22 @@ namespace CarDealer
                 dataAdapter.Fill(dataTable);
                 CarsData.DbConnection.Close();
         }
+
+        public static void UpdateCar(string sqlCommand)
+        {
+            CarsData.DbConnection.Open();
+
+            IDbCommand cmd =
+           DataFactory.CreateCommand(sqlCommand);
+
+            DbDataAdapter dataAdapter =
+               DataFactory.CreateAdapter(cmd);
+
+            DataTable dataTable = new DataTable();
+
+            dataAdapter.Fill(dataTable);
+            CarsData.DbConnection.Close();
+        }
+
     }
 }
