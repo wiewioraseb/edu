@@ -15,7 +15,6 @@ namespace RateCar
     {
         public event EventHandler SelectedIndexChangedInRateCB;
         
-
         public RateCarController()
         {
             InitializeComponent();
@@ -29,11 +28,11 @@ namespace RateCar
         {
             System.Diagnostics.Debug.WriteLine("RateCarController_Load");
 
-            threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
+            //threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
 
             // Event catched from partent when mouse enter
             Control parentControl = this.Parent;
-            parentControl.MouseEnter += new EventHandler(parent_OnFormLoad);
+            parentControl.MouseEnter += new EventHandler(parent_MouseEnter);
 
             this.ParentForm.Load += new EventHandler(parentForm_Load);
         }
@@ -64,7 +63,7 @@ namespace RateCar
         }
 
         private bool firstTimeEvent = true;
-        private void parent_OnFormLoad(object sender, EventArgs e)
+        private void parent_MouseEnter(object sender, EventArgs e)
         {
             if (firstTimeEvent)
             {
@@ -90,9 +89,7 @@ namespace RateCar
                 best3Label.Text = "Najczęściej oceniane:";
                 showBest3Button.Text = "Pokaz najwyzej oceniane";
                 threeRatedCarDataGridView.DataSource = GetDataService.Most3DataTableFromHost;
-
                 //"SELECT * FROM cars ORDER BY no_rate DESC LIMIT 3";
-                //isBestAvgCars = true;
             }
         }
 

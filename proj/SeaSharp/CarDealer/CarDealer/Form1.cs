@@ -42,8 +42,10 @@ namespace CarDealer
             label10.Text = computer1.CPU.Architecture;
 
             RateCar.service.GetDataService.BindingSourceFromHost = this.cars1BindingSource;
-            RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY no_rates DESC LIMIT 3");
-            RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
+            RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars
+                ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY no_rates DESC LIMIT 3");
+            RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars
+                ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY avg_rate DESC LIMIT 3");
 
             foreach (CarDealerEnum enumValue in Enum.GetValues(typeof(CarDealerEnum)))
             {
@@ -133,10 +135,8 @@ namespace CarDealer
 
         private void addNewCarButton_Click(object sender, EventArgs e)
         {
-
             try
             {
-               
                 string carBrand = !addBrandTextBox.Text.Equals("") ?
                     "'"+(addBrandTextBox.Text)+"'" : "NULL";
                 string carModel = !addModelTextBox.Text.Equals("") ?
@@ -157,7 +157,6 @@ namespace CarDealer
                     "1" : "0";
                 string price = !addPriceTextBox.Text.Equals("") ?
                     "'"+(addPriceTextBox.Text)+"'" : "NULL";
-
 
                 string insertQuery = "INSERT INTO cars " +
          "(brand, model, car_engine, production_year, lacquer_color, has_metallic_lacquer, has_power_steering, has_automatic_transmission, has_air_conditioning, price) " +
@@ -184,7 +183,6 @@ namespace CarDealer
                 MessageBox.Show("NIE udalo sie dodac nowego wpisu! \n" + ex.Message);
                 System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu: " + ex.StackTrace);
                 System.Diagnostics.Debug.WriteLine("NIE udalo sie dodac nowego wpisu MESSAGE: " + ex.Message);
-
             }
         }
 
@@ -261,8 +259,13 @@ namespace CarDealer
                     break;
             }
 
-            RateCar.service.GetDataService.Most3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY no_rates DESC LIMIT 3");
-            RateCar.service.GetDataService.Best3DataTableFromHost = CarsData.GetCars("SELECT * FROM cars ORDER BY avg_rate DESC LIMIT 3");
+            RateCar.service.GetDataService.Most3DataTableFromHost = 
+                CarsData.GetCars
+                    ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY no_rates DESC LIMIT 3");
+
+            RateCar.service.GetDataService.Best3DataTableFromHost = 
+                CarsData.GetCars
+                    ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY avg_rate DESC LIMIT 3");
 
             this.cars1BindingSource.DataSource = CarsData.GetCars();
         }
