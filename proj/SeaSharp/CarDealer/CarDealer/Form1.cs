@@ -1,5 +1,6 @@
 ﻿using CarDealer.DataAccessLayer;
 using CarDealer.security;
+using RateCar.events;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static RateCar.RateCarController;
 
 namespace CarDealer
 {
@@ -64,7 +65,7 @@ namespace CarDealer
             //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
             mainDataGridView.CellClick += new DataGridViewCellEventHandler(mainDataGridView_CellClick);
 
-            rateCarController.SelectedIndexChangedInRateCB += new EventHandler(RateComboBox_SelectedIndexChanged);
+            rateCarController.SelectedIndexChangedInRateCB += new RateEventHandler(RateComboBox_SelectedIndexChanged);
 
             if (OnParentLoad != null)
             {
@@ -73,9 +74,9 @@ namespace CarDealer
             }
         }
     
-        protected void RateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        protected void RateComboBox_SelectedIndexChanged(object sender, RateEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Rate " + ((ComboBox)sender).Text + "  from RateComboBox recieved in parent");
+            System.Diagnostics.Debug.WriteLine("Rate " + ((ComboBox)sender).Text + "  from RateComboBox recieved in parent, TEST: " + e.Test);
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)

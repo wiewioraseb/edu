@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RateCar.service;
+using RateCar.events;
 
 namespace RateCar
 {
     public partial class RateCarController: UserControl
     {
-        public event EventHandler SelectedIndexChangedInRateCB;
-        
+        public delegate void RateEventHandler(object sender, RateEventArgs args);
+        public event RateEventHandler SelectedIndexChangedInRateCB;
+
         public RateCarController()
         {
             InitializeComponent();
@@ -96,10 +98,12 @@ namespace RateCar
         private void giveRateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("New rate " + ((ComboBox)sender).Text + " has been given for car ID: " + ratedCarIdCB.Text);
-            
+
+            //new RateEventArgs("EGESZEGE");
+
             if (this.SelectedIndexChangedInRateCB != null)
             {
-                this.SelectedIndexChangedInRateCB(sender, e);
+                this.SelectedIndexChangedInRateCB(sender, new RateEventArgs("EGESZEGE"));
             }
         }
     }
