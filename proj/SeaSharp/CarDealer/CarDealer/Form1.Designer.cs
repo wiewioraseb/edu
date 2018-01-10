@@ -94,6 +94,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.addEntryLabel = new System.Windows.Forms.Label();
             this.rateCarController = new RateCar.RateCarController();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lastRatedCarLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cars1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealer1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -659,11 +661,31 @@
             this.rateCarController.Size = new System.Drawing.Size(248, 290);
             this.rateCarController.TabIndex = 55;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(913, 408);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(150, 13);
+            this.label16.TabIndex = 56;
+            this.label16.Text = "Ostatnio oceniany samochód: ";
+            // 
+            // lastRatedCarLabel
+            // 
+            this.lastRatedCarLabel.AutoSize = true;
+            this.lastRatedCarLabel.Location = new System.Drawing.Point(916, 428);
+            this.lastRatedCarLabel.Name = "lastRatedCarLabel";
+            this.lastRatedCarLabel.Size = new System.Drawing.Size(28, 13);
+            this.lastRatedCarLabel.TabIndex = 57;
+            this.lastRatedCarLabel.Text = "brak";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 544);
+            this.Controls.Add(this.lastRatedCarLabel);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.rateCarController);
             this.Controls.Add(this.newCarPanel);
             this.Controls.Add(this.loggedInUserLabel);
@@ -774,6 +796,8 @@
         internal System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label addEntryLabel;
         private RateCar.RateCarController rateCarController;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lastRatedCarLabel;
     }
 }
 

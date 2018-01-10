@@ -77,22 +77,17 @@ namespace CarDealer
         protected void RateComboBox_SelectedIndexChanged(object sender, RateEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("Rate " + ((ComboBox)sender).Text + "  from RateComboBox recieved in parent,  id: " + e.Id + " model: " + e.Model);
-            string sum_rates = CarsData.GetCars("SELECT sum_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
-            string no_rates = CarsData.GetCars("SELECT no_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
-
-            System.Diagnostics.Debug.WriteLine("sum_rates1: " + sum_rates + " no_rates1: " + no_rates);
 
             CarsData.UpdateCar("UPDATE cars SET sum_rates=sum_rates+" + ((ComboBox)sender).Text + " WHERE id=" + e.Id);
             CarsData.UpdateCar("UPDATE cars SET no_rates=no_rates+1 WHERE id=" + e.Id);
 
-            string sum_rates2 = CarsData.GetCars("SELECT sum_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
-            string no_rates2 = CarsData.GetCars("SELECT no_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
+            string sum_rates = CarsData.GetCars("SELECT sum_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
+            string no_rates = CarsData.GetCars("SELECT no_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
 
-            System.Diagnostics.Debug.WriteLine("sum_rates2: " + sum_rates2 + " no_rates2: " + no_rates2);
+            System.Diagnostics.Debug.WriteLine("sum_rates: " + sum_rates + " no_rates: " + no_rates);
 
-            double avg_rate = (double)Int32.Parse(sum_rates2) / Int32.Parse(no_rates2);
+            double avg_rate = (double)Int32.Parse(sum_rates) / Int32.Parse(no_rates);
 
-            System.Diagnostics.Debug.WriteLine("avg_rate: " + avg_rate);
             CarsData.UpdateCar("UPDATE cars SET avg_rate=" + avg_rate + " WHERE id=" + e.Id);
 
             RateCar.service.GetDataService.Most3DataTableFromHost =
@@ -105,7 +100,7 @@ namespace CarDealer
 
             this.cars1BindingSource.DataSource = CarsData.GetCars();
 
-            //CarsData.UpdateCar("UPDATE cars SET  = value, column2 = value2 WHERE some_column = some_value ");
+            lastRatedCarLabel.Text = e.Brand + " " + e.Model + " oceniono na: " + ((ComboBox)sender).Text;
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)

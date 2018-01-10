@@ -30,8 +30,6 @@ namespace RateCar
         {
             System.Diagnostics.Debug.WriteLine("RateCarController_Load");
 
-            //threeRatedCarDataGridView.DataSource = GetDataService.BindingSourceFromHost;
-
             // Event catched from partent when mouse enter
             Control parentControl = this.Parent;
             parentControl.MouseEnter += new EventHandler(parent_MouseEnter);
@@ -101,7 +99,8 @@ namespace RateCar
 
             if (this.SelectedIndexChangedInRateCB != null)
             {
-                this.SelectedIndexChangedInRateCB(sender, new RateEventArgs(Int32.Parse(ratedCarIdCB.Text), ratedCarModelCB.Text));
+                this.SelectedIndexChangedInRateCB
+                    (sender, new RateEventArgs(Int32.Parse(ratedCarIdCB.Text), ratedCarBrandCB.Text, ratedCarModelCB.Text));
             }
         }
     }
