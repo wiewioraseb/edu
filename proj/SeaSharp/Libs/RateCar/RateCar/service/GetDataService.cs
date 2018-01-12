@@ -21,12 +21,12 @@ namespace RateCar.service
         {
             get
             {
-                Console.WriteLine("Getting binding source from host.");
+                //Console.WriteLine("Getting binding source from host.");
                 return bindingSourceFromHost;
             }
             set
             {
-                Console.WriteLine("Setting binding source in rate car.");
+                //Console.WriteLine("Setting binding source in rate car.");
                 bindingSourceFromHost = value;
             }
         }
@@ -35,12 +35,12 @@ namespace RateCar.service
         {
             get
             {
-                Console.WriteLine("Getting best3 dataTable from host.");
+                //Console.WriteLine("Getting best3 dataTable from host.");
                 return best3DataTableFromHost;
             }
             set
             {
-                Console.WriteLine("Setting best3 dataTable in rate car.");
+                //Console.WriteLine("Setting best3 dataTable in rate car.");
                 best3DataTableFromHost = value;
             }
         }
@@ -49,12 +49,12 @@ namespace RateCar.service
         {
             get
             {
-                Console.WriteLine("Getting most3 dataTable from host.");
+                //Console.WriteLine("Getting most3 dataTable from host.");
                 return most3DataTableFromHost;
             }
             set
             {
-                Console.WriteLine("Setting most3 dataTable in rate car.");
+                //Console.WriteLine("Setting most3 dataTable in rate car.");
                 most3DataTableFromHost = value;
             }
         }

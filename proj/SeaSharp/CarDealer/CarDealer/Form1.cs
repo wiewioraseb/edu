@@ -259,7 +259,6 @@ namespace CarDealer
                 System.Diagnostics.Debug.WriteLine("sqlQuery : " + sqlQuery);
                 
                 this.cars1BindingSource.DataSource = CarsData.GetCars(sqlQuery);
-                
             }
             catch (SqlException ex)
             {
@@ -317,7 +316,6 @@ namespace CarDealer
                 loggedInUserLabel.Text = "Gość";
 
                 newCarPanel.Visible = false;
-
             }
             else
             {
@@ -337,7 +335,6 @@ namespace CarDealer
                 loggedInUserLabel.Text = "Administrator";
                 newCarPanel.Visible = true;
             }
-
         }
     }
 }
