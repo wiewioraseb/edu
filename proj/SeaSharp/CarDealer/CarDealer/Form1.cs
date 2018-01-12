@@ -64,6 +64,7 @@ namespace CarDealer
             lacquerColorComboBox.DropDown += new EventHandler(lacquerColorComboBox_DropDown);
             //lacquerColorComboBox.SelectionChangeCommitted += new EventHandler(lacquerColorComboBox_SelectionChangeCommitted);
             mainDataGridView.CellClick += new DataGridViewCellEventHandler(mainDataGridView_CellClick);
+            addNewCarButton.Click += new EventHandler(addNewCarButton_Click);
 
             rateCarController.SelectedIndexChangedInRateCB += new RateEventHandler(RateComboBox_SelectedIndexChanged);
 
@@ -78,29 +79,36 @@ namespace CarDealer
         {
             System.Diagnostics.Debug.WriteLine("Rate " + ((ComboBox)sender).Text + "  from RateComboBox recieved in parent,  id: " + e.Id + " model: " + e.Model);
 
-            CarsData.UpdateCar("UPDATE cars SET sum_rates=sum_rates+" + ((ComboBox)sender).Text + " WHERE id=" + e.Id);
-            CarsData.UpdateCar("UPDATE cars SET no_rates=no_rates+1 WHERE id=" + e.Id);
+            try
+            {
+                CarsData.UpdateCar("UPDATE cars SET sum_rates=sum_rates+" + ((ComboBox)sender).Text + " WHERE id=" + e.Id);
+                CarsData.UpdateCar("UPDATE cars SET no_rates=no_rates+1 WHERE id=" + e.Id);
 
-            string sum_rates = CarsData.GetCars("SELECT sum_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
-            string no_rates = CarsData.GetCars("SELECT no_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
+                string sum_rates = CarsData.GetCars("SELECT sum_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
+                string no_rates = CarsData.GetCars("SELECT no_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
 
-            System.Diagnostics.Debug.WriteLine("sum_rates: " + sum_rates + " no_rates: " + no_rates);
+                System.Diagnostics.Debug.WriteLine("sum_rates: " + sum_rates + " no_rates: " + no_rates);
 
-            double avg_rate = (double)Int32.Parse(sum_rates) / Int32.Parse(no_rates);
+                double avg_rate = (double)Int32.Parse(sum_rates) / Int32.Parse(no_rates);
 
-            CarsData.UpdateCar("UPDATE cars SET avg_rate=" + avg_rate + " WHERE id=" + e.Id);
+                CarsData.UpdateCar("UPDATE cars SET avg_rate=" + avg_rate + " WHERE id=" + e.Id);
 
-            RateCar.service.GetDataService.Most3DataTableFromHost =
-                CarsData.GetCars
-                    ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY no_rates DESC LIMIT 3");
+                RateCar.service.GetDataService.Most3DataTableFromHost =
+                    CarsData.GetCars
+                        ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY no_rates DESC LIMIT 3");
 
-            RateCar.service.GetDataService.Best3DataTableFromHost =
-                CarsData.GetCars
-                    ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY avg_rate DESC LIMIT 3");
+                RateCar.service.GetDataService.Best3DataTableFromHost =
+                    CarsData.GetCars
+                        ("SELECT id, brand, model, car_engine, production_year, avg_rate, no_rates FROM cars ORDER BY avg_rate DESC LIMIT 3");
 
-            this.cars1BindingSource.DataSource = CarsData.GetCars();
+                this.cars1BindingSource.DataSource = CarsData.GetCars();
 
-            lastRatedCarLabel.Text = e.Brand + " " + e.Model + " oceniono na: " + ((ComboBox)sender).Text;
+                lastRatedCarLabel.Text = e.Brand + " " + e.Model + " oceniono na: " + ((ComboBox)sender).Text;
+            }
+            catch (SqlException ex)
+            {
+                System.Diagnostics.Debug.WriteLine("SQL EXCEPTION when rating car : " + ex.Message + "\n" + ex.StackTrace);
+            }
         }
 
         private void carBrandComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -162,6 +170,8 @@ namespace CarDealer
         {
             try
             {
+                System.Diagnostics.Debug.WriteLine("Attempt to add new car...");
+
                 string carBrand = !addBrandTextBox.Text.Equals("") ?
                     "'"+(addBrandTextBox.Text)+"'" : "NULL";
                 string carModel = !addModelTextBox.Text.Equals("") ?
@@ -218,20 +228,21 @@ namespace CarDealer
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
                 string sqlQuery = "SELECT * FROM cars";
 
                 List<string> queryElements = new List<string>();
-                queryElements.Add( (carBrandComboBox.SelectedIndex > -1) ? 
+                queryElements.Add( (carBrandComboBox.SelectedIndex > -1 && !("".Equals(carBrandComboBox.Text))) ? 
                     ("brand='" + carBrandComboBox.Text+"'") : null);
-                queryElements.Add((carModelComboBox.SelectedIndex > -1) ?
+                queryElements.Add((carModelComboBox.SelectedIndex > -1 && !("".Equals(carModelComboBox.Text))) ?
                     ("model='" + carModelComboBox.Text + "'") : null);
-                queryElements.Add((engineComboBox.SelectedIndex > -1) ?
+                queryElements.Add((engineComboBox.SelectedIndex > -1 && !("".Equals(engineComboBox.Text))) ?
                     ("car_engine='" + engineComboBox.Text + "'") : null);
                 queryElements.Add(isMetallicLacquerCheckBox.Checked ?
                     ("has_metallic_lacquer='" + 1 + "'") : null);
-                queryElements.Add((lacquerColorComboBox.SelectedIndex > -1) ?
+                queryElements.Add((lacquerColorComboBox.SelectedIndex > -1 && !("".Equals(lacquerColorComboBox.Text))) ?
                     ("lacquer_color='" + lacquerColorComboBox.Text + "'") : null);
                 queryElements.Add(automaticTransmissionCheckBox.Checked ?
                     ("has_automatic_transmission='" + 1 + "'") : null);
@@ -256,13 +267,13 @@ namespace CarDealer
                     }
                 }
                 
-                System.Diagnostics.Debug.WriteLine("sqlQuery : " + sqlQuery);
+                System.Diagnostics.Debug.WriteLine("Search sqlQuery : " + sqlQuery);
                 
                 this.cars1BindingSource.DataSource = CarsData.GetCars(sqlQuery);
             }
             catch (SqlException ex)
             {
-                System.Diagnostics.Debug.WriteLine("SQL EXCEPTION! : " + ex.Message + "\n" + ex.StackTrace);
+                System.Diagnostics.Debug.WriteLine("SQL EXCEPTION when searching! : " + ex.Message + "\n" + ex.StackTrace);
             }
         }
 
