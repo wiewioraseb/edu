@@ -87,9 +87,10 @@ namespace CarDealer
                 string sum_rates = CarsData.GetCars("SELECT sum_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
                 string no_rates = CarsData.GetCars("SELECT no_rates FROM cars WHERE id=" + e.Id).Rows[0].ItemArray[0].ToString();
 
-                System.Diagnostics.Debug.WriteLine("sum_rates: " + sum_rates + " no_rates: " + no_rates);
+                float float_avg_rate = (float)Int32.Parse(sum_rates) / Int32.Parse(no_rates);
+                string avg_rate = float_avg_rate.ToString().Replace(',', '.');
+                System.Diagnostics.Debug.WriteLine("avg_rate: " + avg_rate + " sum_rates: " + sum_rates + " no_rates: " + no_rates);
 
-                double avg_rate = (double)Int32.Parse(sum_rates) / Int32.Parse(no_rates);
 
                 CarsData.UpdateCar("UPDATE cars SET avg_rate=" + avg_rate + " WHERE id=" + e.Id);
 
