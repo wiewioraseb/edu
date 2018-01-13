@@ -313,8 +313,11 @@ namespace CarDealer
         private void mainDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            string carBrand = this.mainDataGridView.Rows[rowIndex].Cells[1].Value.ToString();
-            this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand.ToLower());
+            if (rowIndex > 0)
+            {
+                string carBrand = this.mainDataGridView.Rows[rowIndex].Cells[1].Value.ToString();
+                this.carAvatarPB.Image = (Bitmap)global::CarDealer.Properties.Resources.ResourceManager.GetObject(carBrand.ToLower());
+            }
         }
 
         private void showLoginButton_Click(object sender, EventArgs e)
