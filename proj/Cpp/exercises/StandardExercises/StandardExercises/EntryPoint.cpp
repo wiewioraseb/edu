@@ -1,5 +1,5 @@
 #include <iostream>
-//#include "zadanie1.h"
+#include "ex1-1.h"
 //#include "zadanie2.h"
 //#include "zadanie3.h"
 //#include "zadanie4.h"
@@ -15,14 +15,14 @@ void main(void) {
 	//cin >> x;
 
 	cout << "Podaj nr zadania: ";
-	int numerZadania = 5;
-	cout << endl << "Wybrano zadanie: " + numerZadania << endl;
+	int numerZadania = 1;
+	cout << endl << "Wybrano zadanie: " << numerZadania << endl;
 
 	switch (numerZadania) {
 	case 1: {
-		cout << "TEST: " + numerZadania;
+		cout << "TEST: " << numerZadania;
 
-		//zadanie1();
+		ex1_1();
 		break;
 	}
 	//case 2: {
