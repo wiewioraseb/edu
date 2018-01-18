@@ -1,9 +1,6 @@
 #include <iostream>
 #include "ex1-1.h"
-//#include "zadanie2.h"
-//#include "zadanie3.h"
-//#include "zadanie4.h"
-//#include "zadanie5.h"
+#include "ex2-9.h"
 
 
 using namespace std;
@@ -15,7 +12,7 @@ void main(void) {
 	//cin >> x;
 
 	cout << "Podaj nr zadania: ";
-	int numerZadania = 1;
+	int numerZadania = 2;
 	cout << endl << "Wybrano zadanie: " << numerZadania << endl;
 
 	switch (numerZadania) {
@@ -25,10 +22,10 @@ void main(void) {
 		ex1_1();
 		break;
 	}
-	//case 2: {
-	//	zadanie2();
-	//	break;
-	//}
+	case 2: {
+		ex2_9();
+		break;
+	}
 	//case 3: {
 	//	zadanie3();
 	//	break;
