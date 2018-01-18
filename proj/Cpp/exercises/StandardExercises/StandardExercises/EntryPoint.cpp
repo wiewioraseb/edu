@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// https://github.com/hexen2k/cppio
+
 void main(void) {
 
 	//int x;
@@ -27,7 +29,7 @@ void main(void) {
 		break;
 	}
 	//case 3: {
-	//	zadanie3();
+	//	ex2_4();
 	//	break;
 	//}
 	//case 4: {
