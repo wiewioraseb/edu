@@ -32,6 +32,9 @@ void ex2_6() {
 		//cout << "wiz[" << i << "]->imie= " << wiz[i]->imie <<endl;
 		//cout << "wiz[" << i << "]->imie= " << (*(*(wiz + i))).imie << endl;
 		cout << "wartosc x= " << (*(*(wiz + i))).imie << endl;
+
+		delete wiz[i];
+		//delete[] *(wiz + i);
 	}
 
 	delete[] wiz;
