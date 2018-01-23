@@ -8,7 +8,7 @@ struct Wiz {
 public:
 	string pierwszasStringProperty;
 	int drugaIntProperty;
-	char trzebaIntTabProperty[];
+	char trzebaIntTabProperty[10];
 };
 
 void ex2_4() {
@@ -25,8 +25,8 @@ void ex2_4() {
 	cin >> wiz->trzebaIntTabProperty;
 
 	cout << endl << "pierwszasStringProperty:" << wiz->pierwszasStringProperty 
-		<< "drugaIntProperty: " << wiz->drugaIntProperty 
-		<< "trzebaIntTabProperty: " << wiz->trzebaIntTabProperty;
+		<< endl << "drugaIntProperty: " << wiz->drugaIntProperty
+		<< endl << "trzebaIntTabProperty: " << wiz->trzebaIntTabProperty;
 
 	cout << endl << "PRZED DELETEM" << endl;
 
