@@ -10,7 +10,7 @@ using namespace std;
 
 // https://github.com/hexen2k/cppio
 
-void main(void) {
+int main(void) {
 
 	//int x;
 	//cout << "START" << endl;
@@ -45,4 +45,6 @@ void main(void) {
 
 
 	system("pause");
+
+	return 0;
 }
