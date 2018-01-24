@@ -2,6 +2,7 @@
 #include "ex1-1.h"
 #include "ex2-4.h"
 #include "ex2-6.h"
+#include "ex2-7.h"
 #include "ex2-9.h"
 
 
@@ -16,7 +17,7 @@ void main(void) {
 	//cin >> x;
 
 	cout << "Podaj nr zadania: ";
-	int numerZadania = 4;
+	int numerZadania = 5;
 	cout << endl << "Wybrano zadanie: " << numerZadania << endl;
 
 	switch (numerZadania) {
@@ -36,15 +37,11 @@ void main(void) {
 		ex2_6();
 		break;
 	}
-	//case 5: {
-	//	zadanie5();
-	//	break;
-	//}
+	case 5: {
+		ex2_7();
+		break;
 	}
-
-
-	//cout << "wskaznikZadania1:" << wskaznikZadania1  << endl;
-	//cout << "*wskaznikZadania1:" << *wskaznikZadania1  << endl;
+	}
 
 
 	system("pause");
