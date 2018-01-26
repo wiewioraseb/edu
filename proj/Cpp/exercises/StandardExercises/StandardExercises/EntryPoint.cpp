@@ -6,6 +6,7 @@
 #include "ex2-8.h"
 #include "ex2-9.h"
 #include "ex3-1.h"
+#include "ex3-2.h"
 
 
 using namespace std;
@@ -19,7 +20,7 @@ int main(void) {
 	//cin >> x;
 
 	cout << "Podaj nr zadania: ";
-	int numerZadania = 7;
+	int numerZadania = 8;
 	cout << endl << "Wybrano zadanie: " << numerZadania << endl;
 
 	switch (numerZadania) {
@@ -49,6 +50,10 @@ int main(void) {
 	}
 	case 7: {
 		ex3_1();
+		break;
+	}
+	case 8: {
+		ex3_2();
 		break;
 	}
 }
