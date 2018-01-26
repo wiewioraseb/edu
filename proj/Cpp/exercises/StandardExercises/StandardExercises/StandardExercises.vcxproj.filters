@@ -36,6 +36,9 @@
     <ClCompile Include="ex2-8.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="ex3-1.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ex1-1.h">
@@ -54,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="ex2-8.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ex3-1.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
