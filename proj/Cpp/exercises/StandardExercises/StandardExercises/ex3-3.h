@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <string>
 void ex3_3();
 
@@ -14,21 +15,25 @@ public:
 		energia = e;
 	}
 	Gryzon(Gryzon& k) {
-		cout << "KONSTRUTOR kopiujacy" << endl;
+		std::cout << "KONSTRUTOR kopiujacy" << std::endl;
 	}
 	virtual ~Gryzon() {
-		cout << "DESTRUKTOR Gryzon" << endl;
+		std::cout << "DESTRUKTOR Gryzon" << std::endl;
 	}
-	void sound() {
-		cout << "Sound Gryzon" << endl;
+	virtual void sound() {
+		std::cout << "Sound Gryzon" << std::endl;
 	}
-
+	virtual std::string getTyp() {
+		return typ;
+	}
 private:
 	std::string imie;
 	int energia;
 	std::string typ = "gryzon";
 
 };
+
+class Gryzon;
 
 class Mysz : public Gryzon
 {
@@ -42,13 +47,16 @@ public:
 		energia = e;
 	}
 	Mysz(Mysz& k) {
-		cout << "KONSTRUTOR kopiujacy" << endl;
+		std::cout << "KONSTRUTOR kopiujacy" << std::endl;
 	}
 	~Mysz() {
-		cout << "DESTRUKTOR mysz" << endl;
+		std::cout << "DESTRUKTOR mysz" << std::endl;
 	}
 	void sound() {
-		cout << "Sound Mysz" << endl;
+		std::cout << "Sound Mysz" << std::endl;
+	}
+	std::string getTyp() {
+		return typ;
 	}
 
 private:
@@ -71,13 +79,16 @@ public:
 		energia = e;
 	}
 	Szczur(Szczur& k) {
-		cout << "KONSTRUTOR kopiujacy" << endl;
+		std::cout << "KONSTRUTOR kopiujacy" << std::endl;
 	}
 	~Szczur() {
-		cout << "DESTRUKTOR Szczur" << endl;
+		std::cout << "DESTRUKTOR Szczur" << std::endl;
 	}
 	void sound() {
-		cout << "Sound Szczur" << endl;
+		std::cout << "Sound Szczur" << std::endl;
+	}
+	std::string getTyp() {
+		return typ;
 	}
 
 private:
