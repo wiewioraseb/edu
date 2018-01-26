@@ -13,6 +13,16 @@ public:
 	Kot(Kot&);
 	~Kot();
 	void Spaceruj(int);
+	void Spaceruj(double);
+	/*
+	Kot operator+(const Kot& k) {
+		Kot kot;
+		kot.energia = this->energia + k.energia;
+
+		return kot;
+	}
+	*/
+	friend std::ostream & operator<<(std::ostream & out, Kot & os);
 private:
 	std::string imie;
 	int energia;
