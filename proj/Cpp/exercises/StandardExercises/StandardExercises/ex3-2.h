@@ -18,10 +18,12 @@ public:
 	const Kot operator ++(int)
 	{
 		//Kot temp(*this);
-		Kot temp;
+		Kot temp = (*this);
+		//Kot temp;
 		energia = energia + 1;
 		return temp;
 	}
+	
 	/*
 	Kot operator+(const Kot& k) {
 		Kot kot;
@@ -30,6 +32,7 @@ public:
 		return kot;
 	}
 	*/
+	
 	friend std::ostream & operator<<(std::ostream & out, Kot & os);
 private:
 	std::string imie;
