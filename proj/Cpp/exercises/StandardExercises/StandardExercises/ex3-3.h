@@ -9,6 +9,8 @@ public:
 	Gryzon() {
 		imie = "Jakis_gryzon";
 		energia = 88;
+		std::cout << "KONSTRUTOR " << imie << std::endl;
+
 	}
 	Gryzon(std::string i, int e) {
 		imie = i;
@@ -41,6 +43,8 @@ public:
 	Mysz() {
 		imie = "Mickey";
 		energia = 88;
+		std::cout << "KONSTRUTOR " << imie << std::endl;
+
 	}
 	Mysz(std::string i, int e) {
 		imie = i;
@@ -70,9 +74,11 @@ private:
 class Szczur : public Gryzon
 {
 public:
-	Szczur() {
+	Szczur(): Gryzon() {
 		imie = "Szczurek";
 		energia = 88;
+		std::cout << "KONSTRUTOR " << imie << std::endl;
+
 	}
 	Szczur(std::string i, int e) {
 		imie = i;
