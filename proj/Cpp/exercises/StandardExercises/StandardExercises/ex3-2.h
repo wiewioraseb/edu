@@ -14,6 +14,14 @@ public:
 	~Kot();
 	void Spaceruj(int);
 	void Spaceruj(double);
+	
+	const Kot operator ++(int)
+	{
+		//Kot temp(*this);
+		Kot temp;
+		energia = energia + 1;
+		return temp;
+	}
 	/*
 	Kot operator+(const Kot& k) {
 		Kot kot;

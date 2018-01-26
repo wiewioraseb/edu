@@ -10,6 +10,7 @@ void ex3_2() {
 
 	Kot *burek = new Kot();
 	burek->Spaceruj(45);
+	//*burek++;
 	burek->Spaceruj(41.0);
 
 	Kot szczurek("Mruczek", 37);
@@ -20,11 +21,14 @@ void ex3_2() {
 	cout << endl << "Wypisze fielomna? " << filemon << endl;
 	cout << endl << "Wypisze bonifacy? " << *burek<< endl;
 
-	/*
-	Kot pankracy("Pankracy", 99);
-	pankracy = filemon + szczurek;
+	
+	//Kot pankracy("Pankracy", 99);
+	Kot pankracy;
+	//pankracy = filemon + szczurek;
 	pankracy.Spaceruj(77);
-	*/
+	pankracy++;
+	pankracy.Spaceruj(77);
+
 
 	cout << endl << "KONIEC" << endl;
 }
@@ -33,6 +37,11 @@ Kot::Kot(string i, int e) {
 	imie = i;
 	energia = e;
 }
+
+Kot::Kot(Kot& k) {
+	cout << endl << "Konstruktor kopiuj¹cy." << endl;
+}
+
 Kot::~Kot() {
 	cout << endl << "DESTRUKTOR" << endl;
 }
