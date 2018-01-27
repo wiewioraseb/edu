@@ -18,7 +18,10 @@
     <ClCompile Include="Start.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="zadanie1.cpp">
+    <ClCompile Include="zadanie4.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zadanie5.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

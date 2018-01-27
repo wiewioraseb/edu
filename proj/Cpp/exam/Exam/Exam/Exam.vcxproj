@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,7 +117,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Start.cpp" />
-    <ClCompile Include="zadanie1.cpp" />
+    <ClCompile Include="zadanie4.cpp" />
+    <ClCompile Include="zadanie5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="zadanie1.h" />

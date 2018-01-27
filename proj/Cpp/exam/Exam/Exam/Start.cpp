@@ -3,6 +3,7 @@
 
 using namespace std;
 
+/*
 int main(void) {
 	cout << "Podaj nr zadania: ";
 	int numerZadania = 1;
@@ -22,4 +23,4 @@ int main(void) {
 	system("pause");
 
 	return 0;
-}
+}*/
