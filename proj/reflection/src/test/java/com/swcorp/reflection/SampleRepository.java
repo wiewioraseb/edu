@@ -1,9 +1,9 @@
-package com.devskiller.reflection;
+package com.swcorp.reflection;
 
 import java.util.List;
 
 /**
- * @author Devskiller
+ * @author swcorp
  */
 abstract class SampleRepository extends AbstractRepository {
 

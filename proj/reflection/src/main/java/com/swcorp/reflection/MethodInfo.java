@@ -1,10 +1,10 @@
-package com.devskiller.reflection;
+package com.swcorp.reflection;
 
 import java.util.List;
 import java.util.Objects;
 
 /**
- * @author Devskiller
+ * @author swcorp
  */
 public class MethodInfo {
 

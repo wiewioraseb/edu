@@ -1,10 +1,10 @@
-package com.devskiller.reflection;
+package com.swcorp.reflection;
 
 import java.lang.reflect.*;
 import java.util.*;
 
 /**
- * @author Devskiller
+ * @author swcorp
  */
 public class MethodListHelper {
 

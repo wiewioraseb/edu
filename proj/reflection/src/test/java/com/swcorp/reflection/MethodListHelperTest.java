@@ -1,4 +1,4 @@
-package com.devskiller.reflection;
+package com.swcorp.reflection;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @author Devskiller
+ * @author swcorp
  */
 public class MethodListHelperTest {
 

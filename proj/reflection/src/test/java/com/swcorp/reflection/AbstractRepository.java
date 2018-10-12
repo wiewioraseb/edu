@@ -1,7 +1,7 @@
-package com.devskiller.reflection;
+package com.swcorp.reflection;
 
 /**
- * @author Devskiller
+ * @author swcorp
  */
 abstract class AbstractRepository {
 	abstract Long countAll();
