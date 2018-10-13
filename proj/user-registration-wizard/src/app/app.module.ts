@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TopBarModule } from './top-bar/top-bar.module';
+import { SideMenuModule } from './side-menu/side-menu.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { TopBarModule } from './top-bar/top-bar.module';
   ],
   imports: [
     BrowserModule,
-    TopBarModule
+    TopBarModule,
+    SideMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
