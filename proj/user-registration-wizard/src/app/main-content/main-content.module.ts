@@ -6,6 +6,9 @@ import { MainContentComponent } from './main-content.component';
   imports: [
     CommonModule
   ],
-  declarations: [MainContentComponent]
+  declarations: [MainContentComponent],
+  exports: [
+    MainContentComponent
+  ]
 })
 export class MainContentModule { }
