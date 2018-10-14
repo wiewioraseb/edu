@@ -1,3 +1,30 @@
 :host {
   border: 1px greenyellow solid;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.left {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: stretch;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.left > img {
+  max-width: 50%;
+}
+
+.middle-right {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: center;
 }
