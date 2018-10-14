@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: Roboto;
+  src: url('https://fonts.googleapis.com/css?family=Roboto');
+}
+
 html,
 body {
+  font-family: Robot, Arial, sans-serif;
   height: 100%;
   padding: 0;
   margin: 0;
