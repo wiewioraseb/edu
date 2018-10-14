@@ -16,6 +16,7 @@
 
 .top-section {
   box-shadow: 2px 2px 2px lightgrey;
+  z-index: 1;
 
   order: 0;
   flex: 0 1 auto;
@@ -23,8 +24,6 @@
 }
 
 .middle-section {
-  border: 1px lightcoral solid;
-
   order: 0;
   flex: 1 1 auto;
   align-self: stretch;

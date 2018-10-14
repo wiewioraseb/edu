@@ -1,5 +1,5 @@
 :host {
-  border: 1px rebeccapurple solid;
+  background-image: url("../../assets/side-background.png");
 
   order: 0;
   flex: 1 1 auto;
