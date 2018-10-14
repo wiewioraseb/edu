@@ -1,6 +1,4 @@
 :host {
-  border: 1px greenyellow solid;
-
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -17,10 +15,13 @@
   justify-content: center;
   display: flex;
   align-items: center;
+
+  margin: 10px;
 }
 
 .left > img {
-  max-width: 50%;
+  height: 2em;
+  width: auto;
 }
 
 .middle-right {
