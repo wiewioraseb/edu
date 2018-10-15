@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { routes } from '../../app-routing.module';
 import { LoginDetailComponent } from './login-detail/login-detail.component';
 import { SelectGroupComponent } from './select-group/select-group.component';
+import { AddAvatarComponent } from './add-avatar/add-avatar.component';
+import { FormSubmitComponent } from './form-submit/form-submit.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: [MainContentComponent, LoginDetailComponent, SelectGroupComponent],
+  declarations: [MainContentComponent, LoginDetailComponent, SelectGroupComponent, AddAvatarComponent, FormSubmitComponent],
   exports: [
     MainContentComponent
   ],
