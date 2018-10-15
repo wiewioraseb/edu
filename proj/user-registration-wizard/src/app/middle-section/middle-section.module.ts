@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MiddleSectionComponent } from './middle-section.component';
+import { MainContentModule } from './main-content/main-content.module';
+import { SideMenuModule } from './side-menu/side-menu.module';
+import { RouterModule } from '@angular/router';
+import { routes } from '../app-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MainContentModule,
+    SideMenuModule,
   ],
   exports: [
     MiddleSectionComponent

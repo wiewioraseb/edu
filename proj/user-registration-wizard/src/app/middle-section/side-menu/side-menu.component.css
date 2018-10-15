@@ -1,7 +1,7 @@
 :host {
   background:
-    url("../../assets/app-icon.png") no-repeat right -90px bottom/90%,
-    url("../../assets/side-background.png") repeat;
+    url("../../../assets/app-icon.png") no-repeat right -90px bottom/90%,
+    url("../../../assets/side-background.png") repeat;
 
   order: 0;
   flex: 1 1 auto;
