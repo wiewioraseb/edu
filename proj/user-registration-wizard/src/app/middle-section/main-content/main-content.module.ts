@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MainContentComponent } from './main-content.component';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app-routing.module';
+import { LoginDetailComponent } from './login-detail/login-detail.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: [MainContentComponent],
+  declarations: [MainContentComponent, LoginDetailComponent],
   exports: [
     MainContentComponent
   ],
