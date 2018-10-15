@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainContentComponent } from './middle-section/main-content/main-content.component';
 import { LoginDetailComponent } from './middle-section/main-content/login-detail/login-detail.component';
+import { SelectGroupComponent } from './middle-section/main-content/select-group/select-group.component';
 
 @NgModule({
   exports: [
@@ -11,12 +11,13 @@ import { LoginDetailComponent } from './middle-section/main-content/login-detail
 export class AppRoutingModule {}
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'content', pathMatch: 'full' },
-  { path: 'content', component: MainContentComponent, children: [
-      {
+  { path: '', redirectTo: 'login-detail', pathMatch: 'full' },
+  {
         path: 'login-detail',
         component: LoginDetailComponent
       },
-
-    ] }
+      {
+        path: 'select-group',
+        component: SelectGroupComponent
+      }
 ];

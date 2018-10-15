@@ -13,7 +13,7 @@ export class SideMenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  navTest() {
-    this.router.navigate(['/test']);
+  navigateToQuery(path: string) {
+    this.router.navigate(['/' + path]);
   }
 }

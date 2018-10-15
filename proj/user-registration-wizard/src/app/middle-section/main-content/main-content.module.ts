@@ -4,13 +4,14 @@ import { MainContentComponent } from './main-content.component';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app-routing.module';
 import { LoginDetailComponent } from './login-detail/login-detail.component';
+import { SelectGroupComponent } from './select-group/select-group.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: [MainContentComponent, LoginDetailComponent],
+  declarations: [MainContentComponent, LoginDetailComponent, SelectGroupComponent],
   exports: [
     MainContentComponent
   ],
