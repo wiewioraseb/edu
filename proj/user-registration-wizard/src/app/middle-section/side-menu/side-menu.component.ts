@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-side-menu',
@@ -8,9 +9,26 @@ import { Router } from '@angular/router';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @ViewChild('varMenuList')
+  menuList: ElementRef;
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.colorActiveDot(event);
+      });
+  }
+
+  private colorActiveDot(event: NavigationEnd) {
+    this.menuList.nativeElement.querySelectorAll('.menu-list > .menu-list-element > span')
+      .forEach(e => e.style.color = 'gray');
+
+    const idElementName = event.url.replace(/\//g, '');
+    this.menuList.nativeElement.querySelector('#' + idElementName + '_circle').style.color = 'lawngreen';
   }
 
   navigateToQuery(path: string) {

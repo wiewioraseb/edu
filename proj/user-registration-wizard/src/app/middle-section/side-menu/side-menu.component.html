@@ -1,18 +1,15 @@
-<p>
-  side-menu works!
-</p>
-<ul>
-  <li>
-    <button (click)="navigateToQuery('login-detail')">Add login details</button>
-  </li>
-  <li>
-    <button (click)="navigateToQuery('select-group')">Select the user group</button>
-  </li>
-  <li>
-    <button (click)="navigateToQuery('add-avatar')">Add an avatar</button>
-  </li>
-  <li>
-    <button (click)="navigateToQuery('form-submit')">Submit the form</button>
-  </li>
-</ul>
+<div class="menu-list" #varMenuList>
+  <div class="menu-list-element" (click)="navigateToQuery('login-detail')">
+    <span id="login-detail_circle">&#x25CF;</span> Add login details
+  </div>
+  <div class="menu-list-element" (click)="navigateToQuery('select-group')">
+    <span id="select-group_circle">&#x25CF;</span> Select the user group
+  </div>
+  <div class="menu-list-element" (click)="navigateToQuery('add-avatar')">
+    <span id="add-avatar_circle">&#x25CF;</span> Add an avatar
+  </div>
+  <div class="menu-list-element" (click)="navigateToQuery('form-submit')">
+    <span id="form-submit_circle">&#x25CF;</span> Submit the form
+  </div>
+</div>
 
