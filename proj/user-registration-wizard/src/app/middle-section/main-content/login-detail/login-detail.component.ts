@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RedirectStateService } from '../../../redirect-state/redirect-state.service';
 
 @Component({
   selector: 'app-login-detail',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private redirectStateService: RedirectStateService) { }
 
   ngOnInit() {
+    console.log('login detail > redirectStateService: ' + this.redirectStateService.getState());
   }
 
 }
