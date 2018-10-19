@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RedirectStateService } from '../../../redirect-state/redirect-state.service';
+import { ComponentName, RedirectStateService } from '../../../redirect-state/redirect-state.service';
+import { UserDetailModel } from './model/user-detail.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-detail',
@@ -8,10 +10,18 @@ import { RedirectStateService } from '../../../redirect-state/redirect-state.ser
 })
 export class LoginDetailComponent implements OnInit {
 
-  constructor(private redirectStateService: RedirectStateService) { }
+  model = new UserDetailModel('', '', '');
+
+  constructor(
+    private redirectStateService: RedirectStateService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
-    console.log('login detail > redirectStateService: ' + this.redirectStateService.getState());
   }
 
+  onClickSubmit() {
+    this.redirectStateService.setNavigateState(ComponentName.SelectGroup, true);
+    this.router.navigate(['/' + ComponentName.SelectGroup]);
+  }
 }

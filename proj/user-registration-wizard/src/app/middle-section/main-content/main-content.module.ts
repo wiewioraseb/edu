@@ -7,11 +7,13 @@ import { LoginDetailComponent } from './login-detail/login-detail.component';
 import { SelectGroupComponent } from './select-group/select-group.component';
 import { AddAvatarComponent } from './add-avatar/add-avatar.component';
 import { FormSubmitComponent } from './form-submit/form-submit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   declarations: [MainContentComponent, LoginDetailComponent, SelectGroupComponent, AddAvatarComponent, FormSubmitComponent],
   exports: [
