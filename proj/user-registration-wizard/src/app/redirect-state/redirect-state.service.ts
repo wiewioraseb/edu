@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 
-type ComponentName = 'login-detail' | 'select-group' | 'add-avatar' | 'form-submit';
+export enum ComponentName {
+  LoginDetail = 'login-detail',
+  SelectGroup = 'select-group',
+  AddAvatar = 'add-avatar',
+  FormSubmit = 'form-submit'
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class RedirectStateService {
   private stateMap = new Map<string, boolean>([
-    ['login-detail', false],
+    ['login-detail', true],
     ['select-group', false],
     ['add-avatar', false],
     ['form-submit', false]
