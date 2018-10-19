@@ -4,6 +4,7 @@ import { LoginDetailComponent } from './middle-section/main-content/login-detail
 import { SelectGroupComponent } from './middle-section/main-content/select-group/select-group.component';
 import { AddAvatarComponent } from './middle-section/main-content/add-avatar/add-avatar.component';
 import { FormSubmitComponent } from './middle-section/main-content/form-submit/form-submit.component';
+import { NavigationStateGuard } from './guard/navigation-state/navigation-state.guard';
 
 @NgModule({
   exports: [
@@ -13,21 +14,28 @@ import { FormSubmitComponent } from './middle-section/main-content/form-submit/f
 export class AppRoutingModule {}
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login-detail', pathMatch: 'full' },
+  { path: '',
+    redirectTo: 'login-detail',
+    pathMatch: 'full'
+  },
   {
     path: 'login-detail',
-    component: LoginDetailComponent
+    component: LoginDetailComponent,
+    canActivate: [NavigationStateGuard]
   },
   {
     path: 'select-group',
-    component: SelectGroupComponent
+    component: SelectGroupComponent,
+    canActivate: [NavigationStateGuard]
   },
   {
     path: 'add-avatar',
-    component: AddAvatarComponent
+    component: AddAvatarComponent,
+    canActivate: [NavigationStateGuard]
   },
   {
     path: 'form-submit',
-    component: FormSubmitComponent
+    component: FormSubmitComponent,
+    canActivate: [NavigationStateGuard]
   }
 ];

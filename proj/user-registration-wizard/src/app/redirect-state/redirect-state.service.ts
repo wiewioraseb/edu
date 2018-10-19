@@ -12,10 +12,10 @@ export enum ComponentName {
 })
 export class RedirectStateService {
   private stateMap = new Map<string, boolean>([
-    ['login-detail', true],
-    ['select-group', false],
-    ['add-avatar', false],
-    ['form-submit', false]
+    [ComponentName.LoginDetail, true],
+    [ComponentName.SelectGroup, false],
+    [ComponentName.AddAvatar, false],
+    [ComponentName.FormSubmit, false]
   ]);
 
   constructor() { }
