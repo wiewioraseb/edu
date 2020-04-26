@@ -7,6 +7,9 @@
 # The `service` block is the name of the service
 service: sebs-testuje-img-resize
 
+custom:
+  bucket: 'testowy-bucket-for-resized-img'
+
 # The `provider` block defines where your service will be deployed
 provider:
   name: aws
@@ -28,17 +31,17 @@ functions:
     # The `events` block defines how to trigger the handler.helloWorld code
     events:
       - http:
-          path: hello-world
+          path: /hello-world
           method: get
           cors: true
   TesteroUploadImage:
-    handler: uploadImage.handler
+    handler: handler.uploadImage
     # The `events` block defines how to trigger the uploadImage.handler code
     events:
       - http:
-        path: upload-image
-        method: post
-        cors: true
+          path: /upload
+          method: post
+          cors: true
     environment:
       Bucket: ${self:custom.bucket}
 
