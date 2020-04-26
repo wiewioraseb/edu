@@ -5,12 +5,21 @@
 # uses to deploy your code to your provider of choice
 
 # The `service` block is the name of the service
-service: proj
+service: sebs-testuje-img-resize
 
 # The `provider` block defines where your service will be deployed
 provider:
   name: aws
   runtime: nodejs12.x
+  region: eu-central-1
+  stackName: testowyCloudFormationStack
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+      Resource:
+        - "arn:aws:s3:::${self:custom.bucket}/*"
+
 
 # The `functions` block defines what code to deploy
 functions:
@@ -22,3 +31,20 @@ functions:
           path: hello-world
           method: get
           cors: true
+  TesteroUploadImage:
+    handler: uploadImage.handler
+    # The `events` block defines how to trigger the uploadImage.handler code
+    events:
+      - http:
+        path: upload-image
+        method: post
+        cors: true
+    environment:
+      Bucket: ${self:custom.bucket}
+
+resources:
+  Resources:
+    StorageBucket:
+      Type: "AWS::S3::Bucket"
+      Properties:
+        BucketName: ${self:custom.bucket}
